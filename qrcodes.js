@@ -42,7 +42,7 @@ const qrCodeOfb = new QRCodeStyling({
         type: "rounded"
     },
     backgroundOptions: {
-        color: "black",
+        color: "transparent",
     },
     imageOptions: {
         crossOrigin: "anonymous",
