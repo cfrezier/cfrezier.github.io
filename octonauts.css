@@ -1,0 +1,242 @@
+.fullscreen {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    z-index: 1;
+}
+
+body.intro-video {
+    .fullscreen {
+        display: block;
+    }
+}
+
+.bdx-io {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+body {
+    .onepoint.for-intro {
+        display: none;
+    }
+
+    .onepoint.no-intro {
+        display: block;
+    }
+}
+
+body.intro {
+    .onepoint.for-intro {
+        display: block;
+    }
+
+    .onepoint.no-intro {
+        display: none;
+    }
+}
+
+.onepoint {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.onepoint > img {
+    max-width: 200px;
+}
+
+.author {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.circle {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.global {
+    color: #000000;
+    background-color: #d7eaf1;
+    font-family: Poppins;
+}
+
+.center-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.intro {
+    background-image: url("./images/intro.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+img.qwik-logo {
+    max-width: 200px;
+    margin-left: 20px;
+}
+
+.qwik-title {
+    margin-top: -191px;
+    margin-left: 182px;
+}
+
+.grid-perso {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 55px;
+}
+
+.perso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    flex-grow: 1;
+    opacity: 0.5;
+    max-height: 200px;
+}
+
+.perso.active {
+    opacity: 1;
+}
+
+.portrait {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.portrait > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.me {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.me img {
+    background: white;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.me img.nuage {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.me img.logo {
+    background: none;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+img.qwik-logo.small {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.aside-text {
+    font-size: 10px;
+}
+
+.me .circle {
+    margin-right: 20px;
+}
+
+.legacy td {
+    vertical-align: middle;
+}
+
+.legacy tr, .legacy td {
+    height: 100px;
+}
+
+img.app-size {
+    max-height: 75px;
+}
+
+img.rate {
+    max-height: 20px;
+    max-width: 20px;
+    margin-left: 5px;
+}
+
+.rating {
+    font-size: 20px;
+}
+
+.rating > div {
+    height: 30px;
+    justify-content: flex-end;
+}
+
+img.rate.ml-auto {
+    margin-left: auto;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.outside-site {
+    width: 90%;
+    height: 600px;
+    top: 50px !important;
+}
+
+.code-font-sm {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.code-font-md {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.code-font-hd {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.center-questions {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+
+    .split {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.qrcode {
+    > img {
+        width: 200px;
+        height: 200px;
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0;
+    }
+}
