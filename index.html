@@ -2829,11 +2829,15 @@
     // - https://revealjs.com/initialization/
     // - https://revealjs.com/config/
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const receiver = urlParams.get('receiver');
+    const pluginOnlyOnMain = receiver !== null ? [] : [RevealGamepadController(Reveal)];
+
     Reveal.initialize({
         hash: true,
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealGamepadController(Reveal)],
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain ],
     });
 </script>
 <script type="module" src="./qrcodes.js"></script>
