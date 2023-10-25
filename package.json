@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "gulp serve"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "yargs": "^15.1.0"
+  },
+  "dependencies": {
+    "@cfrezier/reveal-gamepad-controller-plugin": "^1.1.2",
+    "qr-code-styling": "^1.6.0-rc.1"
+  }
+}

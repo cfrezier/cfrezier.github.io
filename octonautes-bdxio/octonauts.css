@@ -89,6 +89,15 @@ img.qwik-logo {
 .qwik-title {
     margin-top: -191px;
     margin-left: 182px;
+    color: white;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 30px;
+
+    > img {
+        margin: 0;
+        margin-left: 20px;
+    }
 }
 
 .grid-perso {
