@@ -1,0 +1,63 @@
+body {
+    font-family: Poppins;
+}
+
+.circle {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.center-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.me {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.me img {
+    background: white;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.me img.nuage {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.me img.logo {
+    background: none;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.conf-title {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.conf-image {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.conf {
+    width: 75vw;
+    margin: auto;
+    > tbody > tr > td, > tbody > tr > th {
+        padding: 20px;
+    }
+}

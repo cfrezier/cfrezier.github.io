@@ -1,0 +1,2846 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Les Octonautes sauvent le monde avec Qwik</title>
+
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/white.css">
+    <link rel="stylesheet" href="./octonauts.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+
+    <link rel='stylesheet' id='font-family-1-css'
+          href='https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd'
+          type='text/css' media='all'/>
+</head>
+<body class="global">
+
+<div class="onepoint for-intro">
+    <img src="./images/onepoint-white.png">
+</div>
+<div class="onepoint no-intro">
+    <img src="./images/onepoint-black.png">
+</div>
+<div class="bdx-io">
+    <img src="./images/bdxio.png">
+</div>
+<div class="author center-image">
+    <img src="./images/icon.jpeg" class="circle">@cfrezier
+</div>
+
+<video controls class="fullscreen">
+    <source src="./video/generique.mp4" type="video/mp4"/>
+</video>
+
+<div class="reveal">
+    <div class="slides">
+        <section data-state="intro intro-video">
+            <aside class="notes">
+                Préparer terminal avec profil 'CONF'
+                Vérifier gcloud run deploy octo-eshop --source .
+                S'assurer que le service tourne
+            </aside>
+        </section>
+
+        <section data-state="intro">
+            <div class="center-image qwik-title">
+                sauvent la planète avec <img src="./images/qwik.png" class="qwik-logo">
+            </div>
+            <aside class="notes">
+                Les octonautes sauvent la planète avec Qwik
+            </aside>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                </div>
+                <aside class="notes">
+                    Capitaine Barnacle, Capitaine Barnacle !
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                </div>
+                <aside class="notes">
+                    Oui Peso, qu'y a-t-il ?
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                </div>
+                <aside class="notes">
+                    Je n'ai plus de pansements pour soigner les crabes blessés dans l'explosion du volcan !
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                </div>
+                <aside class="notes">
+                    Va donc te ravitailler dans les stocks Peso !
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                </div>
+                <aside class="notes">
+                    J'ai bien peur que les stocks soient vides, Capitaine. Nous n'avons pas pu faire le plein lors de
+                    notre
+                    dernière escale, faute de budget !
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                </div>
+                <aside class="notes">
+                    Il nous faut trouver une solution pérenne à ce manque de capitaux, Capitaine. Peut-être
+                    pourrions-nous
+                    vendre quelques produits afin de supporter notre action ?
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Oui, nous pourrions créer un site e-commerce afin de faciliter la prise de commande !
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Ce serait génial Cassie, mais je ne voudrais pas que cela soit trop consommateur.
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Justement Peso. Avec le framework Qwik, j'améliore automatiquement la performance et du coup,
+                    les échanges réseaux et l'électricité consommée par le site.
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait active">
+                            <img src="./images/nav.png">
+                        </div>
+                        Nave & Légumaux
+                    </div>
+                </div>
+                <aside class="notes">
+                    Nav nav nav nav nav
+                    Ce qui une fois traduit donne: On s'occupe de la logistique !
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            /me
+            <div class="me">
+                <div>
+                    <div class="center-image">
+                        <img src="./images/icon.jpeg" class="circle"> Christophe Frézier
+                    </div>
+                    <div class="center-image">
+                        <a href="https://twitter.com/cfrezier" class="center-image"><img src="./images/x.png"
+                                                                                         class="circle"> @cfrezier</a>
+                    </div>
+                    <div class="center-image">
+                        <a href="https://github.com/cfrezier" class="center-image"><img src="./images/github.png"
+                                                                                        class="circle"> cfrezier</a>
+                    </div>
+                    <div>
+                        <a href="https://www.groupeonepoint.com/fr/"><img src="./images/onepoint-white.png"
+                                                                          class="logo"></a>
+                    </div>
+                    <div>
+                        <a href="https://www.provoly.com/"><img src="./images/provoly.svg" class="logo"></a>
+                    </div>
+                </div>
+                <div>
+                    <div><img src="./images/nuage-de-mots.webp" class="nuage"></div>
+                    <div>
+                        <a href="https://github.com/cfrezier/save-the-world-octonauts">
+                            <p class="code-font-sm" style="margin: 0">Code/Slides sur github</p>
+                            <div class="qrcode qrcode-repo"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <aside class="notes">
+                <div>TEMPO: 2:00</div>
+
+                <div>Alors j'interrompt cet épisode non-officiel des octonautes pour me présenter: "je m'appelle
+                    Christophe Frézier et voilà où me retrouver, je travaille pour onepoint et en particulier pour un
+                    produit bientôt open-source qui est juste en dessous. Et puis à droite, en vrac, les choses qui
+                    m'occupent principalement en ce moment
+                </div>
+
+                <div>Mais sans plus tarder reprenons notre épisode</div>
+            </aside>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Performance Web</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 3:00</div>
+
+                    Alors Cassie, tu disais que Qwik permet de créer des sites performants automatiquement ? Mais qu'en
+                    est-il de l'impact environnemental ?
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <p>Performance Web</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    C'est sûr que faire un site ce n'est pas anodin. Mais au moins, on peut limiter son impact.
+                    Mais avant de te parler de ça je doit te présenter ce qu'est la performance web
+                </aside>
+            </section>
+
+            <section>
+                La performance web, c'est quoi ?
+            </section>
+
+            <section data-auto-animate data-auto-animate-id="fcp">
+                <img src="./images/fcp.avif">
+                <aside class="notes">
+                    <div>Un exemple de timeline de chargement de site web</div>
+                    <div>Différents moments importants pour définir l'expérience utilisateur</div>
+                </aside>
+            </section>
+
+            <section data-auto-animate data-auto-animate-id="fcp">
+                <img src="./images/fcp.avif">
+                <p>FP: First Painting</p>
+                <aside class="notes">
+                    On commence à "sentir" de site web arriver
+                </aside>
+            </section>
+
+            <section data-auto-animate data-auto-animate-id="fcp">
+                <img src="./images/fcp.avif">
+                <p>FP: First Painting</p>
+                <p>FCP: First Contentful Painting</p>
+                <aside class="notes">
+                    On peut commencer à lire, vue générale
+                </aside>
+            </section>
+
+            <section data-auto-animate data-auto-animate-id="fcp">
+                <img src="./images/fcp.avif">
+                <p>FP: First Painting</p>
+                <p>FCP: First Contentful Painting</p>
+                <p>TTI: Time to Interactive</p>
+                <aside class="notes">
+                    On peut interagir
+                    <div>C'est le moment où on a réussi à capter l'attention de l'utilisateur</div>
+                </aside>
+            </section>
+
+            <section>
+                <img src="./images/fcp-why.png">
+                <aside class="notes">
+                    <div>TEMPO: 4:40</div>
+                    <div>Correspond à des évènements techniques</div>
+                    <div>FP: chargement de la page html uniquement</div>
+                    <div>FCP: page html + rendu JS si besoin</div>
+                    <div>TTI: page html + rendu JS + écouteurs dévènements</div>
+                </aside>
+            </section>
+
+            <section>
+                Les types de rendu web
+                <aside class="notes">
+                    <div>TEMPO: 6:00</div>
+                    <div>Partant de ces définitions, on a utilisé dans le temps plusieurs façons de faire pour essayer
+                        d'améliorer l'UX utilisateur
+                    </div>
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <table class="legacy">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p>Statique</p>
+                        </td>
+                        <td>
+                            <img src="./images/app1.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <aside class="notes">
+                    <p>Très performant, et responsable</p>
+                    <p>Pas ou peu d'interactions</p>
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <table class="legacy">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p>Statique</p>
+                        </td>
+                        <td>
+                            <img src="./images/app1.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Généré</p>
+                        </td>
+                        <td>
+                            <img src="./images/app2.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <aside class="notes">
+                    <p>Moins bien niveau perf (il faut générer la page avant de la servir)</p>
+                    <p>Plus d'interactions</p>
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <table class="legacy">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p>Statique</p>
+                        </td>
+                        <td>
+                            <img src="./images/app1.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Généré</p>
+                        </td>
+                        <td>
+                            <img src="./images/app2.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>CSR</p>
+                        </td>
+                        <td>
+                            <img src="./images/app3.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <aside class="notes">
+                    <p>Interactions bien supérieures</p>
+                    <p>Performances "s'écroulent" FCP et TTI</p>
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <table class="legacy">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p>Statique</p>
+                        </td>
+                        <td>
+                            <img src="./images/app1.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Généré</p>
+                        </td>
+                        <td>
+                            <img src="./images/app2.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>CSR</p>
+                        </td>
+                        <td>
+                            <img src="./images/app3.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>SSR</p>
+                        </td>
+                        <td>
+                            <img src="./images/app4.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <aside class="notes">
+                    <p>SSR: hydratation</p>
+                    <p>Données envoyées 2 fois (HTML ET JS) et calculées 2 fois</p>
+                    <p>TTI très long (reconstruction de l'ensemble de la page avant interaction même si déjà
+                        constuite)</p>
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <table class="legacy">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p>Statique</p>
+                        </td>
+                        <td>
+                            <img src="./images/app1.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Généré</p>
+                        </td>
+                        <td>
+                            <img src="./images/app2.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>CSR</p>
+                        </td>
+                        <td>
+                            <img src="./images/app3.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>SSR</p>
+                        </td>
+                        <td>
+                            <img src="./images/app4.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Résumable (<img src="./images/qwik.png" class="qwik-logo small">)</p>
+                        </td>
+                        <td>
+                            <img src="./images/app5.png" class="app-size">
+                        </td>
+                        <td class="rating">
+                            <div class="center-image">
+                                <p>Interactivité</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>FCP</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                            <div class="center-image">
+                                <p>TTI</p>
+                                <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <aside class="notes">
+                    <div>TEMPO: 10:30</div>
+                    <p>Grosse amélioration TTI</p>
+                    <p>Optimisations de ce qui est possible en plus</p>
+                    <div>Do better by doing (almost) nothing !</div>
+                </aside>
+            </section>
+
+            <section data-auto-animate data-auto-animate-id="eco">
+                <div>Performance mais responsable ?</div>
+                <aside class="notes">
+                    <p>On a parlé jusque-là de performances, mais quel rapport avec la responsabilité</p>
+                </aside>
+            </section>
+
+            <section data-auto-animate data-auto-animate-id="eco">
+                <div>Performance mais responsable ?</div>
+                <div>1 Mo envoyé = 15 g de CO2*</div>
+                <div>Moins on en envoie, mieux c'est !</div>
+                <aside class="notes">
+                    <p>Cela n'autorise pas à ne pas optimiser l'ensemble du process, mais c'est un début !</p>
+                </aside>
+            </section>
+
+            <section data-auto-animate data-auto-animate-id="eco">
+                <div>Performance mais responsable ?</div>
+                <div>Il faut aussi prendre en compte l'activité backend</div>
+                <aside class="notes">
+                    <p>On privilégiera donc du statique serveur... sauf si génération statique mise en cache</p>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Premiers pas</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 12:00</div>
+                    D'accord Cassie, tout cela est bien beau, mais tu ne nous as pas encore expliqué comment tu faisais
+                    ! Ni comment cela fonctionnait !
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Premiers pas</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    J'y viens Professeur !
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div>Exemple</div>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm">
+                    npm create qwik@latest
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 12:15</div>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div>Exemple</div>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm">
+                    npm create qwik@latest
+                </code>
+                </pre>
+                <div><img src="./images/joke.png" style="height: 400px;"></div>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm">
+                    npm run start
+                </code>
+                </pre>
+                <a href="name" target="_blank">Starting App</a>
+                <aside class="notes">
+                    Montrer:
+                    <div>- Counter</div>
+                    <div>- Steps</div>
+                    <div>- Doc</div>
+                    <div>- @QwikDev</div>
+                </aside>
+            </section>
+
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 14:15</div>
+                    Oui mais concrètement, comment j'écris un composant Qwik ?
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Je vous montre ça Professeur
+                </aside>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        import {component$} from "@builder.io/qwik";
+
+                        export default component$(() => {
+                            return (
+                            <>
+                                <h1>Hello Bdx IO !</h1>
+                                <button onClick$={() => console.log('Hello Bdx IO')}>Greet Me !</button>
+                            </>
+                            );
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>Voilà un exemple avec:</div>
+                    <div>- un rendu</div>
+                    <div>- une interaction</div>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Pour ceux qui aiment React</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        /** @jsxImportSource react */
+                        import { qwikify$ } from '@builder.io/qwik-react';
+
+                        // Create React component standard way
+                        function Greetings() {
+                            return <p>Hello from React</p>;
+                        }
+
+                        // Convert React component to Qwik component
+                        export const QGreetings = qwikify$(Greetings);
+                    </script>
+                </code>
+                </pre>
+            </section>
+            <section data-auto-animate>
+                <p>Oui, ça ressemble à du React.</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        /** @jsxImportSource react */
+                        import { qwikify$ } from '@builder.io/qwik-react';
+
+                        // Create React component standard way
+                        function Greetings() {
+                            return <p>Hello from React</p>;
+                        }
+
+                        // Convert React component to Qwik component
+                        export const QGreetings = qwikify$(Greetings);
+                    </script>
+                </code>
+                </pre>
+                <p>Et on peut aussi intégrer des composants <a
+                        href="https://www.npmjs.com/package/@qwikdev/qwik-angular">Angular</a></p>
+            </section>
+
+            <section data-auto-animate>
+                Résumabilité
+                <aside class="notes">
+                    <div>TEMPO: 14:15</div>
+                    <div>LE concept qui fait de Qwik ce qu'il est</div>
+                </aside>
+            </section>
+            <section data-auto-animate data-auto-animate-id="loader">
+                <p>QwikLoader</p>
+            </section>
+            <section data-auto-animate data-auto-animate-id="loader">
+                <p>QwikLoader</p>
+                <p>Mini JS - 1 kb</p>
+                <p>Inliné si possible</p>
+                <aside class="notes">
+                    <div>Mais du coup comment faire ce qu'un gros JS pourrait réaliser ?</div>
+                </aside>
+            </section>
+            <section>
+                <p>Comment ça marche ?</p>
+                <p class="aside-text">(Pour les débutants, vous pouvez dormir 2 minutes)</p>
+                <img src="./images/onevent.png" style="height: 400px;">
+                <aside class="notes">
+                    <div>TEMPO: 15:00</div>
+                    <div>Qwik ne va télécharger le JS qu'au moment où il en a besoin !</div>
+                </aside>
+            </section>
+            <section>
+                <p>Ce qui est envoyé ?</p>
+                <ul>
+                    <li>Etat minimisé</li>
+                    <li>Dépendances entre fragments</li>
+                    <li>Reactions aux interactions</li>
+                    <li>JS nécessaire (useVisibleTask$, ...)</li>
+                </ul>
+                <aside class="notes">
+                    <div>TEMPO: 15:30</div>
+                </aside>
+            </section>
+            <section data-auto-animate data-auto-animate-id="code1">
+                Références, dépendances, états, ...
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1|24-25,30|32-39">
+                    <script type="qwik/json">{
+                      "refs": {
+                        "a": "0",
+                        "b": "0",
+                        "e": "1 6",
+                        "g": "1 6"
+                      },
+                      "ctx": {
+                        "9": {
+                          "h": "7",
+                          "s": "0"
+                        },
+                        "f": {
+                          "h": "a 9!"
+                        }
+                      },
+                      "objs": [
+                        "\u00122",
+                        "\u00125",
+                        0,
+                        "\u00110 @0",
+                        "#c",
+                        70,
+                        "\u0002/src/counter_component_setcount_axa3vnn55qe.js#counter_component_setCount_aXA3vNn55QE[1]",
+                        "\u0002/src/next_steps_component_kjctkbc9zbk.js#next_steps_component_kJCtKbc9zbk",
+                        "\u00111 @1",
+                        {
+                          "$$value": "8"
+                        },
+                        "\u0002/src/gauge_component_7gzriutqs98.js#gauge_component_7gzriUtQs98"
+                      ],
+                      "subs": [
+                        [
+                          "0 #9",
+                          "3 #c 3 #c"
+                        ],
+                        [
+                          "0 #f"
+                        ]
+                      ]
+                    }</script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 16:15</div>
+                    <p>Type spécifique, compris par celui qui en a besoin</p>
+                    <p>On devine les références au code Javascript</p>
+                    <p>On devine les dépendances entre fragments</p>
+                </aside>
+            </section>
+            <section>
+                <p>Comment il s'y retrouve ?</p>
+                <pre data-id="code-animation">
+                <code data-trim data-line-numbers="1-16|3-5|6" class="code-font-sm">
+                    ...
+                    <main class="o-main">
+                        <!--qv q:id=6 q:key=CDS6:yB_3-->
+                        <!--qv q:key=8z_2-->
+                        <!--qv q:id=7 q:key=8gdL:8z_0-->
+                        <a href="/cart-list" preventdefault:click="" class="m-basket"
+                           on:click="q-4578ff76.js#s_i1Cv0pYJNR0[0 1 1 1]" q:key="AD_1" q:id="8">
+                            <!--qv q:s q:sref=7 q:key=-->
+                            <i class="a-icon a-icon--basket"></i>
+                            <span class="a-number">
+                                <!--t=9-->0<!---->
+                            </span>
+                            <span class="a-label">Mon panier</span>
+                            <!--/qv-->
+                        </a>
+                    ...
+                    </main>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <p>Qwik sait se repérer</p>
+                    <p>il utilise ses références et son markup pour le rendu</p>
+                    <p>il utilise ses links js avec références pour les exécutions</p>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div>Pas super lisible, mais...</div>
+                <aside class="notes">
+                    <div>TEMPO: 18:00</div>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div>Pas super lisible, mais...</div>
+                <ul>
+                    <li>Le framework est responsable de ces optimisations</li>
+                </ul>
+            </section>
+            <section data-auto-animate>
+                <div>Pas super lisible, mais...</div>
+                <ul>
+                    <li>Le framework est responsable de ces optimisations</li>
+                    <li>Uniquement la partie nécessaire de l'application est envoyée</li>
+                </ul>
+                <aside class="notes">
+                    <p>En particulier, on n'envoie pas un contenu obtenu par API qui ne peut plus changer !</p>
+                </aside>
+            </section>
+            <section>
+                <img src="./images/peso-happy.png" style="max-height: 200px">
+                <aside class="notes">
+                    <div>TEMPO: 19:00</div>
+                    <p>C'est les pinguins et les ours polaires qui sont heureux</p>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Gestion d'état</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 19:00</div>
+                    Tu as dit que l'état de mon application devait être transférée depuis le backend...
+                    Mais cela doit être compliqué ! Je faisais pareil dans mon application Angular avec universal.
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Gestion d'état</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Pas vraiment Professeur. Je vous explique...
+                </aside>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        import { component$, useStore } from '@builder.io/qwik';
+
+                        export default component$(() => {
+                            return (
+                                <>
+                                    <h1>Hello Bdx IO !</h1>
+                                    <p>I am a static component, there is no reason to ever download me to the client.</p>
+                                    <hr/>
+                                    <Counter/>
+                                </>
+                            );
+                        });
+
+                        export const Counter = component$(() => {
+                            const store = useStore({ count: 0 });
+
+                            return (
+                                <>
+                                    <p>I am a dynamic component. Qwik will download me only when it is time to re-render me after
+                                        the user clicks on the <code>+1</code> button.</p>
+                                    <p>Current count: {store.count}</p>
+                                    <button onClick$={() => store.count++}>+1</button>
+                                </>
+                            );
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 19:15</div>
+                    <div>En haut, un composant statique: pas d'état</div>
+                    <div>En bas, un composant dynamique; on déclare un store (ou closure, mais attention)</div>
+                </aside>
+            </section>
+            <section>
+                Etat partagé: Contexte
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1,4,6,17,23">
+                    <script type="text/template">
+                        export const CART_CTX = createContextId<{ content: ProductInstance[] }>('cart');
+
+                        export default component$(() => {
+                            const cart = useStore({content: []});
+
+                            useContextProvider(CART_CTX, cart);
+
+                            const numberOfArticles = useComputed$(() => {
+                                return cart.content.reduce((p, c: ProductInstance) => c.howMany + p, 0);
+                            });
+
+                            return (
+                                <>
+                                    <div>
+                                        <Link href={'/cart-list'} class={'a-btn'}>Voir mes {numberOfArticles} produits</Link>
+                                    </div>
+                                    <Slot/> // Child components can access the context
+                                </>
+                            );
+                        });
+
+                        export default component$((props: ProductCardProps) => {
+                            const cart = useContext(CART_CTX);
+
+                            // You can use the context
+                            // ...
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>On peut partager simplement notre contexte avec les autres composants composants</div>
+                </aside>
+            </section>
+            <section>
+                Qwik s'occupe de transférer ce qui est nécessaire
+                <aside class="notes">
+                    <div>TEMPO: 19:45</div>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Ca me semble parfait tout ça Cassie
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Mais attention Professeur, il y a des règles à respecter !
+                </aside>
+            </section>
+            <section>
+                <p>Serialization (Les implications du $)</p>
+                <a href="https://qwik.builder.io/docs/advanced/dollar/" target="_blank">Qwik Optimizer</a>
+                <aside class="notes">
+                    <div>TEMPO: 19:55</div>
+                    <p>Fonctionnement de Qwik: on découpe tout en petits JS</p>
+                    <p>Implication: état sérialisable à tout moment.</p>
+                    <p>Voyons pourquoi...</p>
+                </aside>
+            </section>
+            <section>
+                <p>Un composant Qwik</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        import { component$ } from '@builder.io/qwik';
+
+                        export default component$(() => {
+                            console.log('render');
+                            return <button onClick$={() => console.log('hello')}>Hello Qwik</button>;
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 20:25</div>
+                    <div>Exemple tout simple de composant</div>
+                </aside>
+            </section>
+            <section>
+                <p>... et sa version "compilée"</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-6|8-20|22-24">
+                //app.js
+                import { componentQrl, qrl } from '@builder.io/qwik';
+                const App = /*#__PURE__*/ componentQrl(
+                qrl(() => import('./app_component_akbu84a8zes.js'), 'App_component_AkbU84a8zes')
+                );
+                export { App };
+
+                // app_component_akbu84a8zes.js
+                import { jsx as _jsx } from '@builder.io/qwik/jsx-runtime';
+                import { qrl } from '@builder.io/qwik';
+                export const App_component_AkbU84a8zes = () => {
+                    console.log('render');
+                    return /*#__PURE__*/ _jsx('p', {
+                        onClick$: qrl(
+                        () => import('./app_component_p_onclick_01pegc10cpw'),
+                            'App_component_p_onClick_01pEgC10cpw'
+                        ),
+                        children: 'Hello Qwik',
+                    });
+                };
+
+                // app_component_p_onclick_01pegc10cpw.js
+                export const App_component_p_onClick_01pEgC10cpw = () => console.log('hello');
+                </code>
+                </pre>
+                <aside class="notes">
+                    <p>Séparation en fichiers séparés</p>
+                    <p>De là viennent des contraintes à respecter... (imaginons Closures, paramètres, ...)</p>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                Not all valid TypeScript code is valid code for the Optimizer.
+                <aside class="notes">
+                    <div>TEMPO: 21:25</div>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                Not all valid TypeScript code is valid code for the Optimizer.
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                // Invalid
+                const foo = 'foo';
+                foo$(foo); // foo is not exported, so it's not importable
+
+                // Valid
+                export const bar = 'bar';
+                foo$(bar);
+
+                // Valid
+                import { bar } from './bar';
+                foo$(bar);
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 22:25</div>
+                    <p>Invalide car non exporté</p>
+                    <p>Valides sinon</p>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                Not all valid TypeScript code is valid code for the Optimizer.
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                    // Invalid
+                    component$(() => {
+                        let foo = 'value'; // variable is not a const
+                        return <div onClick$={() => console.log(foo)}/>
+                    });
+
+                    // Invalid
+                    component$(() => {
+                        const foo = new MyCustomClass(12); // MyCustomClass is not serializable
+                        return <div onClick$={() => console.log(foo)}/>
+                    });
+
+                    // Valid
+                    component$(() => {
+                        const foo = 'value'; // ok
+                        return <div onClick$={() => console.log(foo)}/>
+                    });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 23:10</div>
+                    <p>Pas de let</p>
+                    <p>Pas de classes (sérializable)</p>
+                </aside>
+            </section>
+            <section>
+                Contexte non sérializable
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-13|13">
+                    <script type="text/template">
+                    const controls = useStore({
+                        actual: 0,
+                        elapsed: 0,
+                        playing: false,
+                        bc: undefined,
+                        interval: undefined
+                    };
+
+                    const tmp = setInterval(() => {
+                        controls.elapsed++;
+                        controls.bc?.postMessage({type: 'elapsed', value: controls.elapsed});
+                    }, 1000);
+                    controls.interval = noSerialize(() => clearInterval(tmp));
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 23:45</div>
+                    <p>utiliser noSerialize</p>
+                    <p>à recréer côté client</p>
+                </aside>
+            </section>
+            <!-- <section>
+                <p>Capture du champ lexical</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-18|3,5,23,28">
+                    <script type="text/template">
+                    // Component
+                    export const Greeter = component$((props: { name: string }) => {
+                    const salutation = 'Hello';
+                    return (
+                    <div>{salutation} {props.name}!</div>
+                    );
+                    });
+
+                    // Naive chunk-a.js
+                    const Greeter_onMount = (props) => {
+                    const salutation = 'Hello';
+                    return qrl('./chunk-b.js', 'Greeter_onRender');
+                    };
+
+                    // Naive chunk-b.js
+                    const Greeter_onRender = () => (
+                    <div>{salutation} {props.name}!</div>
+                    );
+
+                    // chunk-a.js
+                    const Greeter_onMount = (props) => {
+                    const salutation = 'Hello';
+                    return qrl('./chunk-b.js', 'Greeter_onRender', [salutation, props]);
+                    };
+
+                    // chunk-b.js
+                    const Greeter_onRender = () => {
+                    const [salutation, props] = useLexicalScope();
+                    return (
+                    <div>{salutation} {props.name}!</div>
+                    );
+                    };
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <p>Qwik aide au maximum de ce qu'il peut faire</p>
+                    <p>Mais il y a des choses à respecter</p>
+                    <p>Il faut s'attendre à ce genre de problèmes quand on fait du Qwik</p>
+                </aside>
+            </section> -->
+        </section>
+
+
+        <section>
+            <section data-auto-animate>
+                <p>Allons un peu plus loin</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 24:15</div>
+                    <p>Oui mais moi, j'aimais bien plein de fonctionnalités de l'ancien framework...</p>
+                    <p>Je vais perdre des choses avec Qwik !</p>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Allons un peu plus loin</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Mais non Kwazii, Qwik est déjà très étoffé !
+                </aside>
+            </section>
+            <section>
+                <p>Utilisation de Slots / Layouts</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-18|11">
+                    <script type="text/template">
+                        export default component$(() => {
+                            return <>
+                                <h1>Aidez les Octonautes à sauver la planète !</h1>
+                                <div class="bdx-io">
+                                    <ImageBdxIO alt={'Logo BdxIO'}/>
+                                </div>
+                                <div class="author center-image">
+                                    <ImageAuthor class={'circle'} alt={'Avatar cfrezier'}/>@cfrezier
+                                </div>
+                                <Slot/>
+                                <div class="onepoint center-image">footer</div>
+                            </>;
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 24:25</div>
+                    <div>Squelette réutilisable (menus, navigation, ...)</div>
+                </aside>
+            </section>
+            <section>
+                <p>CSS Modules</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-12|14-24|26-32">
+                    <script type="text/template">
+                    //src/components/MyComponent/MyComponent.module.css
+                    .container {
+                        background-color: red;
+                    }
+
+                    // src/components/MyComponent/MyComponent.tsx
+                    import { component$ } from '@builder.io/qwik';
+                    import styles from './MyComponent.module.css';
+
+                    export default component$(() => {
+                        return <div class={styles.container}>Hello world</div>;
+                    });
+
+                    // OR
+                    import { component$, useStylesScoped$ } from '@builder.io/qwik';
+
+                    export default component$(() => {
+                        useStylesScoped$(`
+                            .container {
+                                background-color: red;
+                            }
+                        `);
+                        return <div class="container">Hello world</div>;
+                    });
+
+                    // OR
+                    import styles from './MyComponent.css?inline';
+
+                    export default component$(() => {
+                        useStylesScoped$(styles);
+                        return <div class="container">Hello world</div>;
+                    });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 24:50</div>
+                    <div>fichier css externalisé</div>
+                    <div>inliné dans le composant avec scope</div>
+                    <div>les 2 combinés</div>
+                </aside>
+            </section>
+            <section>
+                <a href="https://qwik.builder.io/docs/qwikcity/#qwik-city" target="_blank">Qwik City</a>
+                <aside class="notes">
+                    <div>TEMPO: 25:40</div>
+                    <div>Meta framework</div>
+                    <div>Qwik City => Qwik</div>
+                    <div>Next.js => React</div>
+                    <div>Nuxt => Vue</div>
+                    <div>SvelteKit => Svelte</div>
+                    <div>Analog => Angular.</div>
+                    <div>Lien vers la doc</div>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                Routing
+            </section>
+            <section data-auto-animate>
+                Routing
+                <p class="code-font-sm">Directory based routing</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="4,6,10,13|9|12|8,15">
+                    <script type="text/template">
+                        src/
+                        └── routes/
+                        ├── contact/
+                        │   └── index.mdx         # https://example.com/contact
+                        ├── about/
+                        │   └── index.md          # https://example.com/about
+                        ├── docs/
+                        │   └── layout.tsx        # This layout is used for all pages under /docs
+                        │   └── [id]/
+                        │       └── index.ts      # https://example.com/docs/1234
+                        │                         # https://example.com/docs/anything
+                        ├── [...catchall]/
+                        │   └── index.tsx         # https://example.com/anything/else/that/didnt/match
+                        │
+                        └── layout.tsx            # This layout is used for all pages
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 26:05</div>
+                    <p>On a les différents formats (md, mdx, ts, tsx)</p>
+                    <p>On peut gérer des paramètres simples</p>
+                    <p>On peut gérer des paramètres multiples</p>
+                    <p>On peut utiliser des layouts (cf Slots)</p>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                Routing
+                <p class="code-font-sm">Récupération de paramètres</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="2,5,6, 9-11">
+                    <script type="text/template">
+                        import { component$ } from '@builder.io/qwik';
+                        import { useLocation } from '@builder.io/qwik-city';
+
+                        export default component$(() => {
+                            const loc = useLocation();
+                            return <div>Hello {loc.params.username}!</div>;
+                        });
+
+                        // File routing
+                        //    └── [username]/
+                        //            └── index.ts      # https://example.com/docs/1234
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 27:25</div>
+                </aside>
+            </section>
+            <section>
+                <p>Route loaders</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        export const useProductDetails = routeLoader$(async (requestEvent) => {
+                            const url = `/api/products/id/${requestEvent.params.productId}`;
+                            const res = await fetch(url);
+                            const product = await res.json();
+                            return product as Product;
+                        });
+
+                        export default component$(() => {
+                            // In order to access the `routeLoader$` data within a Qwik Component, you need to call the hook.
+                            const signal = useProductDetails(); // Readonly
+                            return <>
+                                <Home></Home>
+                                <ProductCard product={signal.value}></ProductCard>
+                            </>;
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 27:45</div>
+                    <p>Charge des données TOUJOURS côté serveur</p>
+                    <p>Est aussi déclenché lors de navigation SPA/MPA</p>
+                    <p>Exécutés après les middlewares, et avant de render (pour gagner du temps)</p>
+                </aside>
+            </section>
+            <section>
+                <p>Ressources</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-34|5,6,18-29">
+                    <script type="text/template">
+                            export default component$(() => {
+                                const date = useSignal(new Date().getTime());
+
+                                const reposResource = useResource$<Product[]>(({ track, cleanup }) => {
+                                    track(() => date.value);
+                                    const controller = new AbortController();
+                                    cleanup(() => controller.abort());
+                                    // Fetch the data and return the promises.
+                                    return getProducts(controller);
+                                });
+
+                                return (
+                                    <main>
+                                        <section>
+                                            <Resource
+                                                    value={reposResource}
+                                                    onPending={() => <div>Chargement des produits...</div>}
+                                                    onRejected={() => <div>Erreur de chargement des produits</div>}
+                                                    onResolved={(products) => {
+                                                        return <div class={'product-list'}>
+                                                                    {products.map(({ id, ...rest }) => (
+                                                                        <div key={id} class={'product-list-item'}>
+                                                                            <ProductCard product={{...rest,
+                                                                                         id}}></ProductCard>
+                                                                        </div>
+                                                                    ))}
+                                                                </div>;
+                                                }}
+                                            />
+                                            <button onClick$={() => date.value = new Date().getTime()}>Rafraichir</button>
+                                        </section>
+                                    </main>
+                                );
+                            });
+
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 28:45</div>
+                    <p>Depuis le client OU le serveur</p>
+                    <p>Utilisé avec le composant Resource, il permet de gérer directement différents états en fonction
+                        de l'état de la resource (loading, resolved, rejected)</p>
+                    <p>On affiche une liste de produits si resolved</p>
+                </aside>
+            </section>
+            <section>
+                <p>Head</p>
+                <p class="code-font-sm">meta, links, ...</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="3-21|23-39">
+                    <script type="text/template">
+                        export default component$(() => { ... }
+
+                        // Static head
+                        export const head: DocumentHead = {
+                            title: "Les octonautes sauvent le monde avec Qwik",
+                            meta: [
+                                {
+                                    name: "description",
+                                    content: "Qwik site description",
+                                },
+                            ],
+                            links: [
+                                {
+                                    rel: 'stylesheet',
+                                    id: 'font-family-1-css',
+                                    href: 'https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd',
+                                    type: 'text/css',
+                                    media: 'all'
+                                },
+                            ],
+                        };
+
+                        // Dynamic Head
+                        export const head: DocumentHead = ({resolveValue, params}) => {
+                            const product = resolveValue(useProductDetails);
+                            return {
+                                title: `Détails de "${product.name}"`,
+                                meta: [
+                                    {
+                                        name: 'description',
+                                        content: product.description,
+                                    },
+                                    {
+                                        name: 'id',
+                                        content: product.id,
+                                    },
+                                ],
+                            };
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 29:20</div>
+                    <div>Permettre de définir les valeurs stockées dans le head du document</div>
+                    <div>Éventuellement de manière dynamique avec résolutions de requêtes avant injection</div>
+                </aside>
+            </section>
+            <section>
+                <p>Optimisation automatique des images</p>
+                <aside class="notes">
+                    <div>TEMPO: 30:20</div>
+                </aside>
+            </section>
+            <section>
+                <a href="https://qwik.builder.io/docs/integrations/image-optimization/" target="_blank">Image
+                    Optimisation</a>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-3|12,15,18">
+                    <script type="text/template">
+                        import ImageOnepoint from './public/images/onepoint-white.png?jsx';
+                        import ImageBdxIO from './public/images/bdxio.png?jsx';
+                        import ImageAuthor from './public/images/icon.jpeg?jsx';
+                        import type {DocumentHead} from "@builder.io/qwik-city";
+
+                        ...
+
+                        export default component$(() => {
+                            return <>
+                                <h1>Aidez les Octonautes à sauver la planète !</h1>
+                                <div class="onepoint">
+                                    <ImageOnepoint/>
+                                </div>
+                                <div class="bdx-io">
+                                    <ImageBdxIO/>
+                                </div>
+                                <div class="author center-image">
+                                    <ImageAuthor class={'circle'}/>@cfrezier
+                                </div>
+                                <Slot/>
+                            </>;
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>import bizarre</div>
+                    <div>aucune décalaration à faire</div>
+                </aside>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-6,8-10">
+                    <script type="text/template">
+                        <img srcset="/@imagetools/68e4624f6eb399e61c972af8eeccabff0b464372 200w,
+                        /@imagetools/8809c67f8779c09edd98ea4913b8405479b91a31 400w,
+                        /@imagetools/ac749ebac4c3760d8527187af23e00067992402f 600w,
+                        /@imagetools/649dfd42c93ba008ec3cdeba8eb3eb39a1b25611 800w"
+                             width="800" height="370" decoding="async" loading="lazy" q:key="yB_0"
+                             data-qwik-inspector="routes/layout.tsx:23:13">
+                        ...
+                        <img srcset="/@imagetools/549a200de83fc57abc50f98fbef4ed73ba7894de 200w"
+                             width="200" height="200" decoding="async" loading="lazy" class="circle" q:key="yB_2"
+                             data-qwik-inspector="routes/layout.tsx:29:13">
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>lazy load automatique</div>
+                    <div>utilisation de srcset avec différentes tailles</div>
+                    <div>images mises à disposition automatiquement sous différentes résolution</div>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Du backend ?</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 31:20</div>
+                    Mais Cassie, comment allons-nous gérer notre catalogue de produits ?
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Du backend ?</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    On a quelques outils côté Qwik city pour ça également !
+                </aside>
+            </section>
+            <section>
+                <p>routeAction$</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-29|2,12,15,21|26-29">
+                    <script type="text/template">
+                        // Définition de l'action
+                        export const useCommand = routeAction$(async (payload) => {
+                            const command = saveCommand(payload); // DB write, ...
+                            console.log(`Commande reçue: ${command}`);
+                            return {
+                                success: command > -1,
+                                commandId: command
+                            };
+                        });
+
+                        //...
+                        const action = useCommand();
+
+                        // en mode programmatique
+                        <button onClick$={async ()=> {await action.submit({cart});}}
+                            disabled={action.value?.success}>
+                            Commander
+                        </button>
+
+                        // ou en mode formulaire
+                        <Form action={action}>
+                          <input name="name"/>
+                          <button type="submit">Commander</button>
+                        </Form>
+
+                        // Utilisation des retours
+                        {action.value?.success && (
+                            <p>Votre commande a été passée. Son identifiant est le {action.value.commandId}. Les animaux marins vous remercient !</p>
+                        )}
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 31:30</div>
+                    <p>Tout d'abord: La réponse à un formulaire ?</p>
+                    <p>On définit l'action côté serveur dans le routeAction$</p>
+                    <p>Utilisation programmatique ou formulaire</p>
+                    <p>Accès aux valeurs de retour</p>
+                </aside>
+            </section>
+            <section>
+                <p>Endpoints</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        // Fichier /api/products/id/[productId]/index.tsx
+                        import {type RequestHandler} from '@builder.io/qwik-city';
+                        import file from "../../products.json";
+
+                        // onRequest, onGet, onPost, onPut, onPatch, onDelete
+                        export const onGet: RequestHandler = async ({json, params}) => {
+                            const product = file.find(product => product.id === params.productId);
+                            if (product) {
+                                json(200, product);
+                            } else {
+                                json(404, 'product not found');
+                            }
+                        };
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 32:20</div>
+                    <p>On peut également définir directement des endpoints plus classiques</p>
+                </aside>
+            </section>
+            <section>
+                <p>Middlewares</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        // plugin.ts or plugin@auth.ts or layout.ts
+
+                        // onRequest, onGet, onPost, onPut, onPatch, onDelete
+                        export const onRequest: RequestHandler = async ({next, url}) => {
+                            console.log('Before request', url);
+                            await next();
+                            console.log('After request', url);
+                        };
+
+                        export const onPut: RequestHandler = async ({ redirect, next }) => {
+                            if (!isLoggedIn()) {
+                                throw redirect(308, '/login');
+                            }
+                            await next();
+                        };
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 32:50</div>
+                    <p>Définissables dans les layouts, ou dans plugin.ts ou plugin@xxx.ts</p>
+                    <p>Peut servir comme on en a l'habitude pour auth, connection DB, logs...</p>
+                    <p>L'ordre d'exécution inter plugin est alphabétique sur leur nom</p>
+                </aside>
+            </section>
+            <section>
+                <p>server$</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        const stream = server$(async function* () {
+                            for (let i = 0; i < 10; i++) {
+                                yield i;
+                                await new Promise((resolve) => setTimeout(resolve, 1000));
+                            }
+                        });
+
+                        export default component$(() => {
+                            const message = useSignal('');
+                            return (
+                                <div>
+                                    <button
+                                        onClick$={async () => {
+                                        const response = await stream();
+                                        for await (const i of response) {
+                                            message.value += ` ${i}`;
+                                        }
+                                    }}>
+                                        start
+                                    </button>
+                                    <div>{message.value}</div>
+                                </div>
+                            );
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 33:50</div>
+                    <p>Un autre type de fonction exécutée sur le serveur</p>
+                    <p>permet de streamer ses réponses</p>
+                    <p>Middlewares uniquement de plugin.ts</p>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Tests unitaires</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 34:50</div>
+                    Et comment vas-tu vérifier que ce que tu as écrit est correct ?
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Tests unitaires</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Facile, je vais utiliser Vitest.
+                </aside>
+            </section>
+            <section data-auto-animate="vitest">
+                <a href="https://qwik.builder.io/docs/integrations/vitest/" target="_blank">Vitest</a>
+                <aside class="notes">
+                    <div>TEMPO: 35:00</div>
+                    <div>Framework de test lié à Vite</div>
+                </aside>
+            </section>
+            <section data-auto-animate="vitest">
+                <a href="https://qwik.builder.io/docs/integrations/vitest/" target="_blank">Vitest</a>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        npm run qwik add vitest
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 35:05</div>
+                    <div>intégration à mon app</div>
+                    <div>une fois fait je peux écrire des tests tel que...</div>
+                </aside>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-28|7,8,11|22,23">
+                    <script type="text/template">
+                        import { createDOM } from '@builder.io/qwik/testing';
+                        import { test, expect } from 'vitest';
+                        import { ExampleTest } from './example';
+
+                        // Affichage
+                        test(`[ExampleTest Component]: Should render ⭐`, async () => {
+                            const { screen, render } = await createDOM();
+                            await render(<ExampleTest flag={true}/>);
+                            expect(screen.outerHTML).toContain('⭐');
+                            const div = screen.querySelector('.icon') as HTMLElement;
+                            expect(div.outerHTML).toContain('⭐');
+                        });
+
+                        // Interactivité
+                        test(`[ExampleTest Component]: Click counter +1`, async () => {
+                            const { screen, render, userEvent } = await createDOM();
+                            await render(<ExampleTest flag={true}/>);
+
+                            expect(screen.outerHTML).toContain('Count:0');
+
+                            const spanBefore = screen.querySelector('span') as HTMLDivElement;
+                            await userEvent('.btn-counter', 'click');
+                            expect(spanBefore.innerHTML).toEqual('Count:1');
+
+                            const spanAfter = screen.querySelector('span') as HTMLDivElement;
+                            await userEvent('button', 'click');
+                            expect(spanAfter.innerHTML).toEqual('Count:2');
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 35:10</div>
+                    <div>exemple de test rendering</div>
+                    <div>exemple de test d'interaction</div>
+                    <div>endpoints: fonctions pures, testables sans code spécifique</div>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Librairies tierces</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 36:10</div>
+                    C'est très bien Cassie, mais si je dois charger ma librairie-de-pirate, cela va forcément impacter
+                    toute l'application
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Librairies tierces</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/kwazii.webp">
+                        </div>
+                        Kwazii
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Mais non Kwazii, on va utiliser une autre ruse !
+                </aside>
+            </section>
+            <section>
+                <p>Partytown</p>
+                <aside class="notes">
+                    <div>TEMPO: 36:25</div>
+                </aside>
+            </section>
+            <section data-auto-animate data-auto-animate-id="code1">
+                <p>Partytown</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="2|12-17">
+                    <script type="text/template">
+                    import globalStyles from './global.scss?inline';
+                    import {QwikPartytown} from "~/components/partytown/partytown";
+
+                    export default component$(() => {
+                        useStyles$(globalStyles);
+                        return (
+                            <QwikCityProvider>
+                                <head>
+                                    <meta charSet="utf-8"/>
+                                    <link rel="manifest" href="/manifest.json"/>
+                                    <RouterHead/>
+                                    <QwikPartytown debug={true} forward={['hljs']}/>
+                                        <script
+                                                async
+                                                type="text/partytown"
+                                                src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"
+                                        />
+                                </head>
+                                <body lang="en">
+                                <RouterOutlet/>
+                                <ServiceWorkerRegister/>
+                                </body>
+                            </QwikCityProvider>
+                        );
+                    });
+                    </script>
+                </code>
+                </pre>
+                <p class="code-font-sm">Puis utilisation de hljs "comme si de rien n'était"</p>
+            </section>
+            <section>
+                <p>...et bien d'autres choses encore !</p>
+                <a href="https://qwik.builder.io/docs/integrations/#list-of-possible-integrations" target="_blank">Intégrations</a>
+                <aside class="notes">
+                    <div>TEMPO: 37:10</div>
+                    <p>Il y a tout un tas de choses qui ont été prémâchées</p>
+                    <ul>
+                        <li>Internationalisation</li>
+                        <li>Bootstrap/Tailwind/...</li>
+                        <li>Auth.js</li>
+                        <li>Storybook</li>
+                    </ul>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Bon alors, la démo ?</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 37:50</div>
+                    Ok Cassie, alors, ça donne quoi ce site finalement ?
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Bon alors, la démo ?</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/barnacle.webp">
+                        </div>
+                        Capt. Barnacle
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Je dois déployer et puis je vous montre ça capitaine !
+                </aside>
+            </section>
+            <section>
+                <a href="https://qwik.builder.io/docs/deployments/" target="_blank">Deployments</a>
+                <aside class="notes">
+                    <div>TEMPO: 38:00</div>
+                </aside>
+            </section>
+            <!--<section>
+                <p>Intégration Node</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="2|12-17">
+                    <script type="text/template">
+                        npm run qwik add express
+
+                        npm run build
+
+                        // dist & server générés
+
+                        node server/entry.express // (normally, set ORIGIN=https://example.com for CSRF protection)
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    On peut même aller voir l'analyse LightHouse
+                </aside>
+            </section>-->
+            <section>
+                <p>Intégration Cloud Run</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        // intégration cloud-run
+                        npm run qwik add cloud-run
+
+                        npm run build
+
+                        // Prepare gcloud cli
+                        gcloud auth login
+                        gcloud config set project ...
+                        gcloud config set run/region europe-west1
+
+                        // Configuration variables environnement
+
+                        npm run deploy
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 38:20</div>
+                    <div>montrer les fichiers de l'app</div>
+                    <div>TEMPO: 39:20 pendant le build</div>
+                    <p>On peut même aller voir l'analyse LightHouse</p>
+                    <p>npx -p lighthouse lighthouse url --view</p>
+                </aside>
+            </section>
+            <section>
+                <img src="./images/lighthouse.png">
+            </section>
+        </section>
+
+        <section>
+            <section data-auto-animate>
+                <p>Plus éco-responsable ?</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 42:00</div>
+                    <p>Cassie, c'est vraiment super ce que tu as construit. Mais et si je voulais aller encore plus loin
+                        ?</p>
+                    <p>Par exemple, j'aimerai qu'on ne génère pas une page chaque fois qu'un visiteur vient sur le site
+                        !</p>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p>Plus éco-responsable ?</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/peso.webp">
+                        </div>
+                        Peso
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <p>Tu as tout à fait raison Peso, je n'y avais pas pensé !</p>
+                    <p>Je le fais tout de suite en utilisant l'intégration "Generation Statique"</p>
+                </aside>
+            </section>
+            <section data-auto-animate="static">
+                <a href="https://qwik.builder.io/docs/guides/static-site-generation/" target="_blank">Génération HTML
+                    statique</a>
+            </section>
+            <section data-auto-animate="static">
+                <a href="https://qwik.builder.io/docs/guides/static-site-generation/" target="_blank">Génération HTML
+                    statique</a>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        npm run qwik add
+                        // Choose "Adapter: Static site (.html files)"
+
+                        npm run build
+                        // Static site generated in ./dist
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <p>Déploiement avec une image plus classique</p>
+                </aside>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers>
+                    <script type="text/template">
+                        // vite.config.ts
+                        plugins: [staticAdapter({
+                            origin: "https://my-url",
+                        })]
+
+                        // Pour les routes avec des paramètres
+                        export const onStaticGenerate: StaticGenerateHandler = async () => {
+                            return {
+                                // Accéder à la DB par exemple
+                                params: ["00001" ,"00002", "00003", "00004", "00005"].map((id) => {
+                                    return { productId: id };
+                                }),
+                            };
+                        };
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <p>Pour générer statiquement des pages avec paramètres (multiples si besoin)</p>
+                </aside>
+            </section>
+        </section>
+
+        <section class="center-questions">
+            <section>
+                <p>Questions ?</p>
+                <p class="code-font-sm">NOTE: Aucun animal sauveteur imaginaire n'a été blessé durant cette présentation</p>
+                <div style="display: flex; flex-direction: row;width: 100%;justify-content: space-evenly;">
+                    <div style="display: flex; flex-direction: column;">
+                        <p class="code-font-sm"><a href="https://github.com/cfrezier/save-the-world-octonauts">Le repo avec les
+                            slides et la démo !</a></p>
+                        <div class="qrcode qrcode-repo"></div>
+                    </div>
+                    <div style="display: flex; flex-direction: column">
+                        <p class="code-font-sm">J'attends vos retours</p>
+                        <div class="qrcode qrcode-ofb"></div>
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 43:10</div>
+                </aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <p>Télécharger du JS au clic ?</p>
+                <p>Mais cela doit être lent/ne pas marcher !</p>
+                <p class="code-font-md">Je savais que vous alliez poser la question</p>
+            </section>
+            <section>
+                <img src="./images/onevent.png" style="height: 400px;">
+            </section>
+            <section data-auto-animate>
+                <p>Si votre réseau est si lent/mauvais:</p>
+            </section>
+            <section data-auto-animate>
+                <p>Si votre réseau est si lent/mauvais:</p>
+                <ul>
+                    <li>La quantité de JS est très limitée</li>
+                    <li>Vous n'auriez même pas pu arriver à charger votre application JS 'non-Qwik'</li>
+                </ul>
+            </section>
+            <section data-auto-animate data-auto-animate-id="prefetch">
+                <p>Version hors-ligne ?</p>
+            </section>
+            <section data-auto-animate data-auto-animate-id="prefetch">
+                <p>Version hors-ligne ?</p>
+                <p>Prefetch</p>
+                <img src="./images/prefetch.png" style="height: 400px;">
+            </section>
+            <section data-auto-animate data-auto-animate-id="prefetch">
+                <p>Version hors-ligne ?</p>
+                <p><a href="https://qwik.builder.io/docs/labs/insights/" target="_blank">Qwik Insights</a></p>
+                <ul>
+                    <li>les informations de timing pour chaque symbole</li>
+                    <li>les chemins de l'url</li>
+                    <li>un sessionID pour identifier la session browser</li>
+                </ul>
+                <aside class="notes">
+                    <p>Insights est un service fourni par Qwik pour déterminer les usages de votre application</p>
+                    <p>Peut être self hosted</p>
+                    <p>Deviendra potentiellement payant dans le futur</p>
+                </aside>
+            </section>
+            <section data-auto-animate data-auto-animate-id="code1">
+                <p>Version hors-ligne ?</p>
+                <p><a href="https://qwik.builder.io/docs/labs/insights/" target="_blank">Qwik Insights</a></p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm" data-line-numbers="1-34|2,9-10|22,24,27">
+                    <script type="text/template">
+                        // Base component
+                        import { Insights } from '@builder.io/qwik-labs';
+
+                        export default component$(() => {
+                        return (
+                            <QwikCityProvider>
+                              <head>
+                                // ...
+                                <Insights
+                                        publicApiKey={({}).PUBLIC_QWIK_INSIGHTS_KEY}
+                                />
+                              </head>
+                              <body lang="en">
+                                // ...
+                              </body>
+                            </QwikCityProvider>
+                        );
+                        });
+
+                        // Vite config
+                        import { defineConfig, loadEnv } from 'vite';
+                        import { qwikInsights } from '@builder.io/qwik-labs/vite';
+
+                        export default defineConfig(async () => {
+                            return {
+                                plugins: [
+                                    qwikInsights({
+                                        publicApiKey: loadEnv('', '.', '').PUBLIC_QWIK_INSIGHTS_KEY,
+                                    }),
+                                    //...
+                                    ],
+                                // ...
+                            };
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <p>La clé est obtenu gratuitement en mettant un message dans le <a
+                            href="https://qwik.builder.io/chat" target="_blank">disccord de Qwik</a></p>
+                </aside>
+            </section>
+        </section>
+    </div>
+    <div id="canvas-qr-repo" style="visibility: hidden"></div>
+    <div id="canvas-qr-ofb" style="visibility: hidden"></div>
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script type="text/javascript" src="../node_modules/qr-code-styling/lib/qr-code-styling.js"></script>
+<script type="module">
+    import RevealGamepadController from "../node_modules/@cfrezier/reveal-gamepad-controller-plugin/dist/index.js";
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const receiver = urlParams.get('receiver');
+    const pluginOnlyOnMain = receiver !== null ? [] : [RevealGamepadController(Reveal)];
+
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain ],
+    });
+</script>
+<script type="module" src="./qrcodes.js"></script>
+</body>
+</html>
+

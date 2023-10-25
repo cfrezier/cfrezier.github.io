@@ -3,7 +3,7 @@ const qrCode = new QRCodeStyling({
     height: 500,
     type: "canvas",
     data: "https://github.com/cfrezier/save-the-world-octonauts",
-    image: "/images/octonauts-logo.webp",
+    image: "./images/octonauts-logo.webp",
     dotsOptions: {
         color: "#ef9d64",
         type: "rounded"
@@ -36,7 +36,7 @@ const qrCodeOfb = new QRCodeStyling({
     height: 500,
     type: "canvas",
     data: "https://openfeedback.io/bdxio2023/2023-11-10/601",
-    image: "/images/logo-openfeedback.png",
+    image: "./images/logo-openfeedback.png",
     dotsOptions: {
         color: "rgb(249 83 46)",
         type: "rounded"
