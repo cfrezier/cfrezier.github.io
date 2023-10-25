@@ -1057,29 +1057,12 @@
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm">
                     npm create qwik@latest
+
+                    npm run start
                 </code>
                 </pre>
                 <aside class="notes">
                     <div>TEMPO: 12:15</div>
-                </aside>
-            </section>
-            <section data-auto-animate>
-                <div>Exemple</div>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm">
-                    npm create qwik@latest
-                </code>
-                </pre>
-                <div><img src="./images/joke.png" style="height: 400px;"></div>
-            </section>
-            <section>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm">
-                    npm run start
-                </code>
-                </pre>
-                <a href="name" target="_blank">Starting App</a>
-                <aside class="notes">
                     Montrer:
                     <div>- Counter</div>
                     <div>- Steps</div>
@@ -1151,7 +1134,7 @@
                 </aside>
             </section>
             <section data-auto-animate>
-                <p>Pour ceux qui aiment React</p>
+                <p><a href="https://qwik.builder.io/docs/integrations/react/">@builder.io/qwik-react</a></p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers>
                     <script type="text/template">
@@ -1168,29 +1151,12 @@
                     </script>
                 </code>
                 </pre>
+                <p class="code-font-sm"><a href="https://github.com/QwikDev/qwik-angular">QwikDev/qwik-angular</a></p>
+                <aside class="notes">
+                    <div>On peut importer du react avec qwik-react</div>
+                    <div>existe aussi avec Angular</div>
+                </aside>
             </section>
-            <section data-auto-animate>
-                <p>Oui, ça ressemble à du React.</p>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
-                    <script type="text/template">
-                        /** @jsxImportSource react */
-                        import { qwikify$ } from '@builder.io/qwik-react';
-
-                        // Create React component standard way
-                        function Greetings() {
-                            return <p>Hello from React</p>;
-                        }
-
-                        // Convert React component to Qwik component
-                        export const QGreetings = qwikify$(Greetings);
-                    </script>
-                </code>
-                </pre>
-                <p>Et on peut aussi intégrer des composants <a
-                        href="https://www.npmjs.com/package/@qwikdev/qwik-angular">Angular</a></p>
-            </section>
-
             <section data-auto-animate>
                 Résumabilité
                 <aside class="notes">
@@ -1200,18 +1166,14 @@
             </section>
             <section data-auto-animate data-auto-animate-id="loader">
                 <p>QwikLoader</p>
-            </section>
-            <section data-auto-animate data-auto-animate-id="loader">
-                <p>QwikLoader</p>
-                <p>Mini JS - 1 kb</p>
-                <p>Inliné si possible</p>
                 <aside class="notes">
+                    <p>Mini JS - 1 kb</p>
+                    <p>Inliné si possible</p>
                     <div>Mais du coup comment faire ce qu'un gros JS pourrait réaliser ?</div>
                 </aside>
             </section>
             <section>
                 <p>Comment ça marche ?</p>
-                <p class="aside-text">(Pour les débutants, vous pouvez dormir 2 minutes)</p>
                 <img src="./images/onevent.png" style="height: 400px;">
                 <aside class="notes">
                     <div>TEMPO: 15:00</div>
@@ -1219,15 +1181,15 @@
                 </aside>
             </section>
             <section>
-                <p>Ce qui est envoyé ?</p>
-                <ul>
-                    <li>Etat minimisé</li>
-                    <li>Dépendances entre fragments</li>
-                    <li>Reactions aux interactions</li>
-                    <li>JS nécessaire (useVisibleTask$, ...)</li>
-                </ul>
+                <p>Envoie le minimum !</p>
                 <aside class="notes">
                     <div>TEMPO: 15:30</div>
+                    <ul>
+                        <li>Etat minimisé</li>
+                        <li>Dépendances entre fragments</li>
+                        <li>Références aux interactions/render</li>
+                        <li>JS nécessaire (useVisibleTask$, ...)</li>
+                    </ul>
                 </aside>
             </section>
             <section data-auto-animate data-auto-animate-id="code1">
@@ -1235,46 +1197,45 @@
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm" data-line-numbers="1|24-25,30|32-39">
                     <script type="qwik/json">{
-                      "refs": {
-                        "a": "0",
-                        "b": "0",
-                        "e": "1 6",
-                        "g": "1 6"
+                    "refs": {
+                      "a": "0",
+                      "b": "0",
+                      "e": "1 6",
+                      "g": "1 6"
+                    },
+                    "ctx": {
+                      "9": {
+                        "h": "7",
+                        "s": "0"
                       },
-                      "ctx": {
-                        "9": {
-                          "h": "7",
-                          "s": "0"
-                        },
-                        "f": {
-                          "h": "a 9!"
-                        }
+                      "f": {
+                        "h": "a 9!"
+                      }
+                    },
+                    "objs": [
+                      "\u00122",
+                      "\u00125",
+                      0,
+                      "\u00110 @0",
+                      "#c",
+                      70,
+                      "\u0002/src/counter_component_setcount_axa3vnn55qe.js#counter_component_setCount_aXA3vNn55QE[1]",
+                      "\u0002/src/next_steps_component_kjctkbc9zbk.js#next_steps_component_kJCtKbc9zbk",
+                      "\u00111 @1",
+                      {
+                        "$$value": "8"
                       },
-                      "objs": [
-                        "\u00122",
-                        "\u00125",
-                        0,
-                        "\u00110 @0",
-                        "#c",
-                        70,
-                        "\u0002/src/counter_component_setcount_axa3vnn55qe.js#counter_component_setCount_aXA3vNn55QE[1]",
-                        "\u0002/src/next_steps_component_kjctkbc9zbk.js#next_steps_component_kJCtKbc9zbk",
-                        "\u00111 @1",
-                        {
-                          "$$value": "8"
-                        },
-                        "\u0002/src/gauge_component_7gzriutqs98.js#gauge_component_7gzriUtQs98"
+                      "\u0002/src/gauge_component_7gzriutqs98.js#gauge_component_7gzriUtQs98"
+                    ],
+                    "subs": [
+                      [
+                        "0 #9",
+                        "3 #c 3 #c"
                       ],
-                      "subs": [
-                        [
-                          "0 #9",
-                          "3 #c 3 #c"
-                        ],
-                        [
-                          "0 #f"
-                        ]
+                      [
+                        "0 #f"
                       ]
-                    }</script>
+                    ]}</script>
                 </code>
                 </pre>
                 <aside class="notes">
@@ -1287,7 +1248,8 @@
             <section>
                 <p>Comment il s'y retrouve ?</p>
                 <pre data-id="code-animation">
-                <code data-trim data-line-numbers="1-16|3-5|6" class="code-font-sm">
+                <code data-trim data-line-numbers="1-16|3-5|7" class="code-font-sm">
+                    <script type="text/template">
                     ...
                     <main class="o-main">
                         <!--qv q:id=6 q:key=CDS6:yB_3-->
@@ -1305,6 +1267,7 @@
                         </a>
                     ...
                     </main>
+                    </script>
                 </code>
                 </pre>
                 <aside class="notes">
@@ -1313,26 +1276,15 @@
                     <p>il utilise ses links js avec références pour les exécutions</p>
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section>
                 <div>Pas super lisible, mais...</div>
                 <aside class="notes">
                     <div>TEMPO: 18:00</div>
-                </aside>
-            </section>
-            <section data-auto-animate>
-                <div>Pas super lisible, mais...</div>
-                <ul>
-                    <li>Le framework est responsable de ces optimisations</li>
-                </ul>
-            </section>
-            <section data-auto-animate>
-                <div>Pas super lisible, mais...</div>
-                <ul>
-                    <li>Le framework est responsable de ces optimisations</li>
-                    <li>Uniquement la partie nécessaire de l'application est envoyée</li>
-                </ul>
-                <aside class="notes">
-                    <p>En particulier, on n'envoie pas un contenu obtenu par API qui ne peut plus changer !</p>
+                    <ul>
+                        <li>Le framework est responsable de ces optimisations</li>
+                        <li>Uniquement la partie nécessaire de l'application est envoyée</li>
+                        <li>En particulier, on n'envoie pas un contenu obtenu par API qui ne peut plus changer !</li>
+                    </ul>
                 </aside>
             </section>
             <section>
@@ -1388,7 +1340,7 @@
                 </aside>
             </section>
             <section>
-                <pre data-id="code-animation">
+                <pre data-id="code-animation" style="height: 500px">
                 <code data-trim class="code-font-sm" data-line-numbers>
                     <script type="text/template">
                         import { component$, useStore } from '@builder.io/qwik';
@@ -1397,7 +1349,8 @@
                             return (
                                 <>
                                     <h1>Hello Bdx IO !</h1>
-                                    <p>I am a static component, there is no reason to ever download me to the client.</p>
+                                    <p>I am a static component, there is no reason to
+                                        ever download me to the client.</p>
                                     <hr/>
                                     <Counter/>
                                 </>
@@ -1409,8 +1362,9 @@
 
                             return (
                                 <>
-                                    <p>I am a dynamic component. Qwik will download me only when it is time to re-render me after
-                                        the user clicks on the <code>+1</code> button.</p>
+                                    <p>I am a dynamic component. Qwik will download me only when it is time
+                                        to re-render me after the user clicks on the
+                                        <code>+1</code> button.</p>
                                     <p>Current count: {store.count}</p>
                                     <button onClick$={() => store.count++}>+1</button>
                                 </>
@@ -1427,8 +1381,8 @@
             </section>
             <section>
                 Etat partagé: Contexte
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1,4,6,17,23">
+                <pre data-id="code-animation" style="height: 540px">
+                <code data-trim class="code-font-sm" data-line-numbers="1,4,6,19,25">
                     <script type="text/template">
                         export const CART_CTX = createContextId<{ content: ProductInstance[] }>('cart');
 
@@ -1444,7 +1398,9 @@
                             return (
                                 <>
                                     <div>
-                                        <Link href={'/cart-list'} class={'a-btn'}>Voir mes {numberOfArticles} produits</Link>
+                                        <Link href={'/cart-list'} class={'a-btn'}>
+                                            Voir mes {numberOfArticles} produits
+                                        </Link>
                                     </div>
                                     <Slot/> // Child components can access the context
                                 </>
