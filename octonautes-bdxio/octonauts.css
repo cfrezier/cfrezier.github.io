@@ -142,6 +142,10 @@ body.intro {
     background-image: url("./images/octocapsule.jpeg");
 }
 
+.fond-vide::before {
+    background: none;
+}
+
 img.qwik-logo {
     max-width: 200px;
     margin-left: 20px;
@@ -285,35 +289,36 @@ img.rate.ml-auto {
 }
 
 .code-font-md {
-font-size: 20px;
-line-height: 20px;
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .code-font-hd {
-font-size: 24px;
-line-height: 24px;
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .center-questions {
-display: flex !important;
-flex-direction: column;
-align-items: center;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
 
-.split {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
+    .split {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
 
 .qrcode {
-> img {
-    width: 200px;
-    height: 200px;
-    max-width: 200px;
-    max-height: 200px;
-    margin: 0;
-}
+    > img {
+        width: 200px;
+        height: 200px;
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0;
+    }
 }
 
 .reveal .progress {
