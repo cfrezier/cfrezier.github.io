@@ -397,7 +397,7 @@
 
                 <div>Mais sans plus tarder reprenons notre épisode</div>
             </aside>
-        </section >
+        </section>
 
         <section data-state="octo-fond fond-perf">
             <section data-auto-animate>
@@ -1117,12 +1117,12 @@
                         import {component$} from "@builder.io/qwik";
 
                         export default component$(() => {
-                        return (
-                        <>
-                        <h1>Hello Bdx IO !</h1>
-                        <button onClick$={() => console.log('Hello Bdx IO')}>Greet Me !</button>
-                        </>
-                        );
+                            return (
+                            <>
+                                <h1>Hello Bdx IO !</h1>
+                                <button onClick$={() => console.log('Hello Bdx IO')}>Greet Me !</button>
+                            </>
+                            );
                         });
                     </script>
                 </code>
@@ -1143,7 +1143,7 @@
 
                         // Create React component standard way
                         function Greetings() {
-                        return <p>Hello from React</p>;
+                            return <p>Hello from React</p>;
                         }
 
                         // Convert React component to Qwik component
@@ -1346,29 +1346,29 @@
                         import { component$, useStore } from '@builder.io/qwik';
 
                         export default component$(() => {
-                        return (
-                        <>
-                        <h1>Hello Bdx IO !</h1>
-                        <p>I am a static component, there is no reason to
+                            return (
+                                <>
+                                    <h1>Hello Bdx IO !</h1>
+                                    <p>I am a static component, there is no reason to
                                         ever download me to the client.</p>
-                        <hr/>
-                        <Counter/>
-                        </>
-                        );
+                                    <hr/>
+                                    <Counter/>
+                                </>
+                            );
                         });
 
                         export const Counter = component$(() => {
-                        const store = useStore({ count: 0 });
+                            const store = useStore({ count: 0 });
 
-                        return (
-                        <>
-                        <p>I am a dynamic component. Qwik will download me only when it is time
+                            return (
+                                <>
+                                    <p>I am a dynamic component. Qwik will download me only when it is time
                                         to re-render me after the user clicks on the
                                         <code>+1</code> button.</p>
-                        <p>Current count: {store.count}</p>
-                        <button onClick$={() => store.count++}>+1</button>
-                        </>
-                        );
+                                    <p>Current count: {store.count}</p>
+                                    <button onClick$={() => store.count++}>+1</button>
+                                </>
+                            );
                         });
                     </script>
                 </code>
@@ -1387,31 +1387,31 @@
                         export const CART_CTX = createContextId<{ content: ProductInstance[] }>('cart');
 
                         export default component$(() => {
-                        const cart = useStore({content: []});
+                            const cart = useStore({content: []});
 
-                        useContextProvider(CART_CTX, cart);
+                            useContextProvider(CART_CTX, cart);
 
-                        const numberOfArticles = useComputed$(() => {
-                        return cart.content.reduce((p, c: ProductInstance) => c.howMany + p, 0);
-                        });
+                            const numberOfArticles = useComputed$(() => {
+                                return cart.content.reduce((p, c: ProductInstance) => c.howMany + p, 0);
+                            });
 
-                        return (
-                        <>
-                        <div>
+                            return (
+                                <>
+                                    <div>
                                         <Link href={'/cart-list'} class={'a-btn'}>
                                             Voir mes {numberOfArticles} produits
-                            </Link>
+                                        </Link>
                                     </div>
-                        <Slot/> // Child components can access the context
-                        </>
-                        );
+                                    <Slot/> // Child components can access the context
+                                </>
+                            );
                         });
 
                         export default component$((props: ProductCardProps) => {
-                        const cart = useContext(CART_CTX);
+                            const cart = useContext(CART_CTX);
 
-                        // You can use the context
-                        // ...
+                            // You can use the context
+                            // ...
                         });
                     </script>
                 </code>
@@ -1482,9 +1482,8 @@
                         import { component$ } from '@builder.io/qwik';
 
                         export default component$(() => {
-                        console.log('render');
-                        return
-                        <button onClick$={() => console.log('hello')}>Hello Qwik</button>;
+                            console.log('render');
+                            return <button onClick$={() => console.log('hello')}>Hello Qwik</button>;
                         });
                     </script>
                 </code>
@@ -1573,23 +1572,20 @@
                     <script type="text/template">
                     // Invalid
                     component$(() => {
-                    let foo = 'value'; // variable is not a const
-                    return
-                    <div onClick$={() => console.log(foo)}/>
+                        let foo = 'value'; // variable is not a const
+                        return <div onClick$={() => console.log(foo)}/>
                     });
 
                     // Invalid
                     component$(() => {
-                    const foo = new MyCustomClass(12); // MyCustomClass is not serializable
-                    return
-                    <div onClick$={() => console.log(foo)}/>
+                        const foo = new MyCustomClass(12); // MyCustomClass is not serializable
+                        return <div onClick$={() => console.log(foo)}/>
                     });
 
                     // Valid
                     component$(() => {
-                    const foo = 'value'; // ok
-                    return
-                    <div onClick$={() => console.log(foo)}/>
+                        const foo = 'value'; // ok
+                        return <div onClick$={() => console.log(foo)}/>
                     });
                     </script>
                 </code>
@@ -1606,16 +1602,16 @@
                 <code data-trim class="code-font-sm typescript" data-line-numbers="1-13|13">
                     <script type="text/template">
                     const controls = useStore({
-                    actual: 0,
-                    elapsed: 0,
-                    playing: false,
-                    bc: undefined,
-                    interval: undefined
+                        actual: 0,
+                        elapsed: 0,
+                        playing: false,
+                        bc: undefined,
+                        interval: undefined
                     };
 
                     const tmp = setInterval(() => {
-                    controls.elapsed++;
-                    controls.bc?.postMessage({type: 'elapsed', value: controls.elapsed});
+                        controls.elapsed++;
+                        controls.bc?.postMessage({type: 'elapsed', value: controls.elapsed});
                     }, 1000);
                     controls.interval = noSerialize(() => clearInterval(tmp));
                     </script>
@@ -1724,17 +1720,17 @@
                 <code data-trim class="code-font-sm typescript" data-line-numbers="1-18|10">
                     <script type="text/template">
                         export default component$(() => {
-                        return <>
-                        <h1>Aidez les Octonautes à sauver la planète !</h1>
-                        <div class="bdx-io">
+                            return <>
+                                <h1>Aidez les Octonautes à sauver la planète !</h1>
+                                <div class="bdx-io">
                                     <ImageBdxIO alt={'Logo BdxIO'}/>
                                 </div>
-                        <div class="author center-image">
+                                <div class="author center-image">
                                     <ImageAuthor class={'circle'} alt={'Avatar cfrezier'}/>@cfrezier
                                 </div>
-                        <Slot/>
-                        <div class="onepoint center-image">footer</div>
-                        </>;
+                                <Slot/>
+                                <div class="onepoint center-image">footer</div>
+                            </>;
                         });
                     </script>
                 </code>
@@ -1751,7 +1747,7 @@
                     <script type="text/template">
                     //src/components/MyComponent/MyComponent.module.css
                     .container {
-                    background-color: red;
+                        background-color: red;
                     }
 
                     // src/components/MyComponent/MyComponent.tsx
@@ -1759,30 +1755,27 @@
                     import styles from './MyComponent.module.css';
 
                     export default component$(() => {
-                    return
-                    <div class={styles.container}>Hello world</div>;
+                        return <div class={styles.container}>Hello world</div>;
                     });
 
                     // OR
                     import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
                     export default component$(() => {
-                    useStylesScoped$(`
-                    .container {
-                    background-color: red;
-                    }
-                    `);
-                    return
-                    <div class="container">Hello world</div>;
+                        useStylesScoped$(`
+                            .container {
+                                background-color: red;
+                            }
+                        `);
+                        return <div class="container">Hello world</div>;
                     });
 
                     // OR
                     import styles from './MyComponent.css?inline';
 
                     export default component$(() => {
-                    useStylesScoped$(styles);
-                    return
-                    <div class="container">Hello world</div>;
+                        useStylesScoped$(styles);
+                        return <div class="container">Hello world</div>;
                     });
                     </script>
                 </code>
@@ -1818,19 +1811,19 @@
                     <script type="text/template">
                         src/
                         └── routes/
-                        ├── contact/
-                        │   └── index.mdx         # https://example.com/contact
-                        ├── about/
-                        │   └── index.md          # https://example.com/about
-                        ├── docs/
-                        │   └── layout.tsx        # This layout is used for all pages under /docs
-                        │   └── [id]/
-                        │       └── index.ts      # https://example.com/docs/1234
-                        │                         # https://example.com/docs/anything
-                        ├── [...catchall]/
-                        │   └── index.tsx         # https://example.com/anything/else/that/didnt/match
-                        │
-                        └── layout.tsx            # This layout is used for all pages
+                                ├── contact/
+                                │   └── index.mdx         # https://example.com/contact
+                                ├── about/
+                                │   └── index.md          # https://example.com/about
+                                ├── docs/
+                                │   └── layout.tsx        # This layout is used for all pages under /docs
+                                │   └── [id]/
+                                │       └── index.ts      # https://example.com/docs/1234
+                                │                         # https://example.com/docs/anything
+                                ├── [...catchall]/
+                                │   └── index.tsx         # https://example.com/anything/else/that/didnt/match
+                                │
+                                └── layout.tsx            # This layout is used for all pages
                     </script>
                 </code>
                 </pre>
@@ -1852,9 +1845,8 @@
                         import { useLocation } from '@builder.io/qwik-city';
 
                         export default component$(() => {
-                        const loc = useLocation();
-                        return
-                        <div>Hello {loc.params.username}!</div>;
+                            const loc = useLocation();
+                            return <div>Hello {loc.params.username}!</div>;
                         });
 
                         // File routing
@@ -1873,20 +1865,20 @@
                 <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         export const useProductDetails = routeLoader$(async (requestEvent) => {
-                        const url = `/api/products/id/${requestEvent.params.productId}`;
-                        const res = await fetch(url);
-                        const product = await res.json();
-                        return product as Product;
+                            const url = `/api/products/id/${requestEvent.params.productId}`;
+                            const res = await fetch(url);
+                            const product = await res.json();
+                            return product as Product;
                         });
 
                         export default component$(() => {
-                        // In order to access the `routeLoader$` data within a Qwik Component,
-                        // you need to call the hook.
-                        const signal = useProductDetails(); // Readonly
-                        return <>
-                        <Home></Home>
-                        <ProductCard product={signal.value}></ProductCard>
-                        </>;
+                            // In order to access the `routeLoader$` data within a Qwik Component,
+                            // you need to call the hook.
+                            const signal = useProductDetails(); // Readonly
+                            return <>
+                                <Home></Home>
+                                <ProductCard product={signal.value}></ProductCard>
+                            </>;
                         });
                     </script>
                 </code>
@@ -1904,23 +1896,22 @@
                 <code data-trim class="code-font-sm typescript" data-line-numbers="1-34|5,6|17,18|19-29">
                     <script type="text/template">
                             export default component$(() => {
-                            const date = useSignal(new Date().getTime());
+                                const date = useSignal(new Date().getTime());
 
-                            const reposResource = useResource$
-                            <Product[]>(({ track, cleanup }) => {
-                            track(() => date.value);
-                            const controller = new AbortController();
-                            cleanup(() => controller.abort());
-                            // Fetch the data and return the promises.
-                            return getProducts(controller);
-                            });
+                                const reposResource = useResource$<Product[]>(({ track, cleanup }) => {
+                                    track(() => date.value);
+                                    const controller = new AbortController();
+                                    cleanup(() => controller.abort());
+                                    // Fetch the data and return the promises.
+                                    return getProducts(controller);
+                                });
 
-                            return (
-                            <main>
+                                return (
+                                    <main>
                                         <section>
                                             <Resource
-                                                    value={reposResource}
-                                                    onPending={() => <div>Chargement des produits...</div>}
+                                                value={reposResource}
+                                                onPending={() => <div>Chargement des produits...</div>}
                                                 onRejected={() => <div>Erreur de chargement des produits</div>}
                                                 onResolved={(products) => {
                                                     return <div class={'product-list'}>
@@ -1936,7 +1927,7 @@
                                             <button onClick$={() => date.value = new Date().getTime()}>Rafraichir</button>
                                         </section>
                                     </main>
-                            );
+                                );
                             });
 
                     </script>
@@ -1961,22 +1952,22 @@
 
                         // Static head
                         export const head: DocumentHead = {
-                        title: "Les octonautes sauvent le monde avec Qwik",
-                        meta: [
-                        {
-                        name: "description",
-                        content: "Qwik site description",
-                        },
-                        ],
-                        links: [
-                        {
-                        rel: 'stylesheet',
-                        id: 'font-family-1-css',
-                        href: 'https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd',
-                        type: 'text/css',
-                        media: 'all'
-                        },
-                        ],
+                            title: "Les octonautes sauvent le monde avec Qwik",
+                            meta: [
+                                {
+                                    name: "description",
+                                    content: "Qwik site description",
+                                },
+                            ],
+                            links: [
+                                {
+                                    rel: 'stylesheet',
+                                    id: 'font-family-1-css',
+                                    href: 'https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd',
+                                    type: 'text/css',
+                                    media: 'all'
+                                },
+                            ],
                         };
                     </script>
                 </code>
@@ -1997,20 +1988,20 @@
 
                         // Dynamic Head
                         export const head: DocumentHead = ({resolveValue, params}) => {
-                        const product = resolveValue(useProductDetails);
-                        return {
-                        title: `Détails de "${product.name}"`,
-                        meta: [
-                        {
-                        name: 'description',
-                        content: product.description,
-                        },
-                        {
-                        name: 'id',
-                        content: product.id,
-                        },
-                        ],
-                        };
+                            const product = resolveValue(useProductDetails);
+                            return {
+                                title: `Détails de "${product.name}"`,
+                                meta: [
+                                    {
+                                        name: 'description',
+                                        content: product.description,
+                                    },
+                                    {
+                                        name: 'id',
+                                        content: product.id,
+                                    },
+                                ],
+                            };
                         });
                     </script>
                 </code>
@@ -2041,19 +2032,19 @@
                         ...
 
                         export default component$(() => {
-                        return <>
-                        <h1>Aidez les Octonautes à sauver la planète !</h1>
-                        <div class="onepoint">
+                            return <>
+                                <h1>Aidez les Octonautes à sauver la planète !</h1>
+                                <div class="onepoint">
                                     <ImageOnepoint/>
                                 </div>
-                        <div class="bdx-io">
+                                <div class="bdx-io">
                                     <ImageBdxIO/>
                                 </div>
-                        <div class="author center-image">
+                                <div class="author center-image">
                                     <ImageAuthor class={'circle'}/>@cfrezier
                                 </div>
-                        <Slot/>
-                        </>;
+                                <Slot/>
+                            </>;
                         });
                     </script>
                 </code>
@@ -2137,12 +2128,12 @@
                     <script type="text/template">
                         // Définition de l'action
                         export const useCommand = routeAction$(async (payload) => {
-                        const command = saveCommand(payload); // DB write, ...
-                        console.log(`Commande reçue: ${command}`);
-                        return {
-                        success: command > -1,
-                        commandId: command
-                        };
+                            const command = saveCommand(payload); // DB write, ...
+                            console.log(`Commande reçue: ${command}`);
+                            return {
+                                success: command > -1,
+                                commandId: command
+                            };
                         });
 
                         //...
@@ -2162,7 +2153,7 @@
 
                         // Utilisation des retours
                         {action.value?.success && (
-                        <p>Votre commande a été passée. Son identifiant est le {action.value.commandId}. Les animaux marins vous remercient !</p>
+                            <p>Votre commande a été passée. Son identifiant est le {action.value.commandId}. Les animaux marins vous remercient !</p>
                         )}
                     </script>
                 </code>
@@ -2186,12 +2177,12 @@
 
                         // onRequest, onGet, onPost, onPut, onPatch, onDelete
                         export const onGet: RequestHandler = async ({json, params}) => {
-                        const product = file.find(product => product.id === params.productId);
-                        if (product) {
-                        json(200, product);
-                        } else {
-                        json(404, 'product not found');
-                        }
+                            const product = file.find(product => product.id === params.productId);
+                            if (product) {
+                                json(200, product);
+                            } else {
+                                json(404, 'product not found');
+                            }
                         };
                     </script>
                 </code>
@@ -2210,16 +2201,16 @@
 
                         // onRequest, onGet, onPost, onPut, onPatch, onDelete
                         export const onRequest: RequestHandler = async ({next, url}) => {
-                        console.log('Before request', url);
-                        await next();
-                        console.log('After request', url);
+                            console.log('Before request', url);
+                            await next();
+                            console.log('After request', url);
                         };
 
                         export const onPut: RequestHandler = async ({ redirect, next }) => {
-                        if (!isLoggedIn()) {
-                        throw redirect(308, '/login');
-                        }
-                        await next();
+                            if (!isLoggedIn()) {
+                                throw redirect(308, '/login');
+                            }
+                            await next();
                         };
                     </script>
                 </code>
@@ -2237,18 +2228,18 @@
                 <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         const stream = server$(async function* () {
-                        for (let i = 0; i < 10; i++) {
-                        yield i;
-                        await new Promise((resolve) => setTimeout(resolve, 1000));
-                        }
+                            for (let i = 0; i < 10; i++) {
+                                yield i;
+                                await new Promise((resolve) => setTimeout(resolve, 1000));
+                            }
                         });
 
                         export default component$(() => {
-                        const message = useSignal('');
-                        return (
-                        <div>
+                            const message = useSignal('');
+                            return (
+                                <div>
                                     <button
-                                            onClick$={async ()=> {
+                                        onClick$={async () => {
                                         const response = await stream();
                                         for await (const i of response) {
                                             message.value += ` ${i}`;
@@ -2258,7 +2249,7 @@
                                     </button>
                                     <div>{message.value}</div>
                                 </div>
-                        );
+                            );
                         });
                     </script>
                 </code>
@@ -2346,9 +2337,8 @@
 
                         // Affichage
                         test(`[ExampleTest Component]: Should render ⭐`, async () => {
-                        const { screen, render } = await createDOM();
-                        await render(
-                        <ExampleTest flag={true}/>);
+                            const { screen, render } = await createDOM();
+                            await render(<ExampleTest flag={true}/>);
                             expect(screen.outerHTML).toContain('⭐');
                             const div = screen.querySelector('.icon') as HTMLElement;
                             expect(div.outerHTML).toContain('⭐');
@@ -2439,9 +2429,9 @@
                     import {QwikPartytown} from "~/components/partytown/partytown";
 
                     export default component$(() => {
-                    useStyles$(globalStyles);
-                    return (
-                    <QwikCityProvider>
+                        useStyles$(globalStyles);
+                        return (
+                            <QwikCityProvider>
                                 <head>
                                     <meta charSet="utf-8"/>
                                     <link rel="manifest" href="/manifest.json"/>
@@ -2458,7 +2448,7 @@
                                 <ServiceWorkerRegister/>
                                 </body>
                             </QwikCityProvider>
-                    );
+                        );
                     });
                     </script>
                 </code>
@@ -2656,17 +2646,17 @@
                     <script type="text/template">
                         // vite.config.ts
                         plugins: [staticAdapter({
-                        origin: "https://my-url",
+                            origin: "https://my-url",
                         })]
 
                         // Pour les routes avec des paramètres
                         export const onStaticGenerate: StaticGenerateHandler = async () => {
-                        return {
-                        // Accéder à la DB par exemple
-                        params: ["00001" ,"00002", "00003", "00004", "00005"].map((id) => {
-                        return { productId: id };
-                        }),
-                        };
+                            return {
+                                // Accéder à la DB par exemple
+                                params: ["00001" ,"00002", "00003", "00004", "00005"].map((id) => {
+                                    return { productId: id };
+                                }),
+                            };
                         };
                     </script>
                 </code>
