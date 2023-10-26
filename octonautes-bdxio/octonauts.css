@@ -74,11 +74,72 @@ body.intro {
     align-items: center;
 }
 
-.intro {
+.intro::before {
+    content: "";
     background-image: url("./images/intro.png");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.transparent-background::before {
+    opacity: 0.1;
+}
+
+.octo-fond::before {
+    content: "";
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.1;
+}
+
+.fond-minute::before {
+    background-image: url("./images/minute.webp");
+}
+
+.fond-crabes::before {
+    background-image: url("./images/crabes.jpeg");
+}
+
+.fond-perf::before {
+    background-image: url("./images/rapide.jpeg");
+}
+
+.fond-pelle::before {
+    background-image: url("./images/pelle.jpeg");
+}
+
+.fond-volcan::before {
+    background-image: url("./images/volcan.jpeg");
+}
+
+.fond-coffre::before {
+    background-image: url("./images/coffre.jpeg");
+}
+
+.fond-trou::before {
+    background-image: url("./images/trou.jpeg");
+}
+
+.fond-song::before {
+    background-image: url("./images/song.jpeg");
+}
+
+.fond-orks::before {
+    background-image: url("./images/orks.jpeg");
+}
+
+.fond-octocapsule::before {
+    background-image: url("./images/octocapsule.jpeg");
 }
 
 img.qwik-logo {
