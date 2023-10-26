@@ -1055,7 +1055,7 @@
             <section data-auto-animate>
                 <div>Exemple</div>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm">
+                <code data-trim class="code-font-sm shell">
                     npm create qwik@latest
 
                     npm run start
@@ -1112,7 +1112,7 @@
             </section>
             <section>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         import {component$} from "@builder.io/qwik";
 
@@ -1136,7 +1136,7 @@
             <section data-auto-animate>
                 <p><a href="https://qwik.builder.io/docs/integrations/react/">@builder.io/qwik-react</a></p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         /** @jsxImportSource react */
                         import { qwikify$ } from '@builder.io/qwik-react';
@@ -1195,7 +1195,7 @@
             <section data-auto-animate data-auto-animate-id="code1">
                 Références, dépendances, états, ...
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1|24-25,30|32-39">
+                <code data-trim class="code-font-sm html" data-line-numbers="1|24-25,30|32-39">
                     <script type="qwik/json">{
                     "refs": {
                       "a": "0",
@@ -1246,9 +1246,9 @@
                 </aside>
             </section>
             <section>
-                <p>Comment il s'y retrouve ?</p>
+                <p>et les liens avec le html...</p>
                 <pre data-id="code-animation">
-                <code data-trim data-line-numbers="1-16|3-5|7" class="code-font-sm">
+                <code data-trim data-line-numbers="1-16|3-5|7" class="code-font-sm html">
                     <script type="text/template">
                     ...
                     <main class="o-main">
@@ -1341,7 +1341,7 @@
             </section>
             <section>
                 <pre data-id="code-animation" style="height: 500px">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         import { component$, useStore } from '@builder.io/qwik';
 
@@ -1382,7 +1382,7 @@
             <section>
                 Etat partagé: Contexte
                 <pre data-id="code-animation" style="height: 540px">
-                <code data-trim class="code-font-sm" data-line-numbers="1,4,6,19,25">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1,4,6,19,25">
                     <script type="text/template">
                         export const CART_CTX = createContextId<{ content: ProductInstance[] }>('cart');
 
@@ -1477,7 +1477,7 @@
             <section>
                 <p>Un composant Qwik</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         import { component$ } from '@builder.io/qwik';
 
@@ -1495,12 +1495,12 @@
             </section>
             <section>
                 <p>... et sa version "compilée"</p>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-6|8-20|22-24">
+                <pre data-id="code-animation" style="height: 420px">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-6|8-20|22-24">
                 //app.js
                 import { componentQrl, qrl } from '@builder.io/qwik';
                 const App = /*#__PURE__*/ componentQrl(
-                qrl(() => import('./app_component_akbu84a8zes.js'), 'App_component_AkbU84a8zes')
+                    qrl(() => import('./app_component_akbu84a8zes.js'), 'App_component_AkbU84a8zes')
                 );
                 export { App };
 
@@ -1528,15 +1528,21 @@
                 </aside>
             </section>
             <section data-auto-animate>
-                Not all valid TypeScript code is valid code for the Optimizer.
+                <blockquote cite="https://qwik.builder.io/docs/advanced/dollar/">
+                    <p>Not all valid JavaScript code is valid code for the Optimizer.</p>
+                    <footer class="code-font-sm">—Qwik documentation, <cite>The $ dollar sign</cite></footer>
+                </blockquote>
                 <aside class="notes">
                     <div>TEMPO: 21:25</div>
                 </aside>
             </section>
             <section data-auto-animate>
-                Not all valid TypeScript code is valid code for the Optimizer.
+                <blockquote cite="https://qwik.builder.io/docs/advanced/dollar/">
+                    <p>Not all valid JavaScript code is valid code for the Optimizer.</p>
+                    <footer class="code-font-sm">—Qwik documentation, <cite>The $ dollar sign</cite></footer>
+                </blockquote>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                 // Invalid
                 const foo = 'foo';
                 foo$(foo); // foo is not exported, so it's not importable
@@ -1557,9 +1563,12 @@
                 </aside>
             </section>
             <section data-auto-animate>
-                Not all valid TypeScript code is valid code for the Optimizer.
+                <blockquote cite="https://qwik.builder.io/docs/advanced/dollar/">
+                    <p>Not all valid JavaScript code is valid code for the Optimizer.</p>
+                    <footer class="code-font-sm">—Qwik documentation, <cite>The $ dollar sign</cite></footer>
+                </blockquote>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                     // Invalid
                     component$(() => {
@@ -1588,9 +1597,9 @@
                 </aside>
             </section>
             <section>
-                Contexte non sérializable
+                <p>Contexte non sérializable</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-13|13">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-13|13">
                     <script type="text/template">
                     const controls = useStore({
                         actual: 0,
@@ -1709,7 +1718,7 @@
             <section>
                 <p>Utilisation de Slots / Layouts</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-18|11">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-18|10">
                     <script type="text/template">
                         export default component$(() => {
                             return <>
@@ -1735,7 +1744,7 @@
             <section>
                 <p>CSS Modules</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-12|14-24|26-32">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-12|14-24|26-32">
                     <script type="text/template">
                     //src/components/MyComponent/MyComponent.module.css
                     .container {
@@ -1799,23 +1808,23 @@
                 Routing
                 <p class="code-font-sm">Directory based routing</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="4,6,10,13|9|12|8,15">
+                <code data-trim class="code-font-sm shell" data-line-numbers="4,6,10,13|9|12|8,15">
                     <script type="text/template">
                         src/
                         └── routes/
-                        ├── contact/
-                        │   └── index.mdx         # https://example.com/contact
-                        ├── about/
-                        │   └── index.md          # https://example.com/about
-                        ├── docs/
-                        │   └── layout.tsx        # This layout is used for all pages under /docs
-                        │   └── [id]/
-                        │       └── index.ts      # https://example.com/docs/1234
-                        │                         # https://example.com/docs/anything
-                        ├── [...catchall]/
-                        │   └── index.tsx         # https://example.com/anything/else/that/didnt/match
-                        │
-                        └── layout.tsx            # This layout is used for all pages
+                                ├── contact/
+                                │   └── index.mdx         # https://example.com/contact
+                                ├── about/
+                                │   └── index.md          # https://example.com/about
+                                ├── docs/
+                                │   └── layout.tsx        # This layout is used for all pages under /docs
+                                │   └── [id]/
+                                │       └── index.ts      # https://example.com/docs/1234
+                                │                         # https://example.com/docs/anything
+                                ├── [...catchall]/
+                                │   └── index.tsx         # https://example.com/anything/else/that/didnt/match
+                                │
+                                └── layout.tsx            # This layout is used for all pages
                     </script>
                 </code>
                 </pre>
@@ -1831,7 +1840,7 @@
                 Routing
                 <p class="code-font-sm">Récupération de paramètres</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="2,5,6, 9-11">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="2,5,6, 9-11">
                     <script type="text/template">
                         import { component$ } from '@builder.io/qwik';
                         import { useLocation } from '@builder.io/qwik-city';
@@ -1854,7 +1863,7 @@
             <section>
                 <p>Route loaders</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         export const useProductDetails = routeLoader$(async (requestEvent) => {
                             const url = `/api/products/id/${requestEvent.params.productId}`;
@@ -1864,7 +1873,8 @@
                         });
 
                         export default component$(() => {
-                            // In order to access the `routeLoader$` data within a Qwik Component, you need to call the hook.
+                            // In order to access the `routeLoader$` data within a Qwik Component,
+                            // you need to call the hook.
                             const signal = useProductDetails(); // Readonly
                             return <>
                                 <Home></Home>
@@ -1884,7 +1894,7 @@
             <section>
                 <p>Ressources</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-34|5,6,18-29">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-34|5,6|17,18|19-29">
                     <script type="text/template">
                             export default component$(() => {
                                 const date = useSignal(new Date().getTime());
@@ -1901,19 +1911,19 @@
                                     <main>
                                         <section>
                                             <Resource
-                                                    value={reposResource}
-                                                    onPending={() => <div>Chargement des produits...</div>}
-                                                    onRejected={() => <div>Erreur de chargement des produits</div>}
-                                                    onResolved={(products) => {
-                                                        return <div class={'product-list'}>
-                                                                    {products.map(({ id, ...rest }) => (
-                                                                        <div key={id} class={'product-list-item'}>
-                                                                            <ProductCard product={{...rest,
-                                                                                         id}}></ProductCard>
-                                                                        </div>
-                                                                    ))}
-                                                                </div>;
-                                                }}
+                                                value={reposResource}
+                                                onPending={() => <div>Chargement des produits...</div>}
+                                                onRejected={() => <div>Erreur de chargement des produits</div>}
+                                                onResolved={(products) => {
+                                                    return <div class={'product-list'}>
+                                                                {products.map(({ id, ...rest }) => (
+                                                                    <div key={id} class={'product-list-item'}>
+                                                                        <ProductCard product={{...rest,
+                                                                                     id}}></ProductCard>
+                                                                    </div>
+                                                                ))}
+                                                            </div>;
+                                                    }}
                                             />
                                             <button onClick$={() => date.value = new Date().getTime()}>Rafraichir</button>
                                         </section>
@@ -1927,6 +1937,7 @@
                 <aside class="notes">
                     <div>TEMPO: 28:45</div>
                     <p>Depuis le client OU le serveur</p>
+                    <p>Permet de définir le besoin de mise à jour avec track, ou même d'annuler</p>
                     <p>Utilisé avec le composant Resource, il permet de gérer directement différents états en fonction
                         de l'état de la resource (loading, resolved, rejected)</p>
                     <p>On affiche une liste de produits si resolved</p>
@@ -1936,9 +1947,9 @@
                 <p>Head</p>
                 <p class="code-font-sm">meta, links, ...</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="3-21|23-39">
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
-                        export default component$(() => { ... }
+                        export default component$(() => { ... });
 
                         // Static head
                         export const head: DocumentHead = {
@@ -1959,6 +1970,22 @@
                                 },
                             ],
                         };
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 29:20</div>
+                    <div>Permettre de définir les valeurs stockées dans le head du document</div>
+                    <div>Éventuellement de manière dynamique avec résolutions de requêtes avant injection</div>
+                </aside>
+            </section>
+            <section>
+                <p>Head</p>
+                <p class="code-font-sm">meta, links, ...</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
+                    <script type="text/template">
+                        export default component$(() => { ... });
 
                         // Dynamic Head
                         export const head: DocumentHead = ({resolveValue, params}) => {
@@ -1981,8 +2008,6 @@
                 </code>
                 </pre>
                 <aside class="notes">
-                    <div>TEMPO: 29:20</div>
-                    <div>Permettre de définir les valeurs stockées dans le head du document</div>
                     <div>Éventuellement de manière dynamique avec résolutions de requêtes avant injection</div>
                 </aside>
             </section>
@@ -1998,7 +2023,7 @@
             </section>
             <section>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-3|12,15,18">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-3|12,15,18">
                     <script type="text/template">
                         import ImageOnepoint from './public/images/onepoint-white.png?jsx';
                         import ImageBdxIO from './public/images/bdxio.png?jsx';
@@ -2032,7 +2057,7 @@
             </section>
             <section>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-6,8-10">
+                <code data-trim class="code-font-sm html" data-line-numbers="1-6,8-10">
                     <script type="text/template">
                         <img srcset="/@imagetools/68e4624f6eb399e61c972af8eeccabff0b464372 200w,
                         /@imagetools/8809c67f8779c09edd98ea4913b8405479b91a31 400w,
@@ -2100,7 +2125,7 @@
             <section>
                 <p>routeAction$</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-29|2,12,15,21|26-29">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-29|2,12,15,21|26-29">
                     <script type="text/template">
                         // Définition de l'action
                         export const useCommand = routeAction$(async (payload) => {
@@ -2145,7 +2170,7 @@
             <section>
                 <p>Endpoints</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         // Fichier /api/products/id/[productId]/index.tsx
                         import {type RequestHandler} from '@builder.io/qwik-city';
@@ -2171,7 +2196,7 @@
             <section>
                 <p>Middlewares</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         // plugin.ts or plugin@auth.ts or layout.ts
 
@@ -2201,7 +2226,7 @@
             <section>
                 <p>server$</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         const stream = server$(async function* () {
                             for (let i = 0; i < 10; i++) {
@@ -2291,7 +2316,7 @@
             <section data-auto-animate="vitest">
                 <a href="https://qwik.builder.io/docs/integrations/vitest/" target="_blank">Vitest</a>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm shell" data-line-numbers>
                     <script type="text/template">
                         npm run qwik add vitest
                     </script>
@@ -2305,7 +2330,7 @@
             </section>
             <section>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-28|7,8,11|22,23">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-28|7,8,11|22,23">
                     <script type="text/template">
                         import { createDOM } from '@builder.io/qwik/testing';
                         import { test, expect } from 'vitest';
@@ -2399,7 +2424,7 @@
             <section data-auto-animate data-auto-animate-id="code1">
                 <p>Partytown</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="2|12-17">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="2|12-17">
                     <script type="text/template">
                     import globalStyles from './global.scss?inline';
                     import {QwikPartytown} from "~/components/partytown/partytown";
@@ -2517,7 +2542,7 @@
             <section>
                 <p>Intégration Cloud Run</p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm shell" data-line-numbers>
                     <script type="text/template">
                         // intégration cloud-run
                         npm run qwik add cloud-run
@@ -2544,7 +2569,7 @@
                 </aside>
             </section>
             <section>
-                <img src="./images/lighthouse.png">
+                <img src="./images/lighthouse.png" style="max-width: 400px">
             </section>
         </section>
 
@@ -2602,7 +2627,7 @@
                 <a href="https://qwik.builder.io/docs/guides/static-site-generation/" target="_blank">Génération HTML
                     statique</a>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm shell" data-line-numbers>
                     <script type="text/template">
                         npm run qwik add
                         // Choose "Adapter: Static site (.html files)"
@@ -2618,7 +2643,7 @@
             </section>
             <section>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers>
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
                         // vite.config.ts
                         plugins: [staticAdapter({
@@ -2709,7 +2734,7 @@
                 <p>Version hors-ligne ?</p>
                 <p><a href="https://qwik.builder.io/docs/labs/insights/" target="_blank">Qwik Insights</a></p>
                 <pre data-id="code-animation">
-                <code data-trim class="code-font-sm" data-line-numbers="1-34|2,9-10|22,24,27">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-34|2,9-10|22,24,27">
                     <script type="text/template">
                         // Base component
                         import { Insights } from '@builder.io/qwik-labs';
