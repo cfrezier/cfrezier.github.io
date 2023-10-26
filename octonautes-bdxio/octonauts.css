@@ -315,3 +315,11 @@ align-items: center;
     margin: 0;
 }
 }
+
+.reveal .progress {
+    height: 5px;
+}
+
+.reveal .progress span {
+    background-color: #ff8f43;
+}
