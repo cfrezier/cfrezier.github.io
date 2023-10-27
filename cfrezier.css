@@ -46,7 +46,7 @@ body {
 }
 
 .me img.nuage {
-    max-width: 500px;
+    max-width: min(100%, 500px);
     max-height: 300px;
 }
 
