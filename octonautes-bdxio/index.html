@@ -2789,9 +2789,7 @@
 <script type="text/javascript" src="../node_modules/qr-code-styling/lib/qr-code-styling.js"></script>
 <script type="module">
     import RevealGamepadController from "../node_modules/@cfrezier/reveal-gamepad-controller-plugin/dist/index.js";
-    // More info about initialization & config:
-    // - https://revealjs.com/initialization/
-    // - https://revealjs.com/config/
+    import RevealProgressImage from "../node_modules/@cfrezier/reveal-progress-image-plugin/dist/index.js";
 
     const urlParams = new URLSearchParams(window.location.search);
     const receiver = urlParams.get('receiver');
@@ -2800,9 +2798,14 @@
     Reveal.initialize({
         hash: true,
         progress: true,
-
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain],
+        progressImage: {
+            imageAnimation: [
+                { transform: 'translateX(0px)' },
+                { transform: 'translateX(5px)' },
+                { transform: 'translateX(0px)' },
+            ]
+        },
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain, RevealProgressImage(Reveal)],
     });
 </script>
 <script type="module" src="./qrcodes.js"></script>

@@ -10,4 +10,5 @@ tmp/**
 .sass-cache
 node_modules
 !node_modules/@cfrezier/reveal-gamepad-controller-plugin/dist/index.js
+!node_modules/@cfrezier/reveal-progress-image-plugin/dist/index.js
 !node_modules/qr-code-styling/qr-code-styling/lib/qr-code-styling.js
