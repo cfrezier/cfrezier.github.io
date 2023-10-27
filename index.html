@@ -4,16 +4,17 @@
     <link rel='stylesheet' id='font-family-1-css'
           href='https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd'
           type='text/css' media='all'/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 <section>
     <div class="me">
         <div>
             <div class="center-image">
-                <img src="./images/icon.jpeg" class="circle"> Christophe Frézier
+                <img src="./images/icon.jpeg" class="circle big"> Christophe Frézier
             </div>
             <div class="center-image">
-                <a href="https://twitter.com/cfrezier" class="center-image"><img src="./images/x.png" class="circle">
+                <a href="https://twitter.com/cfrezier" class="center-image"><img src="./images/x.png" style="background: white;">
                     @cfrezier</a>
             </div>
             <div class="center-image">
@@ -27,27 +28,31 @@
     </div>
 </section>
 <section>
-    <table class="conf">
-        <thead>
-        <tr>
-            <th>Conférence</th>
-            <th>Versions consultables</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="conf-title">
+    <div class="conf">
+        <h2>Conférences & Meetups</h2>
+        <div class="conf-type">
+            <div class="conf-title">
                 <img class="conf-image" src="./images/octonauts-logo.webp">
                 <a href="https://github.com/cfrezier/save-the-world-octonauts">
                     <p class="code-font-sm" style="margin: 0">Les Octonautes sauvent le monde avec Qwik</p>
                 </a>
-            </td>
-            <td>
+            </div>
+            <div class="conf-instance">
                 <a href="./octonautes-bdxio"><img class="conf-image" src="./images/bdxio.png"></a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+            </div>
+        </div>
+        <div class="conf-type">
+            <div class="conf-title">
+                <img class="conf-image" src="./images/angular.png">
+                <a href="https://docs.google.com/presentation/d/1XC41AJjdcQXQ0Qrj6hJFJwm0HReu1Rw-8ehefVhbJLI/edit#slide=id.ga38a77960c_0_0">
+                    <p class="code-font-sm" style="margin: 0">Angular Wars</p>
+                </a>
+            </div>
+            <div class="conf-instance">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vsljDshnyDQ?si=-eqkMo9aADMLvSj8&amp;start=1680" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 </section>
 <script type="text/javascript" src="./node_modules/qr-code-styling/lib/qr-code-styling.js"></script>
 </body>
