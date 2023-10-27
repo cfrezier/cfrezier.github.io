@@ -2,7 +2,7 @@ body {
     font-family: Poppins;
     font-size: 20px;
     background: radial-gradient(ellipse at top, #dcf8ff, transparent),
-                radial-gradient(ellipse at bottom, #eaeaea, transparent);
+    radial-gradient(ellipse at bottom, #eaeaea, transparent);
 }
 
 .circle {
@@ -16,6 +16,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 20px;
 }
 
 .me {
@@ -30,7 +31,7 @@ body {
 .me > div {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 40px;
     align-items: center;
 }
 
@@ -68,7 +69,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 .conf-title {
@@ -88,18 +89,36 @@ body {
     align-items: center;
 }
 
+.conf-instance:has(iframe) {
+    padding-top: 56.25%;
+    position: relative;
+}
+
+.conf-instance > iframe {
+    position: absolute;
+    top: 12.5%;
+    left: 12.5%;
+    bottom: 12.5%;
+    right: 12.5%;
+    width: 75%;
+    height: 75%;
+}
+
 .conf-type {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 }
 
-.conf > div > div {
+.conf-instance, .conf-title {
     padding: 20px;
     margin-right: 20px;
     border: 1px solid #0d99a5;
     border-radius: 20px;
     gap: 20px;
+    background: radial-gradient(ellipse at top, #dceaff, transparent),
+    radial-gradient(ellipse at bottom, #d9cece, transparent);
 }
 
 @media (max-width: 1000px) {
