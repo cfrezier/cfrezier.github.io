@@ -2795,15 +2795,14 @@
     const receiver = urlParams.get('receiver');
     const pluginOnlyOnMain = receiver !== null ? [] : [RevealGamepadController(Reveal)];
 
+    const progressPlugin = RevealProgressImage(Reveal);
+
     Reveal.initialize({
         hash: true,
         progress: true,
         progressImage: {
-            imageAnimation: [
-                { transform: 'translateX(0px)' },
-                { transform: 'translateX(5px)' },
-                { transform: 'translateX(0px)' },
-            ]
+            iconSize: [19, 30],
+            imageAnimation: progressPlugin.ANIMATIONS.FLY
         },
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain, RevealProgressImage(Reveal)],
     });
