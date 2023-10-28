@@ -604,6 +604,7 @@
                                 <img src="./images/star.png" class="rate ml-auto">
                                 <img src="./images/star.png" class="rate">
                                 <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
                             </div>
                             <div class="center-image">
                                 <p>TTI</p>
@@ -672,6 +673,7 @@
                             <div class="center-image">
                                 <p>FCP</p>
                                 <img src="./images/star.png" class="rate ml-auto">
+                                <img src="./images/star.png" class="rate">
                                 <img src="./images/star.png" class="rate">
                                 <img src="./images/star.png" class="rate">
                             </div>
@@ -770,6 +772,7 @@
                                 <img src="./images/star.png" class="rate ml-auto">
                                 <img src="./images/star.png" class="rate">
                                 <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
                             </div>
                             <div class="center-image">
                                 <p>TTI</p>
@@ -808,7 +811,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <p>SSR / Hydratation</p>
+                            <p>SSR / (Partial) Hydratation</p>
                         </td>
                         <td>
                             <img src="./images/app4.png" class="app-size">
@@ -896,6 +899,7 @@
                                 <img src="./images/star.png" class="rate ml-auto">
                                 <img src="./images/star.png" class="rate">
                                 <img src="./images/star.png" class="rate">
+                                <img src="./images/star.png" class="rate">
                             </div>
                             <div class="center-image">
                                 <p>TTI</p>
@@ -934,7 +938,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <p>SSR / Hydratation</p>
+                            <p>SSR / (Partial) Hydratation</p>
                         </td>
                         <td>
                             <img src="./images/app4.png" class="app-size">
@@ -999,7 +1003,15 @@
                     <p>Grosse amélioration TTI</p>
                     <p>Optimisations de ce qui est possible en plus</p>
                     <div>Do better by doing (almost) nothing !</div>
+                    <div style="font-size: 32px">Qwik ne demande pas d'effort au développeur !</div>
                 </aside>
+            </section>
+
+            <section>
+                <blockquote cite="https://qwik.builder.io/docs/advanced/dollar/">
+                <p>Qwik's magic is not in how fast it executes, but how good it is in avoiding doing any work.</p>
+                <footer class="code-font-sm">—Misko Hevery <cite>creator of AngularJS, Angular and Qwik</cite></footer>
+                </blockquote>
             </section>
 
             <section data-auto-animate data-auto-animate-id="eco">
@@ -1159,6 +1171,7 @@
                 <aside class="notes">
                     <div>On peut importer du react avec qwik-react</div>
                     <div>existe aussi avec Angular</div>
+                    <div>existe bientôt avec Astro</div>
                 </aside>
             </section>
             <section data-auto-animate>
@@ -1250,6 +1263,9 @@
                 </aside>
             </section>
             <section>
+                <p>Lisible avec <a href="https://qwik.builder.io/docs/labs/devtools/">Qwik Devtools</a></p>
+            </section>
+            <section>
                 <p>et les liens avec le html...</p>
                 <pre data-id="code-animation">
                 <code data-trim data-line-numbers="1-16|3-5|7" class="code-font-sm html">
@@ -1278,11 +1294,6 @@
                     <p>Qwik sait se repérer</p>
                     <p>il utilise ses références et son markup pour le rendu</p>
                     <p>il utilise ses links js avec références pour les exécutions</p>
-                </aside>
-            </section>
-            <section>
-                <div>Pas super lisible, mais...</div>
-                <aside class="notes">
                     <div>TEMPO: 18:00</div>
                     <ul>
                         <li>Le framework est responsable de ces optimisations</li>
@@ -1742,6 +1753,7 @@
                 <aside class="notes">
                     <div>TEMPO: 24:25</div>
                     <div>Squelette réutilisable (menus, navigation, ...)</div>
+                    <div>Attention, pas de render automatique de sous-composants (à l'encontre de la logique de Qwik)</div>
                 </aside>
             </section>
             <section>
@@ -2776,6 +2788,26 @@
                             href="https://qwik.builder.io/chat" target="_blank">disccord de Qwik</a></p>
                 </aside>
             </section>
+        </section>
+        <section>
+            <p>Qwik Astro</p>
+            <img src="./images/qwik-astro.png">
+        </section>
+        <section>
+            <p>Qwik scaling</p>
+            <img src="./images/qwik-scale.png">
+        </section>
+        <section>
+            <p>Annexes</p>
+            <div class="code-font-md" style="display: flex; flex-direction: column; gap: 10px">
+                <div><a href="https://www.builder.io/blog/hydration-tree-resumability-map">Hydration is a tree, Resumability is a map.</a></div>
+                <div><a href="https://discourse.elm-lang.org/t/check-out-qwik-could-elm-adapt/8690">Check out Qwik; Could Elm adapt ?</a></div>
+                <div><a href="https://caisy.io/blog/qwik-vs-svelte">Qwik vs Svelte: A Technical Comparison for Developers | caisy</a></div>
+                <div><a href="https://caisy.io/blog/qwik-vs-solid">Qwik vs Solid.js: a Developer's Guide | caisy</a></div>
+                <div><a href="https://www.wearedevelopers.com/magazine/best-javascript-frameworks-to-learn">The Best JavaScript Framework to Learn</a></div>
+                <div><a href="https://www.acldigital.com/blogs/zero-hydration-qwik-future-web">Zero Hydration, Qwik is the future of the Web | Blog | ACL Digital</a></div>
+                <div><a href="https://arxiv.org/pdf/2309.04188.pdf">The State of disappearing Frameworks in 2023</a></div>
+            </div>
         </section>
     </div>
     <div id="canvas-qr-repo" style="visibility: hidden"></div>
