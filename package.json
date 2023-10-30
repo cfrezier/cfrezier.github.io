@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@cfrezier/reveal-gamepad-controller-plugin": "^1.1.2",
-    "@cfrezier/reveal-progress-image-plugin": "^1.1.5",
+    "@cfrezier/reveal-progress-image-plugin": "^1.2.0",
     "qr-code-styling": "^1.6.0-rc.1"
   }
 }
