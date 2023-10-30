@@ -2839,7 +2839,13 @@
         progress: true,
         progressImage: {
             iconSize: [19, 30],
-            imageAnimation: progressPlugin.ANIMATIONS.FLY
+            imageAnimation: [
+                { transform: 'translate(0px, 0px)' },
+                { transform: 'translate(2.5px, -2.5px)' },
+                { transform: 'translate(0px, -5px)' },
+                { transform: 'translate(-2.5px, -2.5px)' },
+                { transform: 'translate(0px, 0px)' },
+            ]
         },
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain, RevealProgressImage(Reveal)],
     });
