@@ -19,6 +19,20 @@ body.intro-video {
     left: 10px;
 }
 
+.pokemon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transform: rotate(10deg);
+    display: none;
+}
+
+body.first-dialog {
+    .pokemon {
+        display: block;
+    }
+}
+
 body {
     .onepoint.for-intro {
         display: none;
