@@ -461,7 +461,7 @@
             </section>
 
             <section data-auto-animate data-auto-animate-id="fcp">
-                <img src="./images/fcp.avif">
+                <img src="./images/fcp.png" style="max-height: 400px">
                 <aside class="notes">
                     <div>Un exemple de timeline de chargement de site web</div>
                     <div>Différents moments importants pour définir l'expérience utilisateur</div>
@@ -469,7 +469,7 @@
             </section>
 
             <section data-auto-animate data-auto-animate-id="fcp">
-                <img src="./images/fcp.avif">
+                <img src="./images/fcp.png" style="max-height: 400px">
                 <p>FP: First Painting</p>
                 <aside class="notes">
                     On commence à "sentir" de site web arriver
@@ -477,7 +477,7 @@
             </section>
 
             <section data-auto-animate data-auto-animate-id="fcp">
-                <img src="./images/fcp.avif">
+                <img src="./images/fcp.png" style="max-height: 400px">
                 <p>FP: First Painting</p>
                 <p>FMP: First MeaningFul Painting</p>
                 <aside class="notes">
@@ -486,7 +486,7 @@
             </section>
 
             <section data-auto-animate data-auto-animate-id="fcp">
-                <img src="./images/fcp.avif">
+                <img src="./images/fcp.png" style="max-height: 400px">
                 <p>FP: First Painting</p>
                 <p>FMP: First MeaningFul Painting</p>
                 <p>TTI: Time to Interactive</p>
@@ -504,6 +504,16 @@
                     <div>FP: chargement de la page html uniquement</div>
                     <div>FMP: page html + rendu JS si besoin</div>
                     <div>TTI: page html + rendu JS + écouteurs dévènements</div>
+                </aside>
+            </section>
+
+            <section data-auto-animate data-auto-animate-id="eco">
+                <div>Performance mais responsable ?</div>
+                <aside class="notes">
+                    <p>On a parlé jusque-là de performances, mais quel rapport avec la responsabilité</p>
+                    <div>1 Mo envoyé = 15 g de CO2 (et c'est déjà un début)</div>
+                    <div>L'activité backend doit être prise en compte dans la consommation !</div>
+                    <div>Optimiser l'ensemble du process (caches, génération statique, ...)</div>
                 </aside>
             </section>
 
@@ -1020,166 +1030,6 @@
                 </blockquote>
             </section>
 
-            <section data-auto-animate data-auto-animate-id="eco">
-                <div>Performance mais responsable ?</div>
-                <aside class="notes">
-                    <p>On a parlé jusque-là de performances, mais quel rapport avec la responsabilité</p>
-                    <div>1 Mo envoyé = 15 g de CO2 (et c'est déjà un début)</div>
-                    <div>L'activité backend doit être prise en compte dans la consommation !</div>
-                    <div>Optimiser l'ensemble du process (caches, génération statique, ...)</div>
-                </aside>
-            </section>
-        </section>
-
-        <section data-state="octo-fond fond-pelle">
-            <section data-auto-animate data-state="dialog-scene">
-                <p>Premiers pas</p>
-                <div class="grid-perso">
-                    <div class="perso active">
-                        <div class="portrait">
-                            <img src="./images/inkling.webp">
-                        </div>
-                        Professeur Inkling
-                    </div>
-                    <div class="perso">
-                        <div class="portrait">
-                            <img src="./images/cassie.png">
-                        </div>
-                        Cassie
-                    </div>
-                </div>
-                <aside class="notes">
-                    <div>TEMPO: 12:00</div>
-                    D'accord Cassie, tout cela est bien beau, mais tu ne nous as pas encore expliqué comment tu faisais
-                    ! Ni comment cela fonctionnait !
-                </aside>
-            </section>
-            <section data-auto-animate data-state="dialog-scene">
-                <p>Premiers pas</p>
-                <div class="grid-perso">
-                    <div class="perso">
-                        <div class="portrait">
-                            <img src="./images/inkling.webp">
-                        </div>
-                        Professeur Inkling
-                    </div>
-                    <div class="perso active">
-                        <div class="portrait">
-                            <img src="./images/cassie.png">
-                        </div>
-                        Cassie
-                    </div>
-                </div>
-                <aside class="notes">
-                    J'y viens Professeur !
-                </aside>
-            </section>
-            <section data-auto-animate>
-                <div>Exemple</div>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm shell">
-                    npm create qwik@latest
-
-                    npm run start
-                </code>
-                </pre>
-                <aside class="notes">
-                    <div>TEMPO: 12:15</div>
-                    Montrer:
-                    <div>- Counter</div>
-                    <div>- Steps</div>
-                    <div>- Doc</div>
-                    <div>- @QwikDev</div>
-                </aside>
-            </section>
-
-            <section data-auto-animate data-state="dialog-scene">
-                <div class="grid-perso">
-                    <div class="perso active">
-                        <div class="portrait">
-                            <img src="./images/inkling.webp">
-                        </div>
-                        Professeur Inkling
-                    </div>
-                    <div class="perso">
-                        <div class="portrait">
-                            <img src="./images/cassie.png">
-                        </div>
-                        Cassie
-                    </div>
-                </div>
-                <aside class="notes">
-                    <div>TEMPO: 14:15</div>
-                    Oui mais concrètement, comment j'écris un composant Qwik ?
-                </aside>
-            </section>
-            <section data-auto-animate data-state="dialog-scene">
-                <div class="grid-perso">
-                    <div class="perso">
-                        <div class="portrait">
-                            <img src="./images/inkling.webp">
-                        </div>
-                        Professeur Inkling
-                    </div>
-                    <div class="perso active">
-                        <div class="portrait">
-                            <img src="./images/cassie.png">
-                        </div>
-                        Cassie
-                    </div>
-                </div>
-                <aside class="notes">
-                    Je vous montre ça Professeur
-                </aside>
-            </section>
-            <section>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm typescript" data-line-numbers>
-                    <script type="text/template">
-                        import {component$} from "@builder.io/qwik";
-
-                        export default component$(() => {
-                            return (
-                            <>
-                                <h1>Hello Bdx IO !</h1>
-                                <button onClick$={() => console.log('Hello Bdx IO')}>Greet Me !</button>
-                            </>
-                            );
-                        });
-                    </script>
-                </code>
-                </pre>
-                <aside class="notes">
-                    <div>Voilà un exemple avec:</div>
-                    <div>- un rendu</div>
-                    <div>- une interaction</div>
-                </aside>
-            </section>
-            <section data-auto-animate>
-                <p><a href="https://qwik.builder.io/docs/integrations/react/">@builder.io/qwik-react</a></p>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm typescript" data-line-numbers>
-                    <script type="text/template">
-                        /** @jsxImportSource react */
-                        import { qwikify$ } from '@builder.io/qwik-react';
-
-                        // Create React component standard way
-                        function Greetings() {
-                            return <p>Hello from React</p>;
-                        }
-
-                        // Convert React component to Qwik component
-                        export const QGreetings = qwikify$(Greetings);
-                    </script>
-                </code>
-                </pre>
-                <p class="code-font-sm"><a href="https://github.com/QwikDev/qwik-angular">QwikDev/qwik-angular</a></p>
-                <aside class="notes">
-                    <div>On peut importer du react avec qwik-react</div>
-                    <div>existe aussi avec Angular</div>
-                    <div>existe bientôt avec Astro</div>
-                </aside>
-            </section>
             <section data-auto-animate>
                 Résumabilité
                 <aside class="notes">
@@ -1313,6 +1163,132 @@
                 <aside class="notes">
                     <div>TEMPO: 19:00</div>
                     <p>C'est les pinguins et les ours polaires qui sont heureux</p>
+                </aside>
+            </section>
+        </section>
+
+        <section data-state="octo-fond fond-pelle">
+            <section data-auto-animate data-state="dialog-scene">
+                <p>Premiers pas</p>
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 12:00</div>
+                    D'accord Cassie, tout cela est bien beau, mais tu ne nous as pas encore expliqué comment tu faisais
+                    ! Ni comment cela fonctionnait !
+                </aside>
+            </section>
+            <section data-auto-animate data-state="dialog-scene">
+                <p>Premiers pas</p>
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    J'y viens Professeur !
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div>Exemple</div>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm shell">
+                    npm create qwik@latest
+
+                    npm run start
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 12:15</div>
+                    Montrer:
+                    <div>- Counter</div>
+                    <div>- Steps</div>
+                    <div>- Doc</div>
+                    <div>- @QwikDev</div>
+                </aside>
+            </section>
+
+            <section data-auto-animate data-state="dialog-scene">
+                <div class="grid-perso">
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 14:15</div>
+                    Oui mais concrètement, comment j'écris un composant Qwik ?
+                </aside>
+            </section>
+            <section data-auto-animate data-state="dialog-scene">
+                <div class="grid-perso">
+                    <div class="perso">
+                        <div class="portrait">
+                            <img src="./images/inkling.webp">
+                        </div>
+                        Professeur Inkling
+                    </div>
+                    <div class="perso active">
+                        <div class="portrait">
+                            <img src="./images/cassie.png">
+                        </div>
+                        Cassie
+                    </div>
+                </div>
+                <aside class="notes">
+                    Je vous montre ça Professeur
+                </aside>
+            </section>
+            <section>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
+                    <script type="text/template">
+                        import {component$} from "@builder.io/qwik";
+
+                        export default component$(() => {
+                            return (
+                            <>
+                                <h1>Hello Bdx IO !</h1>
+                                <button onClick$={() => console.log('Hello Bdx IO')}>Greet Me !</button>
+                            </>
+                            );
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>Voilà un exemple avec:</div>
+                    <div>- un rendu</div>
+                    <div>- une interaction</div>
                 </aside>
             </section>
         </section>
@@ -1803,6 +1779,31 @@
                     <div>fichier css externalisé</div>
                     <div>inliné dans le composant avec scope</div>
                     <div>les 2 combinés</div>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <p><a href="https://qwik.builder.io/docs/integrations/react/">@builder.io/qwik-react</a></p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm typescript" data-line-numbers>
+                    <script type="text/template">
+                        /** @jsxImportSource react */
+                        import { qwikify$ } from '@builder.io/qwik-react';
+
+                        // Create React component standard way
+                        function Greetings() {
+                        return <p>Hello from React</p>;
+                        }
+
+                        // Convert React component to Qwik component
+                        export const QGreetings = qwikify$(Greetings);
+                    </script>
+                </code>
+                </pre>
+                <p class="code-font-sm"><a href="https://github.com/QwikDev/qwik-angular">QwikDev/qwik-angular</a></p>
+                <aside class="notes">
+                    <div>On peut importer du react avec qwik-react</div>
+                    <div>existe aussi avec Angular</div>
+                    <div>existe bientôt avec Astro</div>
                 </aside>
             </section>
             <section>
@@ -2805,6 +2806,7 @@
                     <div><a href="https://arxiv.org/pdf/2309.04188.pdf">The State of disappearing Frameworks in 2023</a></div>
                     <div><a href="https://x.com/Steve8708/status/1718049689222951196?s=20">Qwik and Astro</a></div>
                     <div><a href="https://www.builder.io/blog/qwik-v1">Qwik reaches v1.0</a></div>
+                    <div><a href="https://technodiscours.hypotheses.org/1103">1Mo = 15gCo2</a></div>
                 </div>
             </section>
             <section>
