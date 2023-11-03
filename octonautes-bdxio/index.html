@@ -35,6 +35,9 @@
 <div class="pokemon">
     <img src="./images/ChristopheF.png">
 </div>
+<div class="cinema">
+    <img src="./images/projecteur.png">
+</div>
 
 <video controls class="fullscreen">
     <source src="./video/generique.mp4" type="video/mp4"/>
@@ -63,7 +66,7 @@
             </aside>
         </section>
 
-        <section data-state="first-dialog">
+        <section data-state="first-dialog dialog-scene">
             <section data-auto-animate>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -407,7 +410,7 @@
         </section>
 
         <section data-state="octo-fond fond-perf">
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Performance Web</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -431,7 +434,7 @@
                 </aside>
             </section>
 
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Performance Web</p>
                 <div class="grid-perso">
                     <div class="perso">
@@ -1028,8 +1031,8 @@
             </section>
         </section>
 
-        <section  data-state="octo-fond fond-pelle">
-            <section data-auto-animate>
+        <section data-state="octo-fond fond-pelle">
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Premiers pas</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -1051,7 +1054,7 @@
                     ! Ni comment cela fonctionnait !
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Premiers pas</p>
                 <div class="grid-perso">
                     <div class="perso">
@@ -1090,7 +1093,7 @@
                 </aside>
             </section>
 
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <div class="grid-perso">
                     <div class="perso active">
                         <div class="portrait">
@@ -1110,7 +1113,7 @@
                     Oui mais concrètement, comment j'écris un composant Qwik ?
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <div class="grid-perso">
                     <div class="perso">
                         <div class="portrait">
@@ -1315,7 +1318,7 @@
         </section>
 
         <section  data-state="octo-fond fond-coffre">
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Gestion d'état</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -1337,7 +1340,7 @@
                     Mais cela doit être compliqué ! Je faisais pareil dans mon application Angular avec universal.
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Gestion d'état</p>
                 <div class="grid-perso">
                     <div class="perso">
@@ -1444,7 +1447,7 @@
                     <div>TEMPO: 19:45</div>
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <div class="grid-perso">
                     <div class="perso active">
                         <div class="portrait">
@@ -1463,7 +1466,7 @@
                     Ca me semble parfait tout ça Cassie
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <div class="grid-perso">
                     <div class="perso">
                         <div class="portrait">
@@ -1690,7 +1693,7 @@
         </section>
 
         <section data-state="octo-fond fond-volcan">
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Allons un peu plus loin</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -1712,7 +1715,7 @@
                     <p>Je vais perdre des choses avec Qwik !</p>
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Allons un peu plus loin</p>
                 <div class="grid-perso">
                     <div class="perso">
@@ -2099,7 +2102,7 @@
         </section>
 
         <section data-state="octo-fond fond-octocapsule">
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Du backend ?</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -2120,7 +2123,7 @@
                     Mais Cassie, comment allons-nous gérer notre catalogue de produits ?
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Du backend ?</p>
                 <div class="grid-perso">
                     <div class="perso">
@@ -2283,7 +2286,7 @@
         </section>
 
         <section data-state="octo-fond fond-orks">
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Tests unitaires</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -2304,7 +2307,7 @@
                     Et comment vas-tu vérifier que ce que tu as écrit est correct ?
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Tests unitaires</p>
                 <div class="grid-perso">
                     <div class="perso">
@@ -2391,7 +2394,7 @@
         </section>
 
         <section data-state="octo-fond fond-trou">
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Librairies tierces</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -2413,7 +2416,7 @@
                     toute l'application
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Librairies tierces</p>
                 <div class="grid-perso">
                     <div class="perso">
@@ -2491,7 +2494,7 @@
         </section>
 
         <section data-state="octo-fond fond-song">
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Bon alors, la démo ?</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -2512,7 +2515,7 @@
                     Ok Cassie, alors, ça donne quoi ce site finalement ?
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Bon alors, la démo ?</p>
                 <div class="grid-perso">
                     <div class="perso">
@@ -2592,7 +2595,7 @@
         </section>
 
         <section data-state="octo-fond fond-crabes">
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Plus éco-responsable ?</p>
                 <div class="grid-perso">
                     <div class="perso active">
@@ -2616,7 +2619,7 @@
                         !</p>
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="dialog-scene">
                 <p>Plus éco-responsable ?</p>
                 <div class="grid-perso">
                     <div class="perso">
