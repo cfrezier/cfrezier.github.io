@@ -3,9 +3,9 @@ const slides = document.querySelectorAll('.conf-type');
 const detail = document.querySelector('.detail');
 let previouslyActive = 0;
 
-const scrollTo = (index) => {
+const scrollTo = (index, smooth = true) => {
     // scroll
-    slides[index].scrollIntoView(true);
+    slides[index].scrollIntoView({behavior: smooth ? "smooth" : "instant", block: "start", inline: "start"});
 }
 
 for (let i = 0; i < options.length; i++) {
@@ -22,6 +22,6 @@ for (let i = 0; i < options.length; i++) {
 
 screen.orientation.addEventListener("change", (event) => {
     setTimeout(() => {
-        scrollTo(previouslyActive);
+        scrollTo(previouslyActive, false);
     }, 10);
 });
