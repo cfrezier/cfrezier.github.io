@@ -4,7 +4,7 @@ const yargs = require('yargs')
 
 const root = yargs.argv.root || '.'
 const port = yargs.argv.port || 8000
-const host = yargs.argv.host || 'localhost'
+const host = yargs.argv.host || '0.0.0.0'
 
 gulp.task('reload', () => gulp.src(['index.html'])
     .pipe(connect.reload()));
