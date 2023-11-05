@@ -5,11 +5,7 @@ let previouslyActive = 0;
 
 const scrollTo = (index) => {
     // scroll
-    let toPass = 0;
-    for (let j = 0; j < index; j++) {
-        toPass += slides[j].getBoundingClientRect().height
-    }
-    detail.scrollTop = toPass;
+    slides[index].scrollIntoView(true);
 }
 
 for (let i = 0; i < options.length; i++) {
