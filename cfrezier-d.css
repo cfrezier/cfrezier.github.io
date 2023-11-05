@@ -1,6 +1,6 @@
 body {
     font-family: "Exo 2";
-    font-size: 20px;
+    font-size: 1.25rem;
     display: grid;
     box-sizing: border-box;
     padding: 0;
@@ -14,18 +14,18 @@ p {
 
 @media (orientation: landscape) {
     body {
-        grid-template-columns: 60vw 40vw;
-        grid-template-rows: 80vh 20vh;
+        grid-template-columns: 60dvw 40dvw;
+        grid-template-rows: 80dvh 20dvh;
         grid-template-areas:
             "me detail"
             "options detail";
     }
 
     .detail {
-        height: 100vh;
+        height: 100dvh;
 
         .conf-type {
-            height: 100vh;
+            height: 100dvh;
             width: 100%;
         }
     }
@@ -39,10 +39,10 @@ p {
     position: relative;
 
     > h1 {
-        font-size: 48px;
+        font-size: 3rem;
         position: absolute;
-        bottom: 80px;
-        right: 30px;
+        bottom: 10%;
+        right: 5%;
     }
 }
 
@@ -116,8 +116,8 @@ p {
 
 @media (orientation: portrait) {
     body {
-        grid-template-columns: 100vw;
-        grid-template-rows: 40vh 10vh 50vh;
+        grid-template-columns: 100dvw;
+        grid-template-rows: 40dvh 10dvh 50dvh;
         grid-template-areas:
             "me"
             "options"
@@ -125,10 +125,10 @@ p {
     }
 
     .detail {
-        width: 100vw;
+        width: 100dvw;
 
         .conf-type {
-            height: 50vh;
+            height: 50dvh;
             gap: 10%;
 
             > video {
@@ -136,5 +136,9 @@ p {
                 max-width: 50%;
             }
         }
+    }
+
+    .me > h1 {
+        font-size: 1.5rem;
     }
 }
