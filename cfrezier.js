@@ -10,3 +10,7 @@ for (let i = 0; i < options.length; i++) {
         detail.scrollTop = toPass;
     });
 }
+
+screen.orientation.addEventListener("change", (event) => {
+    detail.scrollTop = 0;
+});
