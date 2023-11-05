@@ -1,7 +1,12 @@
 const options = document.querySelectorAll('.conf-option');
+const slides = document.querySelectorAll('.conf-type');
 const detail = document.querySelector('.detail');
 for (let i = 0; i < options.length; i++) {
     options[i].addEventListener('click', () => {
-        detail.scrollTop = i * window.innerHeight * (window.innerHeight > window.innerWidth ? 0.5 : 1);
+        let toPass = 0;
+        for(let j = 0; j < i; j++) {
+            toPass += slides[j].getBoundingClientRect().height
+        }
+        detail.scrollTop = toPass;
     });
 }

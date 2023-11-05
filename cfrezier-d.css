@@ -99,6 +99,11 @@ p {
             max-width: 100px;
         }
 
+        .conf-image.small {
+            max-height: 30px;
+            max-width: 60px;
+        }
+
         > video, > * > video, > * > * > video {
             max-height: 100%;
             max-width: 100%;
@@ -130,7 +135,13 @@ p {
         .conf-type {
             height: 50dvh;
             gap: 10%;
+        }
+    }
+}
 
+@media (max-width: 600px) or (max-height: 600px) {
+    .detail {
+        .conf-type {
             > video {
                 max-height: 50%;
                 max-width: 50%;
@@ -141,4 +152,9 @@ p {
     .me > h1 {
         font-size: 1.5rem;
     }
+
+    .not-on-mobile {
+        display: none;
+    }
+
 }
