@@ -92,7 +92,7 @@ p {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 50px;
+        gap: 1.5rem;
 
         > img, > * > img, > * > * > img {
             max-height: 40px;
@@ -136,6 +136,7 @@ p {
 
     .detail {
         width: 100dvw;
+        height: 50dvh;
 
         .conf-type {
             height: 50dvh;
