@@ -1423,6 +1423,7 @@
                 </aside>
             </section>
             <section data-auto-animate data-state="dialog-scene">
+                <p>Les implications du $</p>
                 <div class="grid-perso">
                     <div class="perso active">
                         <div class="portrait">
@@ -1443,6 +1444,7 @@
                 </aside>
             </section>
             <section data-auto-animate data-state="dialog-scene">
+                <p>Les implications du $</p>
                 <div class="grid-perso">
                     <div class="perso">
                         <div class="portrait">
@@ -1463,7 +1465,7 @@
                 </aside>
             </section>
             <section>
-                <p>Serialization (Les implications du $)</p>
+                <p>Serialization</p>
                 <a href="https://qwik.builder.io/docs/advanced/dollar/" target="_blank">Qwik Optimizer</a>
                 <aside class="notes">
                     <div>TEMPO: 19:55</div>
@@ -2158,23 +2160,23 @@
                         });
 
                         //...
-                        const action = useCommand();
+                        const theRouteAction = useCommand();
 
                         // en mode programmatique
-                        <button onClick$={async ()=> {await action.submit({cart});}}
-                            disabled={action.value?.success}>
+                        <button onClick$={async ()=> {await theRouteAction.submit({cart});}}
+                            disabled={theRouteAction.value?.success}>
                             Commander
                         </button>
 
                         // ou en mode formulaire
-                        <Form action={action}>
+                        <Form action={theRouteAction}>
                           <input name="name"/>
                           <button type="submit">Commander</button>
                         </Form>
 
                         // Utilisation des retours
-                        {action.value?.success && (
-                            <p>Votre commande a été passée. Son identifiant est le {action.value.commandId}. Les animaux marins vous remercient !</p>
+                        {theRouteAction.value?.success && (
+                            <p>Votre commande a été passée. Son identifiant est le {theRouteAction.value.commandId}. Les animaux marins vous remercient !</p>
                         )}
                     </script>
                 </code>
