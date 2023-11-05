@@ -76,6 +76,11 @@ p {
     scale: 1.5;
 }
 
+.conf-option.active {
+    filter: grayscale(0%);
+}
+
+
 .detail {
     grid-area: detail;
     overflow: hidden;
