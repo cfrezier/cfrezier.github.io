@@ -497,7 +497,7 @@
             </section>
 
             <section>
-                <img src="./images/fcp-why.png">
+                <img src="./images/fcp-why.png" style="height: 600px">
                 <aside class="notes">
                     <div>TEMPO: 4:40</div>
                     <div>Correspond à des évènements techniques</div>
@@ -1162,13 +1162,6 @@
                     </ul>
                 </aside>
             </section>
-            <section>
-                <img src="./images/peso-happy.png" style="max-height: 200px">
-                <aside class="notes">
-                    <div>TEMPO: 16:15</div>
-                    <p>C'est les pinguins et les ours polaires qui sont heureux</p>
-                </aside>
-            </section>
         </section>
 
         <section data-state="octo-fond fond-pelle">
@@ -1464,9 +1457,30 @@
                     Mais attention Professeur, il y a des règles à respecter !
                 </aside>
             </section>
-            <section>
-                <p>Serialization</p>
-                <a href="https://qwik.builder.io/docs/advanced/dollar/" target="_blank">Qwik Optimizer</a>
+            <section data-auto-animate>
+                <div class="rows">
+                    <a href="https://qwik.builder.io/docs/advanced/dollar/" target="_blank">Qwik Optimizer</a>
+                    <p>&</p>
+                    <p>Serialization</p>
+                </div>
+                <aside class="notes">
+                    <div>TEMPO: 19:55</div>
+                    <p>Fonctionnement de Qwik: on découpe tout en petits JS</p>
+                    <p>Implication: état sérialisable à tout moment.</p>
+                    <p>Voyons pourquoi...</p>
+                </aside>
+            </section>
+            <section data-auto-animate>
+                <div class="rows">
+                    <a href="https://qwik.builder.io/docs/advanced/dollar/" target="_blank">Qwik Optimizer</a>
+                    <p>&</p>
+                    <p>Résumabilité</p>
+                </div>
+                <div class="rows">
+                    Petits JS
+                    <p>&</p>
+                    Etat sérialisable
+                </div>
                 <aside class="notes">
                     <div>TEMPO: 19:55</div>
                     <p>Fonctionnement de Qwik: on découpe tout en petits JS</p>
@@ -1543,17 +1557,25 @@
                 </blockquote>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers>
-                // Invalid
-                const foo = 'foo';
-                foo$(foo); // foo is not exported, so it's not importable
+                    <script type="text/template">
+                    // Invalid
+                    const foo = 'foo';
+                    foo$(foo); // foo is not exported, so it's not importable
 
-                // Valid
-                export const bar = 'bar';
-                foo$(bar);
+                    // Invalid
+                    component$(() => {
+                        let foo = 'value'; // variable is not a const
+                        return <div onClick$={() => console.log(foo)}/>
+                    });
 
-                // Valid
-                import { bar } from './bar';
-                foo$(bar);
+                    // Valid
+                    export const bar = 'bar';
+                    foo$(bar);
+
+                    // Valid
+                    import { bar } from './bar';
+                    foo$(bar);
+                    </script>
                 </code>
                 </pre>
                 <aside class="notes">
@@ -1570,12 +1592,6 @@
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers>
                     <script type="text/template">
-                    // Invalid
-                    component$(() => {
-                        let foo = 'value'; // variable is not a const
-                        return <div onClick$={() => console.log(foo)}/>
-                    });
-
                     // Invalid
                     component$(() => {
                         const foo = new MyCustomClass(12); // MyCustomClass is not serializable
