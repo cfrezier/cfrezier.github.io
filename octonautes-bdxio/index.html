@@ -38,6 +38,9 @@
 <div class="cinema">
     <img src="./images/projecteur.png">
 </div>
+<div class="city">
+    <img src="./images/qwik-city.png">
+</div>
 
 <video controls class="fullscreen">
     <source src="./video/generique.mp4" type="video/mp4"/>
@@ -1730,7 +1733,20 @@
                     Mais non Kwazii, Qwik est déjà très étoffé !
                 </aside>
             </section>
-            <section>
+            <section data-state="has-city">
+                <a href="https://qwik.builder.io/docs/qwikcity/#qwik-city" target="_blank">Qwik City</a>
+                <aside class="notes">
+                    <div>TEMPO: 25:40</div>
+                    <div>Meta framework</div>
+                    <div>Qwik City => Qwik</div>
+                    <div>Next.js => React</div>
+                    <div>Nuxt => Vue</div>
+                    <div>SvelteKit => Svelte</div>
+                    <div>Analog => Angular.</div>
+                    <div>Lien vers la doc</div>
+                </aside>
+            </section>
+            <section data-state="has-city">
                 <p>Utilisation de Slots / Layouts</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers="1-18|10">
@@ -1829,20 +1845,7 @@
                     <div>existe bientôt avec Astro</div>
                 </aside>
             </section>
-            <section>
-                <a href="https://qwik.builder.io/docs/qwikcity/#qwik-city" target="_blank">Qwik City</a>
-                <aside class="notes">
-                    <div>TEMPO: 25:40</div>
-                    <div>Meta framework</div>
-                    <div>Qwik City => Qwik</div>
-                    <div>Next.js => React</div>
-                    <div>Nuxt => Vue</div>
-                    <div>SvelteKit => Svelte</div>
-                    <div>Analog => Angular.</div>
-                    <div>Lien vers la doc</div>
-                </aside>
-            </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="has-city">
                 Routing
                 <p class="code-font-sm">Directory based routing</p>
                 <pre data-id="code-animation">
@@ -1874,7 +1877,7 @@
                     <p>On peut utiliser des layouts (cf Slots)</p>
                 </aside>
             </section>
-            <section data-auto-animate>
+            <section data-auto-animate data-state="has-city">
                 Routing
                 <p class="code-font-sm">Récupération de paramètres</p>
                 <pre data-id="code-animation">
@@ -1898,7 +1901,7 @@
                     <div>TEMPO: 27:25</div>
                 </aside>
             </section>
-            <section>
+            <section data-state="has-city">
                 <p>Route loaders</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers="1-6|8-16">
@@ -1981,7 +1984,7 @@
                     <p>On affiche une liste de produits si resolved</p>
                 </aside>
             </section>
-            <section>
+            <section data-state="has-city">
                 <p>Head</p>
                 <p class="code-font-sm">meta, links, ...</p>
                 <pre data-id="code-animation">
@@ -2017,7 +2020,7 @@
                     <div>Éventuellement de manière dynamique avec résolutions de requêtes avant injection</div>
                 </aside>
             </section>
-            <section>
+            <section data-state="has-city">
                 <p>Head</p>
                 <p class="code-font-sm">meta, links, ...</p>
                 <pre data-id="code-animation">
@@ -2050,14 +2053,10 @@
                 </aside>
             </section>
             <section>
-                <p>Optimisation automatique des images</p>
+                <a href="https://qwik.builder.io/docs/integrations/image-optimization/" target="_blank">Image Optimisation</a>
                 <aside class="notes">
                     <div>TEMPO: 30:20</div>
                 </aside>
-            </section>
-            <section>
-                <a href="https://qwik.builder.io/docs/integrations/image-optimization/" target="_blank">Image
-                    Optimisation</a>
             </section>
             <section>
                 <pre data-id="code-animation">
@@ -2160,7 +2159,7 @@
                     On a quelques outils côté Qwik city pour ça également !
                 </aside>
             </section>
-            <section>
+            <section data-state="has-city">
                 <p>routeAction$</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers="2-9|12,14-18|12,20-24|27-29">
@@ -2205,7 +2204,7 @@
                     <p>Accès aux valeurs de retour</p>
                 </aside>
             </section>
-            <section>
+            <section data-state="has-city">
                 <p>Endpoints</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers>
@@ -2231,7 +2230,7 @@
                     <p>On peut également définir directement des endpoints plus classiques</p>
                 </aside>
             </section>
-            <section>
+            <section data-state="has-city">
                 <p>Middlewares</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers>
@@ -2261,7 +2260,7 @@
                     <p>L'ordre d'exécution inter plugin est alphabétique sur leur nom</p>
                 </aside>
             </section>
-            <section>
+            <section data-state="has-city">
                 <p>server$</p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers="1-6|13-17">
