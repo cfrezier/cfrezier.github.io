@@ -1820,6 +1820,35 @@
                     <div>les 2 combinés</div>
                 </aside>
             </section>
+            <section>
+                <p>Navigation SPA/MPA</p>
+                <pre data-id="code-animation">
+                <code data-trim class="code-font-sm typescript" data-line-numbers="1-12|14-24|26-32">
+                    <script type="text/template">
+                        import { component$ } from '@builder.io/qwik';
+                        import { Link } from '@builder.io/qwik-city';
+
+                        export default component$(() => {
+                        return (
+                            <div>
+                              <a href="/docs" class="my-link">
+                                Full page reload
+                              </a>
+                              <Link href="/docs" class="my-link">
+                                Single Page Application navigation
+                              </Link>
+                            </div>
+                        );
+                        });
+                    </script>
+                </code>
+                </pre>
+                <aside class="notes">
+                    <div>TEMPO: 25:30</div>
+                    <div>Navigation possible de 2 manières</div>
+                    <div>en fonction des besoins, de la taille de la page, ...</div>
+                </aside>
+            </section>
             <section data-auto-animate>
                 <p><a href="https://qwik.builder.io/docs/integrations/react/">@builder.io/qwik-react</a></p>
                 <pre data-id="code-animation">
@@ -2747,14 +2776,19 @@
             </section>
             <section data-auto-animate data-auto-animate-id="prefetch">
                 <p>Version hors-ligne ?</p>
-            </section>
-            <section data-auto-animate data-auto-animate-id="prefetch">
-                <p>Version hors-ligne ?</p>
-                <p>Prefetch</p>
+                <a href="https://qwik.builder.io/docs/advanced/prefetching/#prefetching">Prefetch</a>
                 <img src="./images/prefetch.png" style="height: 400px;">
+                <aside class="notes">
+                    <ul>
+                        <li>balise link attribut prefetch pour l'avoir sur le hover</li>
+                        <li>prefetching strategy, custom par config ou par code</li>
+                        <li>composants visibles ou ce que l'utilisateur peut trigger, ...</li>
+                        <li>ou par dispatchEvent(new CustomEvent('qprefetch', ...))</li>
+                    </ul>
+                </aside>
             </section>
             <section data-auto-animate data-auto-animate-id="prefetch">
-                <p>Version hors-ligne ?</p>
+                <p>Et encore plus (avec les stats réelles)</p>
                 <p><a href="https://qwik.builder.io/docs/labs/insights/" target="_blank">Qwik Insights</a></p>
                 <pre data-id="code-animation">
                 <code data-trim class="code-font-sm typescript" data-line-numbers="1-34|2,9-10|22,24,27">
