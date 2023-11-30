@@ -189,3 +189,7 @@ p {
         font-size: 1rem;
     }
 }
+
+.align-center {
+    text-align: center;
+}
