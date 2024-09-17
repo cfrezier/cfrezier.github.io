@@ -109,6 +109,11 @@ p {
             max-width: 60px;
         }
 
+        .conf-image.big {
+            max-height: 200px;
+            max-width: 200px;
+        }
+
         > video, > * > video, > * > * > video {
             max-height: 100%;
             max-width: 100%;

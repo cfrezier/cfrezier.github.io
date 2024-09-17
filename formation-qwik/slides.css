@@ -1,0 +1,130 @@
+.fullscreen {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    z-index: 1;
+}
+
+body.first-dialog {
+    .pokemon {
+        display: block;
+    }
+}
+
+.reveal .progress span {
+    background-color: #ac7ef4;
+}
+
+.legacy td {
+    vertical-align: middle;
+}
+
+.legacy tr, .legacy td {
+    height: 100px;
+}
+
+img.app-size {
+    max-height: 75px;
+}
+
+img.rate {
+    max-height: 20px;
+    max-width: 20px;
+    margin-left: 5px;
+}
+
+.rating {
+    font-size: 20px;
+}
+
+.rating > div {
+    height: 30px;
+    justify-content: flex-end;
+}
+
+img.rate.ml-auto {
+    margin-left: auto;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.center-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img.qwik-logo {
+    max-width: 200px;
+    margin-left: 20px;
+
+    &.small {
+        max-width: 50px;
+        max-height: 50px;
+        vertical-align: middle;
+        margin: 0;
+    }
+}
+
+.code-font-sm {
+    font-size: 12px;
+    line-height: 13px;
+}
+
+pre {
+    height: fit-content;
+}
+
+.red {
+    color: red;
+}
+
+.why-qwik-so-cool:before, .qwik-backend:before, .bonus:before, .power-rangers:before, .pr-robot:before, .se-connaitre:before, .intro:before, .base:before, .medium:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: url("./images/power-rangers-cool.webp");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+}
+
+.green:before {
+    background-image: url("./images/pr-green.avif");
+}
+
+.robot:before {
+    background-image: url("./images/robot.webp");
+}
+
+.qwik-backend:before {
+    background-image: url("./images/delta-base.png");
+}
+
+.bonus:before {
+    background-image: url("./images/super_megaforce.webp");
+}
+
+.power-rangers:before {
+    background-image: url("./images/pr-1.jpg");
+}
+
+.pr-robot:before {
+    background-image: url("./images/pr-robot.jpg");
+}
+
+.medium:before {
+    background-image: url("./images/medium.jpg");
+}
+
+.tp:before {
+    background-image: url("./images/tp.png");
+}
