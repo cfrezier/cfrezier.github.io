@@ -83,7 +83,7 @@ pre {
     color: red;
 }
 
-.why-qwik-so-cool:before, .qwik-backend:before, .bonus:before, .power-rangers:before, .pr-robot:before, .se-connaitre:before, .intro:before, .base:before, .medium:before {
+.why-qwik-so-cool:before, .qwik-backend:before, .bonus:before, .power-rangers:before, .pr-robot:before, .se-connaitre:before, .intro:before, .base:before, .medium:before, .quiz:before {
     content: "";
     position: absolute;
     top: 0;
@@ -110,7 +110,7 @@ pre {
 }
 
 .bonus:before {
-    background-image: url("./images/super_megaforce.webp");
+    background-image: url("./images/power_ranger_cadeau.png");
 }
 
 .power-rangers:before {
@@ -127,4 +127,12 @@ pre {
 
 .tp:before {
     background-image: url("./images/tp.png");
+}
+
+.quiz:before {
+    background-image: url("./images/power_ranger_questions.png");
+}
+
+.green {
+    color:#17ff2e
 }

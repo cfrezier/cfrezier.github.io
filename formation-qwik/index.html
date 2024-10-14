@@ -6,13 +6,13 @@
 
     <title>Qwik training</title>
 
-    <link rel="stylesheet" href="../dist/reset.css">
-    <link rel="stylesheet" href="../dist/reveal.css">
-    <link rel="stylesheet" href="../dist/theme/white.css">
+    <link rel="stylesheet" href="./dist/reset.css">
+    <link rel="stylesheet" href="./dist/reveal.css">
+    <link rel="stylesheet" href="./dist/theme/white.css">
     <link rel="stylesheet" href="./slides.css">
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="./plugin/highlight/monokai.css">
 
     <link rel='stylesheet' id='font-family-1-css'
           href='https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd'
@@ -24,19 +24,12 @@
 <div class="reveal">
     <div class="slides">
         <section data-state="se-connaitre">
-            <h2>BONJOUR</h2>
+            <h1>Qwik</h1>
             <aside class="notes">
                 <ul>
                     <li>Présentation formateur</li>
                     <li>Un tour de table</li>
                     <li>Votre niveau en HTML / JS / CSS ?</li>
-                </ul>
-            </aside>
-        </section>
-        <section data-state="intro">
-            <h1>Qwik</h1>
-            <aside class="notes">
-                <ul>
                     <li>Framework web JS</li>
                     <li>Chargement "instantané" quelle que soit la taille/complexité de l'application</li>
                     <li>Nécessite uniquement 1Ko de JS pour commencer à fonctionner</li>
@@ -46,37 +39,35 @@
         </section>
 
         <section data-state="base">
-            <h2>Qwik niveau 1</h2>
-        </section>
-
-        <section data-state="pr-robot">
-            <h3>Pré-requis</h3>
-            <details>
-                <summary>En local</summary>
-                <ul>
-                    <li>Node.js 18+</li>
-                    <li>NPM v10.7.0+</li>
-                    <li>Git</li>
-                </ul>
-            </details>
-            <details>
-                <summary>ou avec gitpod</summary>
-                <ul>
-                    <li>https://www.gitpod.io</li>
-                </ul>
-            </details>
-            <p>https://github.com/cfrezier/qwik-training</p>
-        </section>
-
-        <section data-state="power-rangers">
             <section>
+                <h2>Qwik niveau 1</h2>
+            </section>
 
+            <section data-state="pr-robot">
+                <h3>Pré-requis</h3>
+                <details>
+                    <summary>En local</summary>
+                    <ul>
+                        <li>Node.js 18+</li>
+                        <li>NPM v10.7.0+</li>
+                        <li>Git</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>ou avec gitpod</summary>
+                    <ul>
+                        <li>https://www.gitpod.io</li>
+                    </ul>
+                </details>
+                <p>https://github.com/cfrezier/qwik-training</p>
+            </section>
+            <section>
                 <p>Votre première application Qwik</p>
             </section>
             <section>
                 <p>Création application blanche</p>
                 <pre data-id="code-animation">
-                    <code data-trim class="code-font-sm html" data-line-numbers="1-11|14">
+                    <code data-trim class="code-font-sm html">
 $ npm create qwik@latest
 o  Where would you like to create your new project? (Use '.' or './' for current directory)
 |  --> ./power-rangers-app <--
@@ -96,7 +87,7 @@ o  Finishing the install. Wanna hear a joke?
             <section data-state="tp">
                 <h2>TP</h2>
                 <ul>
-                    <li class="fragment">Création d'une application qwik "power-rangers-app"</li>
+                    <li>Création d'une application qwik "power-rangers-app"</li>
                     <li>Nom : power-rangers-app</li>
                     <li>Starte : Empty App (Qwik City + Qwik)</li>
                     <li>Installation des dependences : oui</li>
@@ -112,13 +103,16 @@ o  Finishing the install. Wanna hear a joke?
             </section>
             <section>
                 <p>Structure du projet</p>
-                <pre><code data-line-numbers="4|5|6|7|8|9|10|11|12">power-rangers-app
+                <pre><code data-line-numbers="4-5|6|7|8-10|11|12|13|14|15">power-rangers-app
 ├─ README.md
 ├─ package.json
-├─ public             // Contient des fichiers statiques, seront copiés dans le dossier dist
+├─ public             // Contient des fichiers statiques qui
+|                     // seront copiés dans le dossier dist
 └─ src                // Contient le code de l'application
     ├─ components     // Les composants qwik
-    ├─ entry.ssr.tsx  // Point d'entrée commun dans tous les cas où l'application est rendue en dehors du navigateur
+    ├─ entry.ssr.tsx  // Point d'entrée commun dans
+    |                 // tous les cas où l'application est
+    |                 // rendue en dehors du navigateur
     ├─ global.css     // Fichier CSS global
     ├─ root.tsx       // Premier composant qui sera rendu
     └─ routes         // L'annuaire des routes de l'application
@@ -216,7 +210,7 @@ o  Finishing the install. Wanna hear a joke?
 
         <section data-state="medium">
             <section>
-                Qwik niveau 2
+                <h2>Qwik niveau 2</h2>
             </section>
 
             <section>
@@ -1356,6 +1350,123 @@ o  Finishing the install. Wanna hear a joke?
             </section>
         </section>
 
+        <section data-state="quiz">
+            <section>
+                <h2>Quiz</h2>
+            </section>
+            <section data-quiz>
+                <h3>Quel est le concept-clé de Qwik ?</h3>
+                <p class="fragment green">La Résumabilité</p>
+            </section>
+            <section data-quiz>
+                <h3>Quel est son pricipal avantage ?</h3>
+                <p>Il est plus puissant</p>
+                <p class="fragment highlight-green">Il est plus fainéant</p>
+                <p>Il est plus intelligent</p>
+                <aside class="notes">
+                    Sa grande force réside dans toutes les choses qu'il évite de charger / d'exécuter
+                </aside>
+            </section>
+            <section data-quiz>
+                <h3>Ce code est-il valide ?</h3>
+                <pre>
+                    <code data-trim class="code-font-sm typescript" >
+                        <script type="text/template">
+                            component$(() => {
+                                const foo = new BroadcastChannel('channel');
+                                return <div onClick$={() => console.log(foo)}/>
+                            });
+                        </script>
+                    </code>
+                </pre>
+                <p>Oui</p>
+                <p class="fragment highlight-green">Non</p>
+                <aside class="notes">
+                    On ne peut pas sérialiser un BroadcastChannel
+                </aside>
+            </section>
+            <section data-quiz>
+                <h3>Ce code est-il valide ?</h3>
+                <pre>
+                    <code data-trim class="code-font-sm typescript" >
+                        <script type="text/template">
+                            component$(() => {
+                            const foo = setTimeout(() => console.log('hello'), 1000);
+                            return <div onClick$={() => console.log(foo)}/>
+                            });
+                        </script>
+                    </code>
+                </pre>
+                <p class="fragment highlight-green">Oui</p>
+                <p>Non</p>
+                <p class="fragment green">
+                    Mais ce n'est pas intelligent pour autant
+                </p>
+                <aside class="notes">
+                    Alors le retour d'un setTimeout est un entier, donc techniquement sérializable.
+                    Cependant, si on exécute le setTimeout côté server pour le transférer côté client...
+                </aside>
+            </section>
+            <section data-quiz>
+                <h3>Ce code peut-il être exécuté ?</h3>
+                <pre>
+                    <code data-trim class="code-font-sm typescript" >
+                        <script type="text/template">
+                            useTask$(() => {
+                                doSomething();
+                            });
+                        </script>
+                    </code>
+                </pre>
+                <p>Côté client</p>
+                <p class="fragment highlight-green">Côté serveur</p>
+                <p>Les 2</p>
+                <aside class="notes">
+                    Use task est spécifiquement déclenché en SSR
+                </aside>
+            </section>
+            <section data-quiz>
+                <h3>Ce code peut-il être exécuté ?</h3>
+                <pre>
+                    <code data-trim class="code-font-sm typescript" >
+                        <script type="text/template">
+                            useOnDocument$(() => {
+                                doSomething();
+                            });
+                        </script>
+                    </code>
+                </pre>
+                <p class="fragment highlight-green">Côté client</p>
+                <p>Côté serveur</p>
+                <p>Les 2</p>
+                <aside class="notes">
+                    Use on Document permet de déposer un listener sur document
+                    Use Visible task attends spécifiquement l'apparition du composant dans la vue
+                    Exemples: setTimeout après affichage, ...
+                </aside>
+            </section>
+            <section data-quiz>
+                <h3>Ce code peut-il être exécuté ?</h3>
+                <pre>
+                    <code data-trim class="code-font-sm typescript" >
+                        <script type="text/template">
+                            export const useProductDetails = routeLoader$(async (requestEvent) => {
+                                const res = await fetch(`https://.../products/${requestEvent.params.productId}`);
+                                const product = await res.json();
+                                return product as Product;
+                            });
+                        </script>
+                    </code>
+                </pre>
+                <p>Côté client</p>
+                <p class="fragment highlight-green">Côté serveur</p>
+                <p>Les 2</p>
+                <aside class="notes">
+                    Même si on fait de la navigation côté client, cette partie reste déportée sur le serveur
+                </aside>
+            </section>
+        </section>
+
         <section data-state="bonus">
             <section>
                 <h2>Bonus stage</h2>
@@ -1550,13 +1661,13 @@ o  Finishing the install. Wanna hear a joke?
     </div>
 </div>
 
-<script src="../dist/reveal.js"></script>
-<script src="../plugin/notes/notes.js"></script>
-<script src="../plugin/markdown/markdown.js"></script>
-<script src="../plugin/highlight/highlight.js"></script>
+<script src="./dist/reveal.js"></script>
+<script src="./plugin/notes/notes.js"></script>
+<script src="./plugin/markdown/markdown.js"></script>
+<script src="./plugin/highlight/highlight.js"></script>
 <script type="module">
-    import RevealGamepadController from "../node_modules/@cfrezier/reveal-gamepad-controller-plugin/dist/index.js";
-    import RevealProgressImage from "../node_modules/@cfrezier/reveal-progress-image-plugin/dist/index.js";
+    import RevealGamepadController from "./plugin/reveal-gamepad-controller-plugin/dist/index.js";
+    import RevealProgressImage from "./plugin/reveal-progress-image-plugin/dist/index.js";
 
     const urlParams = new URLSearchParams(window.location.search);
     const receiver = urlParams.get('receiver');
