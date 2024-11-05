@@ -31,6 +31,9 @@ function askStepGPT(imagesAndChoices) {
         });
 }
 
+let imgLoaded = () => {
+};
+
 document.addEventListener('DOMContentLoaded', function () {
     let currentIndex = 0;
     const imageElement = document.getElementById('image');
@@ -70,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayCurrentSet() {
         imageElement.classList.remove('fade-in');
-        setTimeout(() => {
-            const currentSet = imagesAndChoices[currentIndex];
-            imageElement.src = currentSet.image;
+        const currentSet = imagesAndChoices[currentIndex];
+
+        imageElement.onload = () => {
             imageElement.classList.add('fade-in');
             choiceButtons.forEach((button, index) => {
                 if (currentSet.choices && currentSet.choices[index]) {
@@ -88,7 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
             story.innerText = currentSet.story;
-        }, 500);
+        };
+
+        imageElement.src = currentSet.image;
     }
 
     function nextSet(selected = 0) {
@@ -212,7 +217,7 @@ const promptForText = (imagesAndChoices) => {
 
     prompt[prompt.length - 1].content = prompt[prompt.length - 1].content + " " + responseFormatJson;
 
-    if(imagesAndChoices.length > 5) {
+    if (imagesAndChoices.length > 5) {
         prompt[prompt.length - 1].content += " Tu as atteint la fin de l'histoire. Tu peux maintenant omettre le champ choices et retourner uniquement un objet avec le champ story.";
     }
 
@@ -233,7 +238,10 @@ const promptForImage = (imagesAndChoices) => {
     const lastImageAndChoices = imagesAndChoices[imagesAndChoices.length - 1];
     const prompt = {
         ...baseMessagesImage,
-        prompt: `${baseMessagesImage.prompt} ${lastImageAndChoices ? `qui effectue l'action suivante: ${lastImageAndChoices.choices[lastImageAndChoices.selected]}` : ''})`
+        prompt: `${baseMessagesImage.prompt} qui effectue les actions suivantes: ${imagesAndChoices.map(({
+                                                                                                             choices,
+                                                                                                             selected
+                                                                                                         }) => choices[selected]).join(' et ')}`,
     };
 
     console.log(JSON.stringify(prompt));
