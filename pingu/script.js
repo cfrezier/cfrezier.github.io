@@ -198,9 +198,10 @@ const baseMessagesTexte = [
     {
         "role": "user",
         "content": `Salut. Nous allons joué à un jeu textuel qui racontera les aventures de Pingu, le pingouin au pull à capuche multicolore. Le point de départ est le suivant : ${pinguStory}. Après environ 5 péripéties, il faudrait arriver à la fin de l'histoire : le bug informatique venait en fait d'un manque de glaçon dans le générateur électrique alimentant le serveur central de la banquise.` +
-            "En partant de ces informations, j'aimerais que tu racontes à chaque fois une courte péripétie d'un centaine de mots environ, avec en finalité un choix entre 2 options possibles pour Pingu. Par exemple : En quittant son village, Pingu doit rejoindre le continent pour chercher l'origine du bug qui a bloqué l'ensemble des ordinateurs de son village. Deux choix s'offre à lui :\n" +
+            "En partant de ces informations, j'aimerais que tu racontes à chaque fois une courte péripétie d'un centaine de mots environ, avec en finalité un choix entre 2 et 4 options possibles pour Pingu. Par exemple : En quittant son village, Pingu doit rejoindre le continent pour chercher l'origine du bug qui a bloqué l'ensemble des ordinateurs de son village. Trois choix s'offre à lui :\n" +
             "Rejoindre le continent en bâteau.\n" +
             "Rejoindre le continent en avion.\n" +
+            "Utiliser un traineau.\n" +
             "Tu peux directement commencé avec la première péripétie.\n" +
             "Après 5 péripéties, le champ choices sera facultatif. Si l’histoire arrive à son terme, tu pourras l’omettre et retourner uniquement un objet avec le champ story.\n"
     }
@@ -219,6 +220,9 @@ const promptForText = (imagesAndChoices) => {
 
     if (imagesAndChoices.length > 5) {
         prompt[prompt.length - 1].content += " Tu as atteint la fin de l'histoire. Tu peux maintenant omettre le champ choices et retourner uniquement un objet avec le champ story.";
+    } else {
+        const nb = Math.round((Math.random() * 1000) % 3)  + 2;
+        prompt[prompt.length - 1].content += ` Propose ${nb} choix dans le champ choices.`;
     }
 
     console.log(JSON.stringify({messages: prompt}));
@@ -238,10 +242,7 @@ const promptForImage = (imagesAndChoices) => {
     const lastImageAndChoices = imagesAndChoices[imagesAndChoices.length - 1];
     const prompt = {
         ...baseMessagesImage,
-        prompt: `${baseMessagesImage.prompt} qui effectue les actions suivantes: ${imagesAndChoices.map(({
-                                                                                                             choices,
-                                                                                                             selected
-                                                                                                         }) => choices[selected]).join(' et ')}`,
+        prompt: `${baseMessagesImage.prompt} ${lastImageAndChoices ? `qui effectue l'action suivante: ${lastImageAndChoices.choices[lastImageAndChoices.selected]}` : ''})`
     };
 
     console.log(JSON.stringify(prompt));
