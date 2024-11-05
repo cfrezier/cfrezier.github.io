@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onepoint Pingui</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./loader.css">
+</head>
+<body>
+<div id="container">
+  <nav id="icon">
+    <img id="onepoint" src="./images/onepoint.png" alt="Image">
+  </nav>
+  <div id="step-container">
+    <h1>Étape <span id="step">1/X</span></h1>
+  </div>
+  <div id="image-container">
+    <img id="image" src="" alt="Image">
+    <p id="story">
+      L'histoire de Pingu
+    </p>
+  </div>
+  <div id="choices-container">
+    <button class="choice" id="choice1"></button>
+    <button class="choice" id="choice2"></button>
+    <button class="choice" id="choice3"></button>
+    <button class="choice" id="choice4"></button>
+    <button class="choice" id="choice5"></button>
+    <button class="choice" id="choice6"></button>
+    <button class="choice" id="choice7"></button>
+    <button class="choice" id="choice8"></button>
+    <button class="choice" id="choice9"></button>
+  </div>
+  <div class="loader" id="loader">
+    <div id="bar"></div>
+  </div>
+  <button id="replay-button">Revoir l'histoire complète</button>
+  <button id="reset-button">Tout recommencer</button>
+  <div id="request-loader">
+    <div class="dot-loader"></div>
+  </div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
