@@ -85,12 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         story.innerText = pinguStory.start;
         askStepGPT(imagesAndChoices)
             .then((data) => {
-                const parsed = JSON.parse(data[0].choices[0].message.content.replaceAll(/```/g, '').replaceAll(/\n/g, ' ').replace(/^json /, ''));
-                imagesAndChoices.push({
-                    image: data[1].data[0].url,
-                    choices: parsed.choices,
-                    story: pinguStory.start + '. ' + parsed.story
-                });
+                addingStepToStory(data, pinguStory.start);
                 localStorage.setItem('imagesAndChoices', JSON.stringify(imagesAndChoices));
                 updateStep();
                 displayCurrentSet();
@@ -132,6 +127,21 @@ document.addEventListener('DOMContentLoaded', function () {
         replayButton.style.display = imagesAndChoices.length === 1 ? 'none' : 'unset';
     }
 
+    function addingStepToStory(data, start = '') {
+        const cleanedText = data[0].choices[0].message.content.replaceAll(/```/g, '').replaceAll(/\n/g, ' ').replace(/^json /, '');
+        let parsed = {story: '', choices: []};
+        try {
+            parsed = JSON.parse(cleanedText);
+        } catch (e) {
+            parsed = JSON.parse(cleanedText.substring(0, cleanedText.lastIndexOf('}')) + '}');
+        }
+        imagesAndChoices.push({
+            image: data[1].data[0].url,
+            choices: parsed.choices,
+            story: (start.length > 0 ? start + '. ' : '') + parsed.story
+        });
+    }
+
     function nextSet(selected = 0) {
         const currentSet = imagesAndChoices[currentIndex];
         if (currentSet.selected === undefined || currentIndex === imagesAndChoices.length - 1) {
@@ -140,12 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             askStepGPT(imagesAndChoices)
                 .then((data) => {
-                    const parsed = JSON.parse(data[0].choices[0].message.content.replaceAll(/```/g, '').replaceAll(/\n/g, ' ').replace(/^json /, ''));
-                    imagesAndChoices.push({
-                        image: data[1].data[0].url,
-                        choices: parsed.choices,
-                        story: parsed.story
-                    });
+                    addingStepToStory(data);
                     localStorage.setItem('imagesAndChoices', JSON.stringify(imagesAndChoices));
                     currentIndex = imagesAndChoices.length - 1;
                     updateStep();
