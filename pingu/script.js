@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     reset.addEventListener('click', function () {
         localStorage.removeItem('imagesAndChoices');
-        localStorage.setItem('STORY', `${Math.round(Math.random() * 1000 % Object.keys(stories).length)}`);
+        localStorage.setItem('STORY', `${Math.floor(Math.random() * 1000 % Object.keys(stories).length)}`);
         window.location.reload();
     });
 
