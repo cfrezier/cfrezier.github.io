@@ -40,7 +40,7 @@ const stories = [
     }
 ];
 
-let pinguStory = stories[parseInt(localStorage.getItem('STORY') ?? '0', 10)];
+let pinguStory = stories[parseInt(localStorage.getItem('FORCED_STORY') ?? localStorage.getItem('STORY') ?? '0', 10)];
 
 function askStepGPT(imagesAndChoices) {
     toggleRequestLoader(true);
