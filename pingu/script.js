@@ -5,6 +5,43 @@ const AUTOPLAY_STEP_DURATION = 5000;
 
 const API_KEY = localStorage.getItem('API_KEY') ?? 'put your api key in local storage, key API_KEY';
 
+const stories = [
+    {
+        start: "Pingu se trouve avec sa famille et ses amis dans son village sur la banquise. Un jour, un bug informatique inconnu a bloqué l'ensemble des ordinateurs du village de Pingu. Ce dernier part donc à l'aventure pour découvrir l'origine du bug",
+        end: "le bug informatique venait en fait d'un manque de glaçon dans le générateur électrique alimentant le serveur central de la banquise. Pingu a donc pu réparer le bug et sauver son village."
+    },
+    {
+        "start": "Pingu se réveille un matin avec une envie irrésistible de découvrir ce qui se cache derrière la grande montagne de glace.",
+        "end": "Après une journée d'exploration, Pingu découvre un magnifique lac gelé où il peut patiner avec ses amis."
+    },
+    {
+        "start": "Un jour, Pingu trouve une vieille carte au trésor dans le grenier de sa maison.",
+        "end": "Après avoir suivi les indices, Pingu déterre un coffre rempli de souvenirs de famille, comprenant des photos et des lettres anciennes."
+    },
+    {
+        "start": "Pingu décide de participer à la grande course de luge annuelle de son village.",
+        "end": "Grâce à son esprit d'équipe et à son pull multicolore porte-bonheur, Pingu remporte la course et célèbre avec tous ses amis."
+    },
+    {
+        "start": "Pingu décide de préparer un gâteau pour l'anniversaire de son ami, mais il n'a jamais cuisiné auparavant.",
+        "end": "Après avoir confondu le sucre avec le sel, le gâteau devient immangeable, mais tout le monde éclate de rire et finit par commander une pizza."
+    },
+    {
+        "start": "Pingu découvre une ancienne prophétie qui parle d'un pingouin destiné à sauver le royaume de glace.",
+        "end": "Avec courage et détermination, Pingu parvient à unir les clans de pingouins et à repousser une tempête glaciale menaçante, devenant ainsi un héros légendaire."
+    },
+    {
+        "start": "Un jour, Pingu trouve une mystérieuse amulette qui lui confère des pouvoirs magiques.",
+        "end": "En utilisant ses nouveaux pouvoirs, Pingu sauve ses amis d'une avalanche et devient le gardien respecté de l'amulette sacrée."
+    },
+    {
+        "start": "Pingu entend parler d'un trésor caché au sommet de la montagne interdite, gardé par un ancien esprit de glace.",
+        "end": "Après une ascension périlleuse et un face-à-face avec l'esprit, Pingu prouve sa valeur et découvre que le véritable trésor est la sagesse et l'amitié qu'il a gagnées en chemin."
+    }
+];
+
+let pinguStory = stories[parseInt(localStorage.getItem('STORY') ?? '0', 10)];
+
 function askStepGPT(imagesAndChoices) {
     toggleRequestLoader(true);
     return Promise.all([fetch('https://azopenai-bdx.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-08-01-preview', {
@@ -31,9 +68,6 @@ function askStepGPT(imagesAndChoices) {
         });
 }
 
-let imgLoaded = () => {
-};
-
 document.addEventListener('DOMContentLoaded', function () {
     let currentIndex = 0;
     const imageElement = document.getElementById('image');
@@ -48,14 +82,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const imagesAndChoices = JSON.parse(localStorage.getItem('imagesAndChoices')) ?? [];
 
     if (imagesAndChoices.length === 0) {
-        story.innerText = pinguStory;
+        story.innerText = pinguStory.start;
         askStepGPT(imagesAndChoices)
             .then((data) => {
                 const parsed = JSON.parse(data[0].choices[0].message.content.replaceAll(/```/g, '').replaceAll(/\n/g, ' ').replace(/^json /, ''));
                 imagesAndChoices.push({
                     image: data[1].data[0].url,
                     choices: parsed.choices,
-                    story: pinguStory + '. ' + parsed.story
+                    story: pinguStory.start + '. ' + parsed.story
                 });
                 localStorage.setItem('imagesAndChoices', JSON.stringify(imagesAndChoices));
                 updateStep();
@@ -94,6 +128,8 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         imageElement.src = currentSet.image;
+
+        replayButton.style.display = imagesAndChoices.length === 1 ? 'none' : 'unset';
     }
 
     function nextSet(selected = 0) {
@@ -178,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     reset.addEventListener('click', function () {
         localStorage.removeItem('imagesAndChoices');
+        localStorage.setItem('STORY', `${Math.round(Math.random() * 1000 % Object.keys(stories).length)}`);
         window.location.reload();
     });
 
@@ -185,8 +222,6 @@ document.addEventListener('DOMContentLoaded', function () {
         autoplay();
     }
 });
-
-const pinguStory = 'Pingu se trouve avec sa famille et ses amis dans son village sur la banquise. Un jour, un bug informatique inconnu a bloqué l\'ensemble des ordinateurs du village de Pingu. Ce dernier part donc à l\'aventure pour découvrir l\'origine du bug';
 
 const responseFormatJson = "J'aimerais que tes réponses soient au format JSON avec les champs suivants :\n" +
     "story : champ texte contenant la suite de l'histoire, sans les choix que Pingu doit faire\n" +
@@ -197,7 +232,7 @@ const baseMessagesTexte = [
     {"role": "system", "content": "You are a helpful assistant."},
     {
         "role": "user",
-        "content": `Salut. Nous allons joué à un jeu textuel qui racontera les aventures de Pingu, le pingouin au pull à capuche multicolore. Le point de départ est le suivant : ${pinguStory}. Après environ 5 péripéties, il faudrait arriver à la fin de l'histoire : le bug informatique venait en fait d'un manque de glaçon dans le générateur électrique alimentant le serveur central de la banquise.` +
+        "content": `Salut. Nous allons joué à un jeu textuel qui racontera les aventures de Pingu, le pingouin au pull à capuche multicolore. Le point de départ est le suivant : ${pinguStory.start}. Après environ 5 péripéties, il faudrait arriver à la fin de l'histoire : ${pinguStory.end}` +
             "En partant de ces informations, j'aimerais que tu racontes à chaque fois une courte péripétie d'un centaine de mots environ, avec en finalité un choix entre 2 et 4 options possibles pour Pingu. Par exemple : En quittant son village, Pingu doit rejoindre le continent pour chercher l'origine du bug qui a bloqué l'ensemble des ordinateurs de son village. Trois choix s'offre à lui :\n" +
             "Rejoindre le continent en bâteau.\n" +
             "Rejoindre le continent en avion.\n" +
@@ -221,7 +256,7 @@ const promptForText = (imagesAndChoices) => {
     if (imagesAndChoices.length > 5) {
         prompt[prompt.length - 1].content += " Tu as atteint la fin de l'histoire. Tu peux maintenant omettre le champ choices et retourner uniquement un objet avec le champ story.";
     } else {
-        const nb = Math.round((Math.random() * 1000) % 3)  + 2;
+        const nb = Math.round((Math.random() * 1000) % 3) + 2;
         prompt[prompt.length - 1].content += ` Propose ${nb} choix dans le champ choices.`;
     }
 
