@@ -6,13 +6,13 @@
 
     <title>Qwik training</title>
 
-    <link rel="stylesheet" href="../dist/reset.css">
-    <link rel="stylesheet" href="../dist/reveal.css">
-    <link rel="stylesheet" href="../dist/theme/white.css">
+    <link rel="stylesheet" href="./dist/reset.css">
+    <link rel="stylesheet" href="./dist/reveal.css">
+    <link rel="stylesheet" href="./dist/theme/white.css">
     <link rel="stylesheet" href="./slides.css">
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="./plugin/highlight/monokai.css">
 
     <link rel='stylesheet' id='font-family-1-css'
           href='https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd'
@@ -42,57 +42,27 @@
             <section>
                 <h2>Qwik niveau 1</h2>
             </section>
-
             <section data-state="pr-robot">
-                <h3>Pré-requis</h3>
-                <details>
-                    <summary>En local</summary>
-                    <ul>
-                        <li>Node.js 18+</li>
-                        <li>NPM v10.7.0+</li>
-                        <li>Git</li>
-                    </ul>
-                </details>
-                <details>
-                    <summary>ou avec gitpod</summary>
-                    <ul>
-                        <li>https://www.gitpod.io</li>
-                    </ul>
-                </details>
-                <p>https://github.com/cfrezier/qwik-training</p>
+                <p>Pré-requis minimums</p>
+                <ul>
+                    <li>Node.js 18+</li>
+                    <li>NPM v10.7.0+</li>
+                    <li>Git</li>
+                </ul>
             </section>
             <section>
-                <p>Votre première application Qwik</p>
-            </section>
-            <section>
-                <p>Création application blanche</p>
-                <pre data-id="code-animation">
-                    <code data-trim class="code-font-sm html">
-$ npm create qwik@latest
-o  Where would you like to create your new project? (Use '.' or './' for current directory)
-|  --> ./power-rangers-app <--
-o  Select a starter
-|  Empty App (Qwik City + Qwik)
-o  Would you like to install npm dependencies?
-|  Yes
-o  Initialize a new git repository?
-|  No
-o  Finishing the install. Wanna hear a joke?
-|  ¯\(°_o)/¯
-...
-—  Happy coding! 🎉
-                    </code>
-                </pre>
+                <p>Création de l'application power ranger</p>
             </section>
             <section data-state="tp">
-                <h2>TP</h2>
+                <p>TP</p>
                 <ul>
                     <li>Création d'une application qwik "power-rangers-app"</li>
+                    <li>`npm create qwik@latest`</li>
                     <li>Nom : power-rangers-app</li>
                     <li>Starte : Empty App (Qwik City + Qwik)</li>
                     <li>Installation des dependences : oui</li>
                     <li>Initialisation du git : non</li>
-                    <li>cd ../power-rangers-app</li>
+                    <li>cd power-rangers-app</li>
                     <li>npm run start</li>
                 </ul>
                 <aside class="notes">
@@ -103,80 +73,173 @@ o  Finishing the install. Wanna hear a joke?
             </section>
             <section>
                 <p>Structure du projet</p>
-                <pre><code data-line-numbers="4-5|6|7|8-10|11|12|13|14|15">power-rangers-app
+                <pre><code data-line-numbers="4|5|6|7|8|9|10|11|12">power-rangers-app
 ├─ README.md
 ├─ package.json
-├─ public             // Contient des fichiers statiques qui
-|                     // seront copiés dans le dossier dist
-└─ src                // Contient le code de l'application
-    ├─ components     // Les composants qwik
-    ├─ entry.ssr.tsx  // Point d'entrée commun dans
-    |                 // tous les cas où l'application est
-    |                 // rendue en dehors du navigateur
-    ├─ global.css     // Fichier CSS global
-    ├─ root.tsx       // Premier composant qui sera rendu
-    └─ routes         // L'annuaire des routes de l'application
-        ├─ index.tsx  // Page d'accueil
-        └─ layout.tsx // La mise en page racine
+├─ public
+└─ src
+    ├─ components
+    ├─ entry.ssr.tsx
+    ├─ global.css
+    ├─ root.tsx
+    └─ routes
+        ├─ index.tsx
+        └─ layout.tsx
                 </code>
                 </pre>
+                <aside class="notes">
+                    <ul>
+                        <li>README.md
+                        <li>package.json
+                        <li>public -> Contient des fichiers statiques qui seront copiés dans le dossier dist</li>
+                        <li>src -> Contient le code de l'application</li>
+                        <li>components -> Les composants qwik</li>
+                        <li>entry.ssr.tsx -> Point d'entrée pour le serveur afin de générer le HTML initial de l'application avant de l'envoyer au client</li>
+                        <li>global.css -> Fichier CSS global</li>
+                        <li>root.tsx -> Premier composant qui sera rendu</li>
+                        <li>routes -> L'annuaire des routes de l'application</li>
+                        <li>index.tsx -> Page d'accueil</li>
+                        <li>layout.tsx -> La mise en page racine</li>
+                    </ul>
+                </aside>
             </section>
             <section>
-                <p>Premier composant & évènement</p>
+                <p>Composant et évènements</p>
+                <pre>
+                    <code data-trim class="code-font typescript">
+                        export default component$&lt;PropsType&gt;((props) => {
+                            const do = $(()=>...);
+                            return &lt;button onClick$={()=>do()}&gt;Clique la&lt;button/&gt;
+                        })
+                    </code>
+                </pre>
                 <aside class="notes">
                     <ul>
                         <li>Montrer comment un composant qwik est formé</li>
-                        <li>montrer handler</li>
+                        <li>Montrer handler</li>
                     </ul>
                 </aside>
             </section>
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">hello world (créer un composant simple, avec un texte)</li>
-                    <li class="fragment">rajouter un bouton, un click dessus, qui fait un console.log</li>
-                    <li class="fragment">Correction : 02-Première-composant</li>
+                    <li class="fragment">Nettoyer la page `index.tsx`</li>
+                    <li class="fragment">Créer un composant hello-world.tsx dans le dossier components et l'appeler dans ...src/routes/index.tsx</li>
+                    <li class="fragment">Passer un `props` pour variabiliser le `world` selon le composant parent (ne pas oublier le typage)</li>
+                    <li class="fragment">Ajouter un bouton avec un évènement onClick$ pour faire un console.log dans une
+                        méthode $
+                    </li>
+                    <li class="fragment">👀Inspecter le navigateur👀</li>
+                    <li class="fragment">Live coding</li>
                 </ul>
             </section>
-
             <section>
-                <p>Boucles et conditions</p>
+                <p>Rendu avec des conditions, des listes et du binding</p>
                 <ul>
-                    <li class="fragment">if</li>
-                    <li class="fragment">else</li>
-                    <li class="fragment">for (+key)</li>
-                    <li class="fragment">bind attribute</li>
+                    <li class="fragment">if/else, ternaire et &&</li>
+                    <li class="fragment">map et key</li>
+                    <li class="fragment">Binding attribute</li>
                 </ul>
+
+            </section>
+            <section>
+                <pre>
+                    <code data-trim class="code-font typescript" data-line-numbers="1|2|3|4|5">
+                        {if(...){}else{}}
+                        {condition ? ... : ...}
+                        {condition && ...}
+                        {[].map(()=>...)}
+                        $&lt;input bind:value={...} &gt;
+                    </code>
+                </pre>
             </section>
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">['a', 'b', 'c'].map(...)</li>
-                    <li class="fragment">Correction : 03-Boucles-et-conditions</li>
+                    <li class="fragment">Importer SAGA_POWER_RANGERS</li>
+                    <li class="fragment">Créer un composant power-ranger-list.tsx</li>
+                    <li class="fragment">Faire apparaitre le nom des power rangers avec une boucle `map`</li>
+                    <li class="fragment">Utiliser les balises ul li</li>
+                    <li class="fragment">Ajout d'une condition d'affichage selon la couleur d'un power ranger</li>
+                    <li class="fragment">Modification du filtre couleur avec un input `bind`</li>
+                    <li class="fragment">Petit aide !!!</li>
+                    <li class="fragment">Live coding</li>
                 </ul>
             </section>
 
             <section>
-                <p>Signaux</p>
+                <p>Signal et Store</p>
+                <pre>
+                        <code data-trim class="code-font typescript">
+                            const ... = useSignal<...>(...);
+                            const ... = useStore<...>(..., { deep: boolean });
+                        </code>
+                    </pre>
                 <aside class="notes">
                     <ul>
-                        <li>Montrer comment on utilise les signaux dans Qwik</li>
+                        <li>Modifier dynamiquement le template</li>
+                        <li>Montrer la différence</li>
+                        <li>option deep permettant de suivre uniquement les propriétés de niveau supérieur, perf</li>
                     </ul>
                 </aside>
             </section>
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">compteur</li>
-                    <li class="fragment">todo-list (pour forcer la découverte du "prevent default"</li>
-                    <li class="fragment">Correction : 04-Signaux</li>
+                    <li class="fragment">Créer un composant dream-team.txs, l'appeler dans power-ranger-list</li>
+                    <li class="fragment">Le composant DreamTeam a en props theSelection de type string</li>
+                    <li class="fragment">Créer un useSignal theSelection de type string dans PowerRangerList</li>
+                    <li class="fragment">Ajouter dans theSelection le nom du power ranger via un bouton, onClick$</li>
+                </ul>
+            </section>
+            <section data-state="tp">
+                <p>Suite du TP</p>
+                <ul>
+                    <li class="fragment">Changer theSelection par une liste de string pour en avoir plusieurs</li>
+                    <li class="fragment">Utiliser les balises ul li</li>
+                    <li class="fragment">👀Inspecter le navigateur👀</li>
+                    <li class="fragment">Live coding</li>
                 </ul>
             </section>
             <section>
-                <p>CSS Modules</p>
+                <p>CSS modules et CSS global</p>
+                <p class="fragment">Le CSS global est utilisé pour les styles qui doivent être appliqués sur tout le site</p>
+                <p class="fragment">Le CSS module est utilisé pour les styles qui doivent être appliqués sur un composant</p>
+            </section>
+            <section>
+                <p>Slot</p>
+                <pre>
+                    <code data-trim class="code-font typescript">
+                        // Composant bouton.tsx
+                        export default component$(() =&gt; {
+
+                          return (
+                            &lt;&gt;
+                                &lt;Slot/&gt;
+                            &lt;/&gt;
+                          );
+                        });
+                        // Utilisation dans un aure composant
+                        &lt;Bouton&gt;
+                            &lt;p>Clique ici&lt;/p&gt;
+                        &lt;/Bouton&gt;
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre>
+                    <code data-trim class="code-font typescript">
+                        import style from './MyComponent.css?inline';
+                        useStyles$(style);
+                        useStylesScoped$(style);
+                    </code>
+                    </pre>
                 <aside class="notes">
                     <ul>
                         <li>utilisation des css module</li>
+                        <li>Importer du CSS sous forme de chaîne dans Vite, vous devez ajouter le ?inline paramètre de
+                            requête à l'importation
+                        </li>
                         <li>scoped</li>
                         <li>inline</li>
                     </ul>
@@ -185,39 +248,53 @@ o  Finishing the install. Wanna hear a joke?
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">rendre "Joli" la todolist</li>
-                    <li class="fragment">Correction : 05-CSS-Modules</li>
+                    <li class="fragment">Création d'un fichier style.css</li>
+                    <li class="fragment">Personnaliser la balise ul avec `list-style-type` et la méthode useStyles$ dans PowerRangerList</li>
+                    <li class="fragment">Remplacer par useStyles$ par useStylesScoped$</li>
+                    <li class="fragment">👀Inspecter le navigateur👀</li>
+                    <li class="fragment">Live coding</li>
                 </ul>
             </section>
             <section>
-                <p>TUA</p>
-                <aside class="notes">
-                    <ul>
-                        <li>adapter</li>
-                        <li>lancement</li>
-                    </ul>
-                </aside>
+                <p>Et les tests</p>
+                <pre>
+                        <code data-trim class="code-font typescript">
+                            test(`[ExampleTest Component]: Should render`, async () => {
+                              const { screen, render } = await createDOM();
+                              await render(&lt;ExampleComponent /&gt;);
+                              expect(screen.outerHTML).toContain(...);
+                            });
+                        </code>
+                    </pre>
             </section>
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">installer l'adapter vitest</li>
-                    <li class="fragment">écrire des tests</li>
-                    <li class="fragment">Correction : 06-Test-unitaire-automatisé</li>
+                    <li class="fragment">Installer de l'adapter vitest `npm run qwik add vitest`</li>
+                    <li class="fragment">Ecrire un test pour PowerRangerDreamTeam</li>
+                    <li class="fragment">Live coding</li>
                 </ul>
             </section>
         </section>
-
         <section data-state="medium">
             <section>
                 <h2>Qwik niveau 2</h2>
             </section>
-
             <section>
-                <p>Store / Contextes</p>
+                <p>Contextes</p>
+                    <pre>
+                        <code data-trim class="code-font typescript">
+                            // Au dessus du composant parent
+                            export const contextId = createContextId&lt;Signal&lt;...&gt;&gt;(...);
+                            // Dans le composant parent
+                            useContextProvider(contextId, ...);
+                            // Dans les composants enfants
+                            const ... = useContext(contextId);
+                        </code>
+                    </pre>
                 <aside class="notes">
                     <ul>
-                        <li>serialization</li>
+                        <li>Déclaration de l'id</li>
                         <li>ce qu'on peut mettre ou pas</li>
                     </ul>
                 </aside>
@@ -225,98 +302,270 @@ o  Finishing the install. Wanna hear a joke?
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">faire intégrer un clearInterval, une fonction, une classe dans le store</li>
+                    <li class="fragment">Supprimer le props theSelection dans DreamTeam</li>
+                    <li class="fragment">Modification PowerRangerList pour utiliser un context</li>
+                    <li class="fragment">Récupération dans DreamTeam</li>
+                    <li class="fragment">Live coding</li>
                 </ul>
             </section>
 
             <section>
                 <p>Qwik City - routing</p>
+                <pre class="fragment">
+                        <code data-trim class="code-font typescript">
+                            src/
+                            └── routes/
+                                ├── about/
+                                │   └── index.tsx # https://example.com/about
+                                ├── details/
+                                │   └── [id]/
+                                │       └── index.tsx # https://example.com/docs/1234
+                                ├── [...catchall]/
+                                │   └── index.tsx # https://example.com/anything/else
+                                └── layout.tsx # layout par défaut pour tous les pages
+                        </code>
+                    </pre>
                 <aside class="notes">
                     <ul>
-                        <li>directory based</li>
-                        <li>slot/layout</li>
-                        <li>useLocation()</li>
+                        <li>Se basse sur le dossier routes</li>
+                        <li>Layout serra utilisé pour les routs au même niveau</li>
+                        <li>Slot permet de projeter ces enfants dans l'arborescence DOM</li>
+                        <li>Récupération de données avec useLocation</li>
                     </ul>
                 </aside>
             </section>
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">TODO</li>
+                    <li class="fragment">Création d'une page `Mon power ranger`</li>
+                    <li class="fragment">Accéder directement via l'url</li>
                 </ul>
             </section>
-
             <section>
-                <p>Qwik City - navigation SPA/MPA</p>
-                <ul>
-                    <li class="fragment">Link</li>
-                    <li class="fragment">a</li>
-                </ul>
+                <p>Pour récupération de la donnée passé dans l'url</p>
+                <pre class="fragment">
+                    <code data-trim class="code-font typescript">
+                        import { useLocation } from '@builder.io/qwik-city';
+                        // Dans le composant
+                        const routeLocation = useLocation();
+                        /*
+                        routeLocation.params[...]
+                        routeLocation.isNavigation
+                        routeLocation.prevUrl
+                        routeLocation.url
+                        */
+                    </code>
+                </pre>
             </section>
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">différence entre les 2 liens via debug / panel network</li>
+                    <li class="fragment">Création d'une page dynamique `detail` avec l'id d'une saga</li>
+                    <li class="fragment">Récupérer la donnée avec SAGA_POWER_RANGERS</li>
+                    <li class="fragment">Accéder directement via l'url</li>
                 </ul>
             </section>
-
             <section>
-                <p>Qwik City - resources</p>
+                <p>Qwik City - Navigation SPA/MPA</p>
+                <pre>
+                    <code data-trim class="code-font typescript">
+                        &lt;Link href=""&gt;
+                            ...
+                        &lt;/Link&gt;
+                    </code>
+                </pre>
+            </section>
+            <section data-state="tp">
+                <p>TP</p>
+                <ul>
+                    <li class="fragment">Utilisation du composant `Link` pour aller sur la page `detail/[id]`</li>
+                    <li class="fragment">👀Inspecter le navigateur👀</li>
+                    <li class="fragment">Live coding</li>
+                </ul>
+            </section>
+            <section>
+                <p>Navigation MPA ou SPA 🧐</p>
+            </section>
+            <section data-state="tp">
+                <p>Évènement de navigation bizarre</p>
+                <p>Live coding</p>
                 <aside class="notes">
-                    <ul>
-                        <li>useResource</li>
-                        <li>track</li>
-                        <li>cleanup</li>
-                        <li>
-                            <Resource>, onPending, onRejected, onResolved, value
-                        </li>
-                    </ul>
+                    export default component$(() => {
+                    const go = $((event)=>{
+                    event.preventDefault();
+                    alert('tu ne pars pas')
+                    })
+                    return &lt;a href="http://google.com" preventdefault:click onClick$={go}&gt;Go to&lt;/a&gt;
+                    }
+                    )
                 </aside>
             </section>
             <section>
-                <p>Qwik City - Form</p>
+                <p>Qwik City - DocumentHead</p>
+                <pre>
+                    <code data-trim class="code-font typescript">
+                        // En dehors du composant
+                        export const ... = routeLoader$(async (requestEvent) => {
+                          return requestEvent.params...;
+                        });
+
+                        export const head: DocumentHead = ({resolveValue, params}) => {
+                          const ... = resolveValue(...);
+                          return {
+                            title: ...,
+                          };
+                        };
+                    </code>
+                </pre>
+            </section>
+            <section data-state="tp">
+                <p>TP</p>
+                <ul>
+                    <li class="fragment">Variabiliser le `title` selon le nom dans page détails d'un power rangers</li>
+                    <li class="fragment">Live coding</li>
+                </ul>
+            </section>
+            <section>
+                <p>Qwik City - routeLoaders$</p>
+                <pre>
+                    <code data-trim class="code-font typescript">
+                        // Au dessus du composant
+                        export const useData = routeLoader$(async (requestEvent) => {
+                          const res = await fetch(...);
+                          const data = await res.json();
+                          return data as ...;
+                        });
+                        // Dans le composant
+                        const signal = useData();
+                    </code>
+                    </pre>
                 <aside class="notes">
                     <ul>
-                        <li>passer signal en paramètre comme https://qwik.dev/docs/action/#actions-with-event-handlers
-                        </li>
-                        <li>onSubmitCompleted$</li>
+                        <li>Récupération de donnée pour le composant ...</li>
+                        <li>Ce code ne s'exécute que sur le serveur, après chaque navigation</li>
                     </ul>
                 </aside>
             </section>
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">afficher la liste des power rangers</li>
-                    <li class="fragment">https://github.com/theuiguru/PowerRangers/blob/gh-pages/assets/saga.json</li>
+                    <li class="fragment">Démarage du backend `node server.mjs`
+                    </li>
+                    <li class="fragment">Modifier le code pour récupération les données avec routeLoader$ sur
+                        http://localhost:8080/
+                    </li>
+                    <li class="fragment">Live coding</li>
                 </ul>
             </section>
-
             <section>
-                <p>Qwik City - head</p>
+                <p>Qwik City - useResource$</p>
+                <pre>
+                    <code data-trim class="code-font typescript">
+                        // Dans le composant
+                        const resource = useResource$&lt;...&gt;(
+                            async ({ track, cleanup }) => {
+                            track(() => ...);
+                            cleanup(() => ...);
+                            const resp = await fetch(...);
+                            const json = (await resp.json()) as ...;
+                            return json;
+                        }
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>Qwik City - Resources</p>
+                <pre>
+                    <code data-trim class="code-font typescript">
+                        &lt;Resource
+                            value={resource}
+                            onPending={()=> &lt;&gt;Loading...&lt;/&gt;}
+                            onRejected={()=> &lt;&gt;Erreur...&lt;/&gt;}
+                            onResolved={(data) => {
+                            return &lt;&gt;OK...&lt;/&gt;;
+                          }}
+                        &gt;
+                    </code>
+                </pre>
                 <aside class="notes">
-                    <ul>
-                        <li>statique</li>
-                        <li>dynamique</li>
-                        <li>renderToStream</li>
-                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li> Il est souvent souhaitable de commencer à récupérer les données sur le serveur dans le cadre de la requête HTTP initiale avant le rendu du composant</li>
+                            <li>Il s'agit plutôt d'une API de bas niveau qui est utile lorsque vous souhaitez récupérer des données dans le navigateur</li>
+                        </ul>
+                    </aside>
                 </aside>
             </section>
-            <section data-state="tp">
-                <p>TP</p>
-            </section>
-
             <section>
-                <p>Qwik City - routeLoaders</p>
-                <aside class="notes">
-                    <ul>
-                        <li></li>
-                    </ul>
-                </aside>
-            </section>
-            <section data-state="tp">
                 <p>TP</p>
+                <ul>
+                    <li class="fragment">Utilisation du composant Ressource avec le backend</li>
+                    <li class="fragment">Live coding</li>
+                </ul>
             </section>
+            <section>
+                <p>Qwik City - formulaire avec Modular Form</p>
+                <pre>
+                    <code data-trim class="code-font typescript" data-line-numbers="1-5|7-13|15|17-19|21-23|26-30|32-35|38-48">
+                        import { $, component$, type QRL } from '@builder.io/qwik';
+                        import { routeLoader$ } from '@builder.io/qwik-city';
+                        import type { InitialValues, SubmitHandler } from '@modular-forms/qwik';
+                        import { formAction$, useForm, valiForm$ } from '@modular-forms/qwik';
+                        import * as v from 'valibot';
 
+                        const LoginSchema = v.object({
+                          email: v.pipe(
+                            v.string(),
+                            v.nonEmpty('Please enter your email.'),
+                            v.email('The email address is badly formatted.'),
+                          )
+                        });
+
+                        type LoginForm = v.InferInput&lt;typeof LoginSchema&gt;;
+
+                        export const useFormLoader = routeLoader$&lt;InitialValues&lt;LoginForm&gt;&gt;(() =&gt; ({
+                          email: '',
+                        }));
+
+                        export const useFormAction = formAction$&lt;LoginForm&gt;((values) =&gt; {
+                          // Runs on server
+                        }, valiForm$(LoginSchema));
+
+                        export default component$(() =&gt; {
+                          const [loginForm, { Form, Field }] = useForm&lt;LoginForm&gt;({
+                            loader: useFormLoader(),
+                            action: useFormAction(),
+                            validate: valiForm$(LoginSchema),
+                          });
+
+                          const handleSubmit: QRL&lt;SubmitHandler&lt;LoginForm&gt;&gt; = $((values, event) =&gt; {
+                            // Runs on client
+                            console.log(values);
+                          });
+
+                          return (
+                            &lt;Form onSubmit$={handleSubmit}&gt;
+                              &lt;Field name="email"&gt;
+                                {(field, props) =&gt; (
+                                  &lt;div&gt;
+                                    &lt;input {...props} type="email" value={field.value} /&gt;
+                                    {field.error && &lt;div&gt;{field.error}&lt;/div&gt;}
+                                  &lt;/div&gt;
+                                )}
+                              &lt;/Field&gt;
+                              &lt;button type="submit"&gt;Login&lt;/button&gt;
+                            &lt;/Form&gt;
+                          );
+                        });
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>TP</p>
+                <ul>
+                    <li class="fragment">Non, je blague</li>
+                </ul>
+            </section>
         </section>
 
         <section data-state="why-qwik-so-cool">
@@ -688,8 +937,9 @@ o  Finishing the install. Wanna hear a joke?
                         import { component$ } from '@builder.io/qwik';
 
                         export default component$(() => {
-                            console.log('render');
-                            return <button onClick$={() => console.log('hello')}>Hello Qwik</button>;
+                        console.log('render');
+                        return
+                        <button onClick$={() => console.log('hello')}>Hello Qwik</button>;
                         });
                     </script>
                 </code>
@@ -1091,7 +1341,8 @@ o  Finishing the install. Wanna hear a joke?
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">Faire en sorte de sauvegarder le contenu de notre robot dans un fichier écrit dans un
+                    <li class="fragment">Faire en sorte de sauvegarder le contenu de notre robot dans un fichier écrit
+                        dans un
                         répertoire (temporaire)
                     </li>
                 </ul>
@@ -1193,7 +1444,9 @@ o  Finishing the install. Wanna hear a joke?
                 <p>TP</p>
                 <ul>
                     <li class="fragment">Logger tous les appels faits sur l'API</li>
-                    <li class="fragment">Si tu t'ennuies: Rediriger si non authentifié sur certaines routes (non corrigé)</li>
+                    <li class="fragment">Si tu t'ennuies: Rediriger si non authentifié sur certaines routes (non
+                        corrigé)
+                    </li>
                 </ul>
             </section>
 
@@ -1345,7 +1598,9 @@ o  Finishing the install. Wanna hear a joke?
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">Valider que toutes les parties du robot sont bien combinées pour pouvoir le sauvegarder dans le fichier</li>
+                    <li class="fragment">Valider que toutes les parties du robot sont bien combinées pour pouvoir le
+                        sauvegarder dans le fichier
+                    </li>
                 </ul>
             </section>
         </section>
@@ -1370,11 +1625,12 @@ o  Finishing the install. Wanna hear a joke?
             <section data-quiz>
                 <h3>Ce code est-il valide ?</h3>
                 <pre>
-                    <code data-trim class="code-font-sm typescript" >
+                    <code data-trim class="code-font-sm typescript">
                         <script type="text/template">
                             component$(() => {
-                                const foo = new BroadcastChannel('channel');
-                                return <div onClick$={() => console.log(foo)}/>
+                            const foo = new BroadcastChannel('channel');
+                            return
+                            <div onClick$={() => console.log(foo)}/>
                             });
                         </script>
                     </code>
@@ -1388,11 +1644,12 @@ o  Finishing the install. Wanna hear a joke?
             <section data-quiz>
                 <h3>Ce code est-il valide ?</h3>
                 <pre>
-                    <code data-trim class="code-font-sm typescript" >
+                    <code data-trim class="code-font-sm typescript">
                         <script type="text/template">
                             component$(() => {
                             const foo = setTimeout(() => console.log('hello'), 1000);
-                            return <div onClick$={() => console.log(foo)}/>
+                            return
+                            <div onClick$={() => console.log(foo)}/>
                             });
                         </script>
                     </code>
@@ -1410,10 +1667,10 @@ o  Finishing the install. Wanna hear a joke?
             <section data-quiz>
                 <h3>Ce code peut-il être exécuté ?</h3>
                 <pre>
-                    <code data-trim class="code-font-sm typescript" >
+                    <code data-trim class="code-font-sm typescript">
                         <script type="text/template">
                             useTask$(() => {
-                                doSomething();
+                            doSomething();
                             });
                         </script>
                     </code>
@@ -1428,10 +1685,10 @@ o  Finishing the install. Wanna hear a joke?
             <section data-quiz>
                 <h3>Ce code peut-il être exécuté ?</h3>
                 <pre>
-                    <code data-trim class="code-font-sm typescript" >
+                    <code data-trim class="code-font-sm typescript">
                         <script type="text/template">
                             useOnDocument$(() => {
-                                doSomething();
+                            doSomething();
                             });
                         </script>
                     </code>
@@ -1448,12 +1705,12 @@ o  Finishing the install. Wanna hear a joke?
             <section data-quiz>
                 <h3>Ce code peut-il être exécuté ?</h3>
                 <pre>
-                    <code data-trim class="code-font-sm typescript" >
+                    <code data-trim class="code-font-sm typescript">
                         <script type="text/template">
                             export const useProductDetails = routeLoader$(async (requestEvent) => {
-                                const res = await fetch(`https://.../products/${requestEvent.params.productId}`);
-                                const product = await res.json();
-                                return product as Product;
+                            const res = await fetch(`https://.../products/${requestEvent.params.productId}`);
+                            const product = await res.json();
+                            return product as Product;
                             });
                         </script>
                     </code>
@@ -1487,15 +1744,15 @@ o  Finishing the install. Wanna hear a joke?
                         ...
 
                         export default component$(() => {
-                            return <>
-                                <div class="onepoint">
+                        return <>
+                        <div class="onepoint">
                                     <ImageOnepoint/>
                                 </div>
-                                <div class="bdx-io">
+                        <div class="bdx-io">
                                     <ImageBdxIO/>
                                 </div>
-                                <Slot/>
-                            </>;
+                        <Slot/>
+                        </>;
                         });
                     </script>
                 </code>
@@ -1530,7 +1787,8 @@ o  Finishing the install. Wanna hear a joke?
             </section>
             <section>
                 <h2><a href="https://qwik.dev/docs/labs/devtools/" target="_blank">DevTools</a></h2>
-                <p class="fragment">Mécanisme pour éjecter les scripts tiers du temps de chargement de la page sans pour autant les supprimer entièrement</p>
+                <p class="fragment">Mécanisme pour éjecter les scripts tiers du temps de chargement de la page sans pour
+                    autant les supprimer entièrement</p>
             </section>
             <section>
                 <pre data-id="code-animation">
@@ -1551,8 +1809,12 @@ o  Finishing the install. Wanna hear a joke?
                 </ul>
                 <aside class="notes">
                     <ul>
-                        <li>QContext: Un état que Qwik a sérialisé pour un composant donné. Inclut les props du composant et un ensemble d'objets Task qui pourraient être exécutées par le composant.</li>
-                        <li>QRef: Si un élément a un observateur, alors la QRef rassemble tous les observateurs ainsi que les objets qui ont pu être capturés par eux.</li>
+                        <li>QContext: Un état que Qwik a sérialisé pour un composant donné. Inclut les props du
+                            composant et un ensemble d'objets Task qui pourraient être exécutées par le composant.
+                        </li>
+                        <li>QRef: Si un élément a un observateur, alors la QRef rassemble tous les observateurs ainsi
+                            que les objets qui ont pu être capturés par eux.
+                        </li>
                         <li>Qwik ne sérialise que les objets atteignables depuis un QContext, ou depuis une QRef.</li>
                     </ul>
                 </aside>
@@ -1577,7 +1839,8 @@ o  Finishing the install. Wanna hear a joke?
 
                 // An existing React component
                 function Greetings() {
-                    return <div>Hello from React</div>;
+                return
+                <div>Hello from React</div>;
                 }
 
                 // Qwik component wrapping the React component
@@ -1618,7 +1881,8 @@ o  Finishing the install. Wanna hear a joke?
             </section>
             <section>
                 <h2><a href="https://qwik.dev/docs/integrations/partytown/#partytown">Partytown</a></h2>
-                <p class="fragment">Mécanisme pour éjecter les scripts tiers du temps de chargement de la page sans pour autant les supprimer entièrement</p>
+                <p class="fragment">Mécanisme pour éjecter les scripts tiers du temps de chargement de la page sans pour
+                    autant les supprimer entièrement</p>
             </section>
             <section>
                 <pre data-id="code-animation">
@@ -1627,11 +1891,11 @@ o  Finishing the install. Wanna hear a joke?
                     import { QwikPartytown } from './components/partytown/partytown';
 
                     export default component$(() => {
-                        return (
-                            <QwikCityProvider>
+                    return (
+                    <QwikCityProvider>
                               <head>
-                                <meta charSet="utf-8" />
-                                <QwikPartytown forward={['gtag','dataLayer.push']} />
+                                <meta charSet="utf-8"/>
+                                <QwikPartytown forward={['gtag','dataLayer.push']}/>
                                 <script
                                         async
                                         type="text/partytown"
@@ -1640,8 +1904,8 @@ o  Finishing the install. Wanna hear a joke?
                                 <script
                                         type="text/partytown"
                                         dangerouslySetInnerHTML={`
-                                        window.dataLayer = window.dataLayer || [];
-                                        window.gtag = function() {
+                                        window.dataLayer=window.dataLayer || [];
+                                        window.gtag=function() {
                                         dataLayer.push(arguments);
                                         }
                                         gtag('js', new Date());
@@ -1651,7 +1915,7 @@ o  Finishing the install. Wanna hear a joke?
                               </head>
                               <body lang="fr"></body>
                             </QwikCityProvider>
-                        );
+                    );
                     });
                     </script>
                 </code>
@@ -1661,13 +1925,13 @@ o  Finishing the install. Wanna hear a joke?
     </div>
 </div>
 
-<script src="../dist/reveal.js"></script>
-<script src="../plugin/notes/notes.js"></script>
-<script src="../plugin/markdown/markdown.js"></script>
-<script src="../plugin/highlight/highlight.js"></script>
+<script src="./dist/reveal.js"></script>
+<script src="./plugin/notes/notes.js"></script>
+<script src="./plugin/markdown/markdown.js"></script>
+<script src="./plugin/highlight/highlight.js"></script>
 <script type="module">
-    import RevealGamepadController from "../plugin/reveal-gamepad-controller-plugin/dist/index.js";
-    import RevealProgressImage from "../plugin/reveal-progress-image-plugin/dist/index.js";
+    import RevealGamepadController from "./plugin/reveal-gamepad-controller-plugin/dist/index.js";
+    import RevealProgressImage from "./plugin/reveal-progress-image-plugin/dist/index.js";
 
     const urlParams = new URLSearchParams(window.location.search);
     const receiver = urlParams.get('receiver');
