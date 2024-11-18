@@ -6,13 +6,13 @@
 
     <title>Qwik training</title>
 
-    <link rel="stylesheet" href="../dist/reset.css">
-    <link rel="stylesheet" href="../dist/reveal.css">
-    <link rel="stylesheet" href="../dist/theme/white.css">
+    <link rel="stylesheet" href="./dist/reset.css">
+    <link rel="stylesheet" href="./dist/reveal.css">
+    <link rel="stylesheet" href="./dist/theme/white.css">
     <link rel="stylesheet" href="./slides.css">
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="./plugin/highlight/monokai.css">
 
     <link rel='stylesheet' id='font-family-1-css'
           href='https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd'
@@ -73,20 +73,7 @@
             </section>
             <section>
                 <p>Structure du projet</p>
-                <pre><code data-line-numbers="4|5|6|7|8|9|10|11|12">power-rangers-app
-├─ README.md
-├─ package.json
-├─ public
-└─ src
-    ├─ components
-    ├─ entry.ssr.tsx
-    ├─ global.css
-    ├─ root.tsx
-    └─ routes
-        ├─ index.tsx
-        └─ layout.tsx
-                </code>
-                </pre>
+                <div w3-include-html="./code/01-structure.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>README.md
@@ -94,7 +81,9 @@
                         <li>public -> Contient des fichiers statiques qui seront copiés dans le dossier dist</li>
                         <li>src -> Contient le code de l'application</li>
                         <li>components -> Les composants qwik</li>
-                        <li>entry.ssr.tsx -> Point d'entrée pour le serveur afin de générer le HTML initial de l'application avant de l'envoyer au client</li>
+                        <li>entry.ssr.tsx -> Point d'entrée pour le serveur afin de générer le HTML initial de
+                            l'application avant de l'envoyer au client
+                        </li>
                         <li>global.css -> Fichier CSS global</li>
                         <li>root.tsx -> Premier composant qui sera rendu</li>
                         <li>routes -> L'annuaire des routes de l'application</li>
@@ -105,14 +94,7 @@
             </section>
             <section>
                 <p>Composant et évènements</p>
-                <pre>
-                    <code data-trim class="code-font typescript">
-                        export default component$&lt;PropsType&gt;((props) => {
-                            const do = $(()=>...);
-                            return &lt;button onClick$={()=>do()}&gt;Clique la&lt;button/&gt;
-                        })
-                    </code>
-                </pre>
+                <div w3-include-html="./code/01-component.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Montrer comment un composant qwik est formé</li>
@@ -124,8 +106,12 @@
                 <p>TP</p>
                 <ul>
                     <li class="fragment">Nettoyer la page `index.tsx`</li>
-                    <li class="fragment">Créer un composant hello-world.tsx dans le dossier components et l'appeler dans ...src/routes/index.tsx</li>
-                    <li class="fragment">Passer un `props` pour variabiliser le `world` selon le composant parent (ne pas oublier le typage)</li>
+                    <li class="fragment">Créer un composant hello-world.tsx dans le dossier components et l'appeler dans
+                        ...src/routes/index.tsx
+                    </li>
+                    <li class="fragment">Passer un `props` pour variabiliser le `world` selon le composant parent (ne
+                        pas oublier le typage)
+                    </li>
                     <li class="fragment">Ajouter un bouton avec un évènement onClick$ pour faire un console.log dans une
                         méthode $
                     </li>
@@ -143,15 +129,7 @@
 
             </section>
             <section>
-                <pre>
-                    <code data-trim class="code-font typescript" data-line-numbers="1|2|3|4|5">
-                        {if(...){}else{}}
-                        {condition ? ... : ...}
-                        {condition && ...}
-                        {[].map(()=>...)}
-                        $&lt;input bind:value={...} &gt;
-                    </code>
-                </pre>
+                <div w3-include-html="./code/01-conditions.html"></div>
             </section>
             <section data-state="tp">
                 <p>TP</p>
@@ -169,12 +147,7 @@
 
             <section>
                 <p>Signal et Store</p>
-                <pre>
-                        <code data-trim class="code-font typescript">
-                            const ... = useSignal<...>(...);
-                            const ... = useStore<...>(..., { deep: boolean });
-                        </code>
-                    </pre>
+                <div w3-include-html="./code/01-signal.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Modifier dynamiquement le template</li>
@@ -203,37 +176,17 @@
             </section>
             <section>
                 <p>CSS modules et CSS global</p>
-                <p class="fragment">Le CSS global est utilisé pour les styles qui doivent être appliqués sur tout le site</p>
-                <p class="fragment">Le CSS module est utilisé pour les styles qui doivent être appliqués sur un composant</p>
+                <p class="fragment">Le CSS global est utilisé pour les styles qui doivent être appliqués sur tout le
+                    site</p>
+                <p class="fragment">Le CSS module est utilisé pour les styles qui doivent être appliqués sur un
+                    composant</p>
             </section>
             <section>
                 <p>Slot</p>
-                <pre>
-                    <code data-trim class="code-font typescript">
-                        // Composant bouton.tsx
-                        export default component$(() =&gt; {
-
-                          return (
-                            &lt;&gt;
-                                &lt;Slot/&gt;
-                            &lt;/&gt;
-                          );
-                        });
-                        // Utilisation dans un aure composant
-                        &lt;Bouton&gt;
-                            &lt;p>Clique ici&lt;/p&gt;
-                        &lt;/Bouton&gt;
-                    </code>
-                </pre>
+                <div w3-include-html="./code/01-slot.html"></div>
             </section>
             <section>
-                <pre>
-                    <code data-trim class="code-font typescript">
-                        import style from './MyComponent.css?inline';
-                        useStyles$(style);
-                        useStylesScoped$(style);
-                    </code>
-                    </pre>
+                <div w3-include-html="./code/01-css.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>utilisation des css module</li>
@@ -249,7 +202,9 @@
                 <p>TP</p>
                 <ul>
                     <li class="fragment">Création d'un fichier style.css</li>
-                    <li class="fragment">Personnaliser la balise ul avec `list-style-type` et la méthode useStyles$ dans PowerRangerList</li>
+                    <li class="fragment">Personnaliser la balise ul avec `list-style-type` et la méthode useStyles$ dans
+                        PowerRangerList
+                    </li>
                     <li class="fragment">Remplacer par useStyles$ par useStylesScoped$</li>
                     <li class="fragment">👀Inspecter le navigateur👀</li>
                     <li class="fragment">Live coding</li>
@@ -257,15 +212,7 @@
             </section>
             <section>
                 <p>Et les tests</p>
-                <pre>
-                        <code data-trim class="code-font typescript">
-                            test(`[ExampleTest Component]: Should render`, async () => {
-                              const { screen, render } = await createDOM();
-                              await render(&lt;ExampleComponent /&gt;);
-                              expect(screen.outerHTML).toContain(...);
-                            });
-                        </code>
-                    </pre>
+                <div w3-include-html="./code/01-tests.html"></div>
             </section>
             <section data-state="tp">
                 <p>TP</p>
@@ -282,16 +229,7 @@
             </section>
             <section>
                 <p>Contextes</p>
-                    <pre>
-                        <code data-trim class="code-font typescript">
-                            // Au dessus du composant parent
-                            export const contextId = createContextId&lt;Signal&lt;...&gt;&gt;(...);
-                            // Dans le composant parent
-                            useContextProvider(contextId, ...);
-                            // Dans les composants enfants
-                            const ... = useContext(contextId);
-                        </code>
-                    </pre>
+                <div w3-include-html="./code/02-context.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Déclaration de l'id</li>
@@ -311,20 +249,7 @@
 
             <section>
                 <p>Qwik City - routing</p>
-                <pre class="fragment">
-                        <code data-trim class="code-font typescript">
-                            src/
-                            └── routes/
-                                ├── about/
-                                │   └── index.tsx # https://example.com/about
-                                ├── details/
-                                │   └── [id]/
-                                │       └── index.tsx # https://example.com/docs/1234
-                                ├── [...catchall]/
-                                │   └── index.tsx # https://example.com/anything/else
-                                └── layout.tsx # layout par défaut pour tous les pages
-                        </code>
-                    </pre>
+                <div w3-include-html="./code/02-routing.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Se basse sur le dossier routes</li>
@@ -343,19 +268,7 @@
             </section>
             <section>
                 <p>Pour récupération de la donnée passé dans l'url</p>
-                <pre class="fragment">
-                    <code data-trim class="code-font typescript">
-                        import { useLocation } from '@builder.io/qwik-city';
-                        // Dans le composant
-                        const routeLocation = useLocation();
-                        /*
-                        routeLocation.params[...]
-                        routeLocation.isNavigation
-                        routeLocation.prevUrl
-                        routeLocation.url
-                        */
-                    </code>
-                </pre>
+                <div w3-include-html="./code/02-location.html"></div>
             </section>
             <section data-state="tp">
                 <p>TP</p>
@@ -367,13 +280,7 @@
             </section>
             <section>
                 <p>Qwik City - Navigation SPA/MPA</p>
-                <pre>
-                    <code data-trim class="code-font typescript">
-                        &lt;Link href=""&gt;
-                            ...
-                        &lt;/Link&gt;
-                    </code>
-                </pre>
+                <div w3-include-html="./code/02-link.html"></div>
             </section>
             <section data-state="tp">
                 <p>TP</p>
@@ -402,21 +309,7 @@
             </section>
             <section>
                 <p>Qwik City - DocumentHead</p>
-                <pre>
-                    <code data-trim class="code-font typescript">
-                        // En dehors du composant
-                        export const ... = routeLoader$(async (requestEvent) => {
-                          return requestEvent.params...;
-                        });
-
-                        export const head: DocumentHead = ({resolveValue, params}) => {
-                          const ... = resolveValue(...);
-                          return {
-                            title: ...,
-                          };
-                        };
-                    </code>
-                </pre>
+                <div w3-include-html="./code/02-head.html"></div>
             </section>
             <section data-state="tp">
                 <p>TP</p>
@@ -427,18 +320,7 @@
             </section>
             <section>
                 <p>Qwik City - routeLoaders$</p>
-                <pre>
-                    <code data-trim class="code-font typescript">
-                        // Au dessus du composant
-                        export const useData = routeLoader$(async (requestEvent) => {
-                          const res = await fetch(...);
-                          const data = await res.json();
-                          return data as ...;
-                        });
-                        // Dans le composant
-                        const signal = useData();
-                    </code>
-                    </pre>
+                <div w3-include-html="./code/02-route-loader.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Récupération de donnée pour le composant ...</li>
@@ -459,39 +341,20 @@
             </section>
             <section>
                 <p>Qwik City - useResource$</p>
-                <pre>
-                    <code data-trim class="code-font typescript">
-                        // Dans le composant
-                        const resource = useResource$&lt;...&gt;(
-                            async ({ track, cleanup }) => {
-                            track(() => ...);
-                            cleanup(() => ...);
-                            const resp = await fetch(...);
-                            const json = (await resp.json()) as ...;
-                            return json;
-                        }
-                    </code>
-                </pre>
+                <div w3-include-html="./code/02-use-resource.html"></div>
             </section>
             <section>
                 <p>Qwik City - Resources</p>
-                <pre>
-                    <code data-trim class="code-font typescript">
-                        &lt;Resource
-                            value={resource}
-                            onPending={()=> &lt;&gt;Loading...&lt;/&gt;}
-                            onRejected={()=> &lt;&gt;Erreur...&lt;/&gt;}
-                            onResolved={(data) => {
-                            return &lt;&gt;OK...&lt;/&gt;;
-                          }}
-                        &gt;
-                    </code>
-                </pre>
+                <div w3-include-html="./code/02-resource.html"></div>
                 <aside class="notes">
                     <aside class="notes">
                         <ul>
-                            <li> Il est souvent souhaitable de commencer à récupérer les données sur le serveur dans le cadre de la requête HTTP initiale avant le rendu du composant</li>
-                            <li>Il s'agit plutôt d'une API de bas niveau qui est utile lorsque vous souhaitez récupérer des données dans le navigateur</li>
+                            <li> Il est souvent souhaitable de commencer à récupérer les données sur le serveur dans le
+                                cadre de la requête HTTP initiale avant le rendu du composant
+                            </li>
+                            <li>Il s'agit plutôt d'une API de bas niveau qui est utile lorsque vous souhaitez récupérer
+                                des données dans le navigateur
+                            </li>
                         </ul>
                     </aside>
                 </aside>
@@ -505,60 +368,7 @@
             </section>
             <section>
                 <p>Qwik City - formulaire avec Modular Form</p>
-                <pre>
-                    <code data-trim class="code-font typescript" data-line-numbers="1-5|7-13|15|17-19|21-23|26-30|32-35|38-48">
-                        import { $, component$, type QRL } from '@builder.io/qwik';
-                        import { routeLoader$ } from '@builder.io/qwik-city';
-                        import type { InitialValues, SubmitHandler } from '@modular-forms/qwik';
-                        import { formAction$, useForm, valiForm$ } from '@modular-forms/qwik';
-                        import * as v from 'valibot';
-
-                        const LoginSchema = v.object({
-                          email: v.pipe(
-                            v.string(),
-                            v.nonEmpty('Please enter your email.'),
-                            v.email('The email address is badly formatted.'),
-                          )
-                        });
-
-                        type LoginForm = v.InferInput&lt;typeof LoginSchema&gt;;
-
-                        export const useFormLoader = routeLoader$&lt;InitialValues&lt;LoginForm&gt;&gt;(() =&gt; ({
-                          email: '',
-                        }));
-
-                        export const useFormAction = formAction$&lt;LoginForm&gt;((values) =&gt; {
-                          // Runs on server
-                        }, valiForm$(LoginSchema));
-
-                        export default component$(() =&gt; {
-                          const [loginForm, { Form, Field }] = useForm&lt;LoginForm&gt;({
-                            loader: useFormLoader(),
-                            action: useFormAction(),
-                            validate: valiForm$(LoginSchema),
-                          });
-
-                          const handleSubmit: QRL&lt;SubmitHandler&lt;LoginForm&gt;&gt; = $((values, event) =&gt; {
-                            // Runs on client
-                            console.log(values);
-                          });
-
-                          return (
-                            &lt;Form onSubmit$={handleSubmit}&gt;
-                              &lt;Field name="email"&gt;
-                                {(field, props) =&gt; (
-                                  &lt;div&gt;
-                                    &lt;input {...props} type="email" value={field.value} /&gt;
-                                    {field.error && &lt;div&gt;{field.error}&lt;/div&gt;}
-                                  &lt;/div&gt;
-                                )}
-                              &lt;/Field&gt;
-                              &lt;button type="submit"&gt;Login&lt;/button&gt;
-                            &lt;/Form&gt;
-                          );
-                        });
-                    </code>
-                </pre>
+                <div w3-include-html="./code/02-forms.html"></div>
             </section>
             <section>
                 <p>TP</p>
@@ -824,50 +634,7 @@
             </section>
             <section data-state="robot">
                 <h2>État minimisé</h2>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm html" data-line-numbers="1|24-25,30|32-39">
-                    <script type="qwik/json">{
-                    "refs": {
-                      "a": "0",
-                      "b": "0",
-                      "e": "1 6",
-                      "g": "1 6"
-                    },
-                    "ctx": {
-                      "9": {
-                        "h": "7",
-                        "s": "0"
-                      },
-                      "f": {
-                        "h": "a 9!"
-                      }
-                    },
-                    "objs": [
-                      "\u00122",
-                      "\u00125",
-                      0,
-                      "\u00110 @0",
-                      "#c",
-                      70,
-                      "\u0002/src/counter_component_setcount_axa3vnn55qe.js#counter_component_setCount_aXA3vNn55QE[1]",
-                      "\u0002/src/next_steps_component_kjctkbc9zbk.js#next_steps_component_kJCtKbc9zbk",
-                      "\u00111 @1",
-                      {
-                        "$$value": "8"
-                      },
-                      "\u0002/src/gauge_component_7gzriutqs98.js#gauge_component_7gzriUtQs98"
-                    ],
-                    "subs": [
-                      [
-                        "0 #9",
-                        "3 #c 3 #c"
-                      ],
-                      [
-                        "0 #f"
-                      ]
-                    ]}</script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/03-state.html"></div>
                 <aside class="notes">
                     <p>Type spécifique, compris par Qwik uniquement</p>
                     <p>On devine les références au code Javascript</p>
@@ -883,31 +650,29 @@
                 </pre>
                 <img class="fragment" src="./images/devtools.png" style="height: 250px;">
             </section>
+            <section>
+                <p>Description du résultat</p>
+                <ul>
+                    <li class="fragment">objs: Les objects du système qui ont été sérialisés</li>
+                    <li class="fragment">ctx: Un ensemble d'objets QContext.</li>
+                    <li class="fragment">refs: un esemble d'objets QRef.</li>
+                    <li class="fragment">sub: un ensemble d'objets QSubscription.</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>QContext: Un état que Qwik a sérialisé pour un composant donné. Inclut les props du
+                            composant et un ensemble d'objets Task qui pourraient être exécutées par le composant.
+                        </li>
+                        <li>QRef: Si un élément a un observateur, alors la QRef rassemble tous les observateurs ainsi
+                            que les objets qui ont pu être capturés par eux.
+                        </li>
+                        <li>Qwik ne sérialise que les objets atteignables depuis un QContext, ou depuis une QRef.</li>
+                    </ul>
+                </aside>
+            </section>
             <section data-state="robot">
                 <p>et dans le html...</p>
-                <pre data-id="code-animation">
-                <code data-trim data-line-numbers="1-16|3-5|7" class="code-font-sm html">
-                    <script type="text/template">
-                    ...
-                    <main class="o-main">
-                        <!--qv q:id=6 q:key=CDS6:yB_3-->
-                        <!--qv q:key=8z_2-->
-                        <!--qv q:id=7 q:key=8gdL:8z_0-->
-                        <a href="/cart-list" preventdefault:click="" class="m-basket"
-                           on:click="q-4578ff76.js#s_i1Cv0pYJNR0[0 1 1 1]" q:key="AD_1" q:id="8">
-                            <!--qv q:s q:sref=7 q:key=-->
-                            <i class="a-icon a-icon--basket"></i>
-                            <span class="a-number">
-                                <!--t=9-->0<!---->
-                            </span>
-                            <span class="a-label">Mon panier</span>
-                            <!--/qv-->
-                        </a>
-                    ...
-                    </main>
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/03-state-html.html"></div>
                 <aside class="notes">
                     <p>il utilise ses références et son markup pour le rendu</p>
                     <p>il utilise ses links js avec références pour les exécutions</p>
@@ -931,53 +696,14 @@
             </section>
             <section>
                 <p>Un composant Qwik</p>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm typescript" data-line-numbers>
-                    <script type="text/template">
-                        import { component$ } from '@builder.io/qwik';
-
-                        export default component$(() => {
-                        console.log('render');
-                        return
-                        <button onClick$={() => console.log('hello')}>Hello Qwik</button>;
-                        });
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/03-component.html"></div>
                 <aside class="notes">
-                    <div>TEMPO: 20:25</div>
                     <div>Exemple tout simple de composant</div>
                 </aside>
             </section>
             <section>
                 <p>... et sa version "compilée"</p>
-                <pre data-id="code-animation" style="height: 420px">
-                <code data-trim class="code-font-sm typescript" data-line-numbers="1-6|8-20|22-24">
-                //app.js
-                import { componentQrl, qrl } from '@builder.io/qwik';
-                const App = /*#__PURE__*/ componentQrl(
-                    qrl(() => import('./app_component_akbu84a8zes.js'), 'App_component_AkbU84a8zes')
-                );
-                export { App };
-
-                // app_component_akbu84a8zes.js
-                import { jsx as _jsx } from '@builder.io/qwik/jsx-runtime';
-                import { qrl } from '@builder.io/qwik';
-                export const App_component_AkbU84a8zes = () => {
-                    console.log('render');
-                    return /*#__PURE__*/ _jsx('p', {
-                        onClick$: qrl(
-                        () => import('./app_component_p_onclick_01pegc10cpw'),
-                            'App_component_p_onClick_01pEgC10cpw'
-                        ),
-                        children: 'Hello Qwik',
-                    });
-                };
-
-                // app_component_p_onclick_01pegc10cpw.js
-                export const App_component_p_onClick_01pEgC10cpw = () => console.log('hello');
-                </code>
-                </pre>
+                <div w3-include-html="./code/03-compiled.html"></div>
                 <aside class="notes">
                     <p>Séparation en fichiers séparés</p>
                     <p>De là viennent des contraintes à respecter... (imaginons Closures, paramètres, ...)</p>
@@ -988,41 +714,14 @@
                     <p>Not all valid JavaScript code is valid code for the Optimizer.</p>
                     <footer class="code-font-sm">—Qwik documentation, <cite>The $ dollar sign</cite></footer>
                 </blockquote>
-                <aside class="notes">
-                    <div>TEMPO: 21:25</div>
-                </aside>
             </section>
             <section data-auto-animate>
                 <blockquote cite="https://qwik.builder.io/docs/advanced/dollar/">
                     <p>Not all valid JavaScript code is valid code for the Optimizer.</p>
                     <footer class="code-font-sm">—Qwik documentation, <cite>The $ dollar sign</cite></footer>
                 </blockquote>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm typescript" data-line-numbers>
-                    <script type="text/template">
-                    // Invalid
-                    const foo = 'foo';
-                    foo$(foo); // foo is not exported, so it's not importable
-
-                    // Invalid
-                    component$(() => {
-                    let foo = 'value'; // variable is not a const
-                    return
-                    <div onClick$={() => console.log(foo)}/>
-                    });
-
-                    // Valid
-                    export const bar = 'bar';
-                    foo$(bar);
-
-                    // Valid
-                    import { bar } from './bar';
-                    foo$(bar);
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/03-invalid.html"></div>
                 <aside class="notes">
-                    <div>TEMPO: 22:25</div>
                     <p>Invalide car non exporté</p>
                     <p>Valides sinon</p>
                 </aside>
@@ -1032,25 +731,7 @@
                     <p>Not all valid JavaScript code is valid code for the Optimizer.</p>
                     <footer class="code-font-sm">—Qwik documentation, <cite>The $ dollar sign</cite></footer>
                 </blockquote>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm typescript" data-line-numbers>
-                    <script type="text/template">
-                    // Invalid
-                    component$(() => {
-                    const foo = new MyCustomClass(12); // MyCustomClass is not serializable
-                    return
-                    <div onClick$={() => console.log(foo)}/>
-                    });
-
-                    // Valid
-                    component$(() => {
-                    const foo = 'value'; // ok
-                    return
-                    <div onClick$={() => console.log(foo)}/>
-                    });
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/03-invalid-2.html"></div>
                 <aside class="notes">
                     <div>TEMPO: 23:10</div>
                     <p>Pas de let</p>
@@ -1063,13 +744,7 @@
                 <p class="fragment">useOn, useOnDocument, useOnWindow</p>
                 <p class="fragment">useTask$</p>
                 <p class="fragment fade-in red">useVisibleTask$</p>
-                <pre class="fragment" data-id="code-animation">
-                <code data-trim class="code-font-sm typescript" data-line-numbers>
-                    <script type="text/template">
-                    // eslint-disable-next-line qwik/no-use-visible-task
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/03-eslint.html"></div>
                 <aside class="notes">
                     <p>Des fois on a besoin d'exécuter des choses sans action utilisateur (slideshow, ...)</p>
                     <ul>
@@ -1082,8 +757,12 @@
             <section data-state="tp">
                 <h2>TP</h2>
                 <ul>
-                    <li class="fragment">Ajouter un affichage de la position de la souris sur la page (coordonnées X, Y)</li>
-                    <li class="fragment">Rendre les Noms des power rangers qui sont trop longs pour qu'ils défilent sur place</li>
+                    <li class="fragment">Ajouter un affichage de la position de la souris sur la page (coordonnées X,
+                        Y)
+                    </li>
+                    <li class="fragment">Rendre les Noms des power rangers qui sont trop longs pour qu'ils défilent sur
+                        place
+                    </li>
                     <li class="fragment">Permettre de stopper/reprendre le défilement en cliquant sur un bouton</li>
                 </ul>
                 <aside class="notes">
@@ -1114,42 +793,7 @@
             </section>
             <section>
                 <p>Avec un form</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|4-14|17,21-25|26-29">
-                import { component$ } from '@builder.io/qwik';
-                import { routeAction$, Form } from '@builder.io/qwik-city';
-
-                export const useAddUser = routeAction$(async (data, requestEvent) => {
-                    // This will only run on the server when the user submits the form (or when the action is called programmatically)
-                    const userID = await db.users.add({
-                        firstName: data.firstName,
-                        lastName: data.lastName,
-                    });
-                    return {
-                        success: true,
-                        userID,
-                    };
-                });
-
-                export default component$(() => {
-                    const action = useAddUser();
-
-                    return (
-                        <>
-                            <Form action={action}>
-                                <input name="firstName"/>
-                                <input name="lastName"/>
-                                <button type="submit">Add user</button>
-                            </Form>
-                            {action.value?.success && (
-                                // When the action is done successfully, the `action.value` property will contain the return value of the action
-                                <p>User {action.value.userID} added successfully</p>
-                            )}
-                        </>
-                        );
-                });
-                    </code>
-                </pre>
+                <div w3-include-html="./code/04-form.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>npm install @modular-forms/qwik</li>
@@ -1163,41 +807,7 @@
             </section>
             <section>
                 <p>Programmatiquement</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|20-23">
-                import { component$ } from '@builder.io/qwik';
-                import { routeAction$, Form } from '@builder.io/qwik-city';
-
-                export const useAddUser = routeAction$(async (data, requestEvent) => {
-                    // This will only run on the server when the user submits the form (or when the action is called programmatically)
-                    const userID = await db.users.add({
-                        firstName: data.firstName,
-                        lastName: data.lastName,
-                    });
-                    return {
-                        success: true,
-                        userID,
-                    };
-                });
-
-                export default component$(() => {
-                    const action = useAddUser();
-                    return (
-                        <section>
-                            <button
-                                    onClick$={async ()=> {
-                                    const { value } = await action.submit({ name: 'John' });
-                                    console.log(value);
-                            }}
-                            >
-                                Add user
-                            </button>
-                            {action.value?.success && <p>User added successfully</p>}
-                        </section>
-                    );
-                });
-                    </code>
-                </pre>
+                <div w3-include-html="./code/04-form-p.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Pour déclencher sur ce qu'on a envie</li>
@@ -1206,28 +816,7 @@
             </section>
             <section>
                 <p>Validation de formulaires</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|13-17">
-                    export const useAddUser = routeAction$(
-                        async (user) => {
-                            // The "user" is strongly typed: { firstName: string, lastName: string }
-                            const userID = await db.users.add({
-                                firstName: user.firstName,
-                                lastName: user.lastName,
-                            });
-                            return {
-                                success: true,
-                                userID,
-                            };
-                        },
-                        // Zod schema is used to validate that the FormData includes "firstName" and "lastName"
-                        zod$({
-                            firstName: z.string(),
-                            lastName: z.string(),
-                        })
-                    );
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-form-valid.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Permet de valider ce qu'on a en entrée</li>
@@ -1237,19 +826,7 @@
             </section>
             <section>
                 <p>Accès à la request</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*">
-                    export const useProductRecommendations = routeAction$(
-                        async (_data, requestEvent) => {
-                            console.log('Request headers:', requestEvent.request.headers);
-                            console.log('Request cookies:', requestEvent.cookie);
-                            console.log('Request url:', requestEvent.url);
-                            console.log('Request params:', requestEvent.params);
-                            console.log('MY_ENV_VAR:', requestEvent.env.get('MY_ENV_VAR'));
-                        }
-                    );
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-request.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>on a bien l'auth etc...</li>
@@ -1258,35 +835,7 @@
             </section>
             <section>
                 <p>Gestion des erreurs</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|6|21">
-                    export const useAddUser = routeAction$(
-                        async (user, { fail }) => {
-                            // `user` is typed { name: string }
-                            const userID = await db.users.add(user);
-                            if (!userID) {
-                                return fail(500, { message: 'User could not be added' });
-                            }
-                            return { userID };
-                        },
-                        zod$({
-                            name: z.string(),
-                        })
-                    );
-
-                    export default component$(() => {
-                        const action = useAddUser();
-                        return (
-                            <Form action={action}>
-                                <input name="name"/>
-                                <button type="submit">Add user</button>
-                                {action.value?.failed && <p>{action.value.fieldErrors.name}</p>}
-                                {action.value?.userID && <p>User added successfully</p>}
-                            </Form>
-                        );
-                    });
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-errors.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>failed est mis à true en cas d'erreur</li>
@@ -1296,23 +845,7 @@
             </section>
             <section>
                 <p>Précédentes valeurs</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|9">
-                    export const useAddUser = routeAction$(
-                        // handle action...
-                    );
-
-                    export default component$(() => {
-                        const action = useAddUser();
-                        return (
-                            <Form action={action}>
-                                <input name="name" value={action.formData?.get('name')}/>
-                                <button type="submit">Add user</button>
-                            </Form>
-                        );
-                    });
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-previous.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>formData contient le précédent formulaire</li>
@@ -1338,10 +871,8 @@
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">Faire en sorte de sauvegarder le contenu de notre robot dans un fichier écrit
-                        dans un
-                        répertoire (temporaire)
-                    </li>
+                    <li class="fragment">Permettre d'ajouter un personnage dans une saga (utiliser le endpoint POST prévu à cet effet).</li>
+                    <li class="fragment">Permettre de modifier un personnage dans une saga (utiliser le endpoint PUT prévu à cet effet).</li>
                 </ul>
             </section>
 
@@ -1356,44 +887,15 @@
             </section>
             <section>
                 <p>Exemple</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*">
-                import type { RequestHandler } from '@builder.io/qwik-city';
-
-                export const onRequest: RequestHandler = async ({next, url}) => {
-                    console.log('Before request', url);
-                    await next();
-                    console.log('After request', url);
-                };
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-previous.html"></div>
             </section>
             <section>
                 <p>Spécifique à une méthode</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*">
-                    // Called only with a specific HTTP method
-                    export const onGet: RequestHandler = async (requestEvent) => { ... }
-                    export const onPost: RequestHandler = async (requestEvent) => { ... }
-                    export const onPut: RequestHandler = async (requestEvent) => { ... }
-                    export const onPatch: RequestHandler = async (requestEvent) => { ... }
-                    export const onDelete: RequestHandler = async (requestEvent) => { ... }
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-method.html"></div>
             </section>
             <section>
                 <p>Ordre d'invocation</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|3|5|7">
-                    src/
-                    └── routes/
-                        ├── layout.tsx            # Invocation order: 1 (first)
-                        └── api/
-                            ├── layout.tsx        # Invocation order: 2
-                            └── greet/
-                                └── index.ts      # Invocation order: 3 (last)
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-order.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>On prends tous les layouts dans l'ordre de descente dans l'arbre</li>
@@ -1409,23 +911,7 @@
             </section>
             <section>
                 <p>RequestEvent</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|4,6,9,12">
-                    import { type RequestHandler } from '@builder.io/qwik-city';
-
-                    // Generic function `onRequest` is executed first
-                    export const onRequest: RequestHandler = async ({ next, sharedMap, json }) => {
-                        const log: string[] = [];
-                        sharedMap.set('log', log);
-
-                        log.push('onRequest start');
-                        await next(); // Execute next middleware function (onGet)
-                        log.push('onRequest end');
-
-                        json(200, log);
-                    };
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-request-event.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>RequestEvent contient toutes sortes de fonctions utilitaires</li>
@@ -1441,24 +927,14 @@
                 <p>TP</p>
                 <ul>
                     <li class="fragment">Logger tous les appels faits sur l'API</li>
-                    <li class="fragment">Si tu t'ennuies: Rediriger si non authentifié sur certaines routes (non
-                        corrigé)
+                    <li class="fragment">Si tu t'ennuies: Rediriger si "non authentifié" sur certaines routes (présenter un header "Authentication" suffit)
                     </li>
                 </ul>
             </section>
 
             <section>
                 <p>Endpoints</p>
-
-                <pre class="fragment">
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*">
-                import { type RequestHandler } from '@builder.io/qwik-city';
-
-                export const onGet: RequestHandler = async ({ json }) => {
-                    json(200, { hello: 'world' });
-                };
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-endpoints.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>C'est un middleware qui retourne une réponse</li>
@@ -1468,26 +944,7 @@
             </section>
             <section>
                 <p>Répondre progressivement</p>
-                <pre>
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|2-4|8,9|12,13">
-                export const onGet: RequestHandler = async (requestEvent) => {
-                    const writableStream = requestEvent.getWritableStream();
-                    const writer = writableStream.getWriter();
-                    const encoder = new TextEncoder();
-
-                    writer.write(encoder.encode('Hello World\n'));
-                    await wait(100);
-                    writer.write(encoder.encode('After 100ms\n'));
-                    await wait(100);
-                    writer.write(encoder.encode('After 200ms\n'));
-                    await wait(100);
-                    writer.write(encoder.encode('END'));
-                    writer.close();
-                };
-
-                const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-endpoints-p.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>C'est un middleware qui retourne une réponse</li>
@@ -1498,45 +955,7 @@
 
             <section>
                 <p>server$</p>
-
-                <pre class="fragment">
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|6-12|23-26">
-                    <script type="text/template">
-                import { component$, useSignal } from '@builder.io/qwik';
-                import { server$ } from '@builder.io/qwik-city';
-
-                // By wrapping a function with `server$()` we mark it to always
-                // execute on the server. This is a form of RPC mechanism.
-                export const serverGreeter = server$(
-                function (firstName: string, lastName: string) {
-                const greeting = `Hello ${firstName} ${lastName}`;
-                console.log('Prints in the server', greeting);
-                return greeting;
-                }
-                );
-
-                export default component$(() => {
-                const firstName = useSignal('');
-                const lastName = useSignal('');
-
-                return (
-                <section>
-                            <label>First name: <input bind:value={firstName}/></label>
-                            <label>Last name: <input bind:value={lastName}/></label>
-
-                            <button onClick$={ async ()=> {
-                                        const greeting = await serverGreeter(firstName.value, lastName.value);
-                                        alert(greeting);
-                                } }
-                                >
-                                greet
-                            </button>
-                        </section>
-                );
-                });
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/04-server.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>On peut aussi faire de la réponse progressive avec server$ (mais avec des fonctions
@@ -1551,40 +970,22 @@
                 </aside>
             </section>
 
+            <section>
+                <p>Répondre progressivement...</p>
+                <div w3-include-html="./code/04-server-p.html"></div>
+            </section>
+
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
                     <li class="fragment">Retourner la liste des power rangers pour afficher sur une page</li>
-                    <li class="fragment">Le faire progressivement apparaître toutes les 1s</li>
+                    <li class="fragment">Si tu t'ennuies: Le faire progressivement apparaître toutes les 1s</li>
                 </ul>
             </section>
 
             <section>
-                <p>validator$</p>
-                <pre class="fragment">
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|5-7|9|11-18">
-                export const useAction = routeAction$(
-                    async (data, requestEvent: RequestEventAction) => {
-                        return { foo: "bar" };
-                    },
-                    zod$(/*...*/),
-                    validator$(/*...*/),
-                    validator$(async (ev: RequestEvent, data) => {
-                        if (ev.query.get("secret") === "123") {
-                            return { success: true, data: "cool" };
-                        }
-                        return {
-                            success: false,
-                            error: {
-                                message: "secret is not correct",
-                                secret: ev.query.get("secret"),
-                                status: 404
-                            },
-                        };
-                    }),
-                );
-                </code>
-                </pre>
+                <p>validator$ (server-side)</p>
+                <div w3-include-html="./code/04-ss-validator.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Permet de valider les entrées, headers, ...</li>
@@ -1595,16 +996,15 @@
             <section data-state="tp">
                 <p>TP</p>
                 <ul>
-                    <li class="fragment">Valider que toutes les parties du robot sont bien combinées pour pouvoir le
-                        sauvegarder dans le fichier
-                    </li>
+                    <li class="fragment">Valider que toules champs du Power ranger soient bien renseignées</li>
+                    <li class="fragment">(optionnel: et les couleurs dans une liste)</li>
                 </ul>
             </section>
         </section>
 
         <section data-state="quiz">
             <section>
-                <h2>Quiz</h2>
+                <h2>Qwizz</h2>
             </section>
             <section data-quiz>
                 <h3>Quel est le concept-clé de Qwik ?</h3>
@@ -1614,24 +1014,14 @@
                 <h3>Quel est son pricipal avantage ?</h3>
                 <p>Il est plus puissant</p>
                 <p class="fragment highlight-green">Il est plus fainéant</p>
-                <p>Il est plus intelligent</p>
+                <p class="fragment highlight-green">Il est plus intelligent</p>
                 <aside class="notes">
                     Sa grande force réside dans toutes les choses qu'il évite de charger / d'exécuter
                 </aside>
             </section>
             <section data-quiz>
                 <h3>Ce code est-il valide ?</h3>
-                <pre>
-                    <code data-trim class="code-font-sm typescript">
-                        <script type="text/template">
-                            component$(() => {
-                            const foo = new BroadcastChannel('channel');
-                            return
-                            <div onClick$={() => console.log(foo)}/>
-                            });
-                        </script>
-                    </code>
-                </pre>
+                <div w3-include-html="./code/05-qwizz-1.html"></div>
                 <p>Oui</p>
                 <p class="fragment highlight-green">Non</p>
                 <aside class="notes">
@@ -1640,21 +1030,11 @@
             </section>
             <section data-quiz>
                 <h3>Ce code est-il valide ?</h3>
-                <pre>
-                    <code data-trim class="code-font-sm typescript">
-                        <script type="text/template">
-                            component$(() => {
-                            const foo = setTimeout(() => console.log('hello'), 1000);
-                            return
-                            <div onClick$={() => console.log(foo)}/>
-                            });
-                        </script>
-                    </code>
-                </pre>
+                <div w3-include-html="./code/05-qwizz-2.html"></div>
                 <p class="fragment highlight-green">Oui</p>
                 <p>Non</p>
                 <p class="fragment green">
-                    Mais ce n'est pas intelligent pour autant
+                    Mais ce n'est pas pertinent pour autant
                 </p>
                 <aside class="notes">
                     Alors le retour d'un setTimeout est un entier, donc techniquement sérializable.
@@ -1662,34 +1042,8 @@
                 </aside>
             </section>
             <section data-quiz>
-                <h3>Ce code peut-il être exécuté ?</h3>
-                <pre>
-                    <code data-trim class="code-font-sm typescript">
-                        <script type="text/template">
-                            useTask$(() => {
-                            doSomething();
-                            });
-                        </script>
-                    </code>
-                </pre>
-                <p>Côté client</p>
-                <p class="fragment highlight-green">Côté serveur</p>
-                <p>Les 2</p>
-                <aside class="notes">
-                    Use task est spécifiquement déclenché en SSR
-                </aside>
-            </section>
-            <section data-quiz>
-                <h3>Ce code peut-il être exécuté ?</h3>
-                <pre>
-                    <code data-trim class="code-font-sm typescript">
-                        <script type="text/template">
-                            useOnDocument$(() => {
-                            doSomething();
-                            });
-                        </script>
-                    </code>
-                </pre>
+                <h3>Ce code est exécuté ?</h3>
+                <div w3-include-html="./code/05-qwizz-4.html"></div>
                 <p class="fragment highlight-green">Côté client</p>
                 <p>Côté serveur</p>
                 <p>Les 2</p>
@@ -1700,23 +1054,23 @@
                 </aside>
             </section>
             <section data-quiz>
-                <h3>Ce code peut-il être exécuté ?</h3>
-                <pre>
-                    <code data-trim class="code-font-sm typescript">
-                        <script type="text/template">
-                            export const useProductDetails = routeLoader$(async (requestEvent) => {
-                            const res = await fetch(`https://.../products/${requestEvent.params.productId}`);
-                            const product = await res.json();
-                            return product as Product;
-                            });
-                        </script>
-                    </code>
-                </pre>
+                <h3>Ce code est exécuté ?</h3>
+                <div w3-include-html="./code/05-qwizz-5.html"></div>
                 <p>Côté client</p>
                 <p class="fragment highlight-green">Côté serveur</p>
                 <p>Les 2</p>
                 <aside class="notes">
                     Même si on fait de la navigation côté client, cette partie reste déportée sur le serveur
+                </aside>
+            </section>
+            <section data-quiz>
+                <h3>Ce code est exécuté ?</h3>
+                <div w3-include-html="./code/05-qwizz-3.html"></div>
+                <p>Côté client</p>
+                <p>Côté serveur</p>
+                <p class="fragment highlight-green">Les 2</p>
+                <aside class="notes">
+                    Use task est spécifiquement déclenché au rendeer du composant
                 </aside>
             </section>
         </section>
@@ -1728,54 +1082,17 @@
             <section>
                 <h2><a href="https://qwik.builder.io/docs/integrations/image-optimization/" target="_blank">Image
                     Optimisation</a></h2>
-                <p class="fragment">Optimisation automatique et poussée des images</p>
+                <p class="fragment">Optimisation automatique et poussée des images (featuring Vite)</p>
             </section>
             <section>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm typescript" data-line-numbers="1-3|10,13">
-                    <script type="text/template">
-                        import ImageOnepoint from './public/images/onepoint-white.png?jsx';
-                        import ImageBdxIO from './public/images/bdxio.png?jsx';
-                        import type {DocumentHead} from "@builder.io/qwik-city";
-
-                        ...
-
-                        export default component$(() => {
-                        return <>
-                        <div class="onepoint">
-                                    <ImageOnepoint/>
-                                </div>
-                        <div class="bdx-io">
-                                    <ImageBdxIO/>
-                                </div>
-                        <Slot/>
-                        </>;
-                        });
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/06-image.html"></div>
                 <aside class="notes">
                     <div>import de composant avec ?jsx à la fin</div>
                     <div>Pas d'autres déclarations à faire</div>
                 </aside>
             </section>
             <section>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm html" data-line-numbers="1-6,8-10">
-                    <script type="text/template">
-                        <img srcset="/@imagetools/68e4624f6eb399e61c972af8eeccabff0b464372 200w,
-                        /@imagetools/8809c67f8779c09edd98ea4913b8405479b91a31 400w,
-                        /@imagetools/ac749ebac4c3760d8527187af23e00067992402f 600w,
-                        /@imagetools/649dfd42c93ba008ec3cdeba8eb3eb39a1b25611 800w"
-                             width="800" height="370" decoding="async" loading="lazy" q:key="yB_0"
-                             data-qwik-inspector="routes/layout.tsx:23:13">
-                        ...
-                        <img srcset="/@imagetools/549a200de83fc57abc50f98fbef4ed73ba7894de 200w"
-                             width="200" height="200" decoding="async" loading="lazy" class="circle" q:key="yB_2"
-                             data-qwik-inspector="routes/layout.tsx:29:13">
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/06-image-compiled.html"></div>
                 <aside class="notes">
                     <div>lazy load automatique</div>
                     <div>utilisation de srcset avec différentes tailles</div>
@@ -1783,68 +1100,11 @@
                 </aside>
             </section>
             <section>
-                <h2><a href="https://qwik.dev/docs/labs/devtools/" target="_blank">DevTools</a></h2>
-                <p class="fragment">Mécanisme pour éjecter les scripts tiers du temps de chargement de la page sans pour
-                    autant les supprimer entièrement</p>
-            </section>
-            <section>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm js" data-line-numbers="1-6,8-10">
-                    <script type="text/template">
-                        import("https://qwik.dev/devtools/json/");
-                    </script>
-                </code>
-                </pre>
-            </section>
-            <section>
-                <p>Description du résultat</p>
-                <ul>
-                    <li class="fragment">objs: Les objects du système qui ont été sérialisés</li>
-                    <li class="fragment">ctx: Un ensemble d'objets QContext.</li>
-                    <li class="fragment">refs: un esemble d'objets QRef.</li>
-                    <li class="fragment">sub: un ensemble d'objets QSubscription.</li>
-                </ul>
-                <aside class="notes">
-                    <ul>
-                        <li>QContext: Un état que Qwik a sérialisé pour un composant donné. Inclut les props du
-                            composant et un ensemble d'objets Task qui pourraient être exécutées par le composant.
-                        </li>
-                        <li>QRef: Si un élément a un observateur, alors la QRef rassemble tous les observateurs ainsi
-                            que les objets qui ont pu être capturés par eux.
-                        </li>
-                        <li>Qwik ne sérialise que les objets atteignables depuis un QContext, ou depuis une QRef.</li>
-                    </ul>
-                </aside>
-            </section>
-            <section data-state="tp">
-                <p>TP</p>
-                <ul>
-                    <li class="fragment">Regarder l'état minimisé de votre application</li>
-                </ul>
-            </section>
-            <section>
                 <h2><a href="https://qwik.dev/docs/integrations/react/#qwik-react-%EF%B8%8F">Qwik-React</a></h2>
                 <p class="fragment">Migrer depuis une application React sans tout réécrire dès le début</p>
             </section>
             <section>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm js" data-line-numbers="2|3|5-11">
-                    <script type="text/template">
-                // This pragma is required so that React JSX is used instead of Qwik JSX
-                /** @jsxImportSource react */
-                import { qwikify$ } from '@builder.io/qwik-react';
-
-                // An existing React component
-                function Greetings() {
-                return
-                <div>Hello from React</div>;
-                }
-
-                // Qwik component wrapping the React component
-                export const QGreetings = qwikify$(Greetings);
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/06-react.html"></div>
             </section>
             <section>
                 <p>Existe aussi pour:</p>
@@ -1853,6 +1113,7 @@
                     <li class="fragment"><a href="https://github.com/mizchi/qwik-vue">Vue</a></li>
                 </ul>
                 <p class="fragment">Attention à la maturité</p>
+                <p class="fragment">Attention à l'utilisabilité (instances de services, ...)</p>
             </section>
             <section>
                 <h2><a href="https://qwik.dev/docs/integrations/#integrations">Integrations</a></h2>
@@ -1860,7 +1121,7 @@
             </section>
             <section>
                 <ul>
-                    <li><a href="https://qwik.dev/docs/integrations/authjs/">Auth.js</a></li>
+                    <li><a href="https://qwik.dev/docs/integrations/authjs/">Auth.js</a> pour le backend</li>
                     <li><a href="https://qwik.dev/docs/integrations/i18n/">i18n ($localize ou qwik-speak)</a></li>
                     <li>Storybook, Tailwind, Leaflet...</li>
                 </ul>
@@ -1872,8 +1133,15 @@
             <section>
                 <ul>
                     <li><a href="https://qwik.dev/docs/deployments/node/">Node</a></li>
-                    <li><a href="https://qwik.dev/docs/deployments/static/">Static Site</a></li>
                     <li>Google Cloud Run, Deno, Bun, AWS, Firebase, ...</li>
+                    <li><a href="https://qwik.dev/docs/deployments/static/">Static Site</a></li>
+                </ul>
+            </section>
+            <section data-state="tp">
+                <p>TP</p>
+                <ul>
+                    <li class="fragment">Déployer votre application en mode Node.JS</li>
+                    <li class="fragment">Compiler votre application en SSG</li>
                 </ul>
             </section>
             <section>
@@ -1882,53 +1150,55 @@
                     autant les supprimer entièrement</p>
             </section>
             <section>
-                <pre data-id="code-animation">
-                <code data-trim class="code-font-sm js" data-line-numbers="1|5,27,8|9-24">
-                    <script type="text/template">
-                    import { QwikPartytown } from './components/partytown/partytown';
-
-                    export default component$(() => {
-                    return (
-                    <QwikCityProvider>
-                              <head>
-                                <meta charSet="utf-8"/>
-                                <QwikPartytown forward={['gtag','dataLayer.push']}/>
-                                <script
-                                        async
-                                        type="text/partytown"
-                                        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
-                                />
-                                <script
-                                        type="text/partytown"
-                                        dangerouslySetInnerHTML={`
-                                        window.dataLayer=window.dataLayer || [];
-                                        window.gtag=function() {
-                                        dataLayer.push(arguments);
-                                        }
-                                        gtag('js', new Date());
-                                    gtag('config', 'G-XXXXXX');
-                                  `}
-                                />
-                              </head>
-                              <body lang="fr"></body>
-                            </QwikCityProvider>
-                    );
-                    });
-                    </script>
-                </code>
-                </pre>
+                <div w3-include-html="./code/06-partytown.html"></div>
             </section>
         </section>
     </div>
 </div>
 
-<script src="../dist/reveal.js"></script>
-<script src="../plugin/notes/notes.js"></script>
-<script src="../plugin/markdown/markdown.js"></script>
-<script src="../plugin/highlight/highlight.js"></script>
+
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /* Make an HTTP request using the attribute value as the file name: */
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /* Remove the attribute, and call this function once more: */
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /* Exit the function: */
+                return;
+            }
+        }
+    }
+
+    includeHTML();
+</script>
+<script src="./dist/reveal.js"></script>
+<script src="./plugin/notes/notes.js"></script>
+<script src="./plugin/markdown/markdown.js"></script>
+<script src="./plugin/highlight/highlight.js"></script>
 <script type="module">
-    import RevealGamepadController from "../plugin/reveal-gamepad-controller-plugin/dist/index.js";
-    import RevealProgressImage from "../plugin/reveal-progress-image-plugin/dist/index.js";
+    import RevealGamepadController from "./plugin/reveal-gamepad-controller-plugin/dist/index.js";
+    import RevealProgressImage from "./plugin/reveal-progress-image-plugin/dist/index.js";
 
     const urlParams = new URLSearchParams(window.location.search);
     const receiver = urlParams.get('receiver');
@@ -1936,16 +1206,18 @@
 
     const progressPlugin = RevealProgressImage(Reveal);
 
-    Reveal.initialize({
-        hash: true,
-        progress: true,
-        progressImage: {
-            iconSize: [60, 60],
-            imageAnimation: progressPlugin.ANIMATIONS.CIRCULAR_FLY
-        },
-        imageSrc: './images/lightening.png',
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain, progressPlugin],
-    });
+    setTimeout(() => {
+        Reveal.initialize({
+            hash: true,
+            progress: true,
+            progressImage: {
+                iconSize: [60, 60],
+                imageAnimation: progressPlugin.ANIMATIONS.CIRCULAR_FLY
+            },
+            imageSrc: './images/lightening.png',
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain, progressPlugin],
+        });
+    }, 1000);
 </script>
 </body>
 </html>

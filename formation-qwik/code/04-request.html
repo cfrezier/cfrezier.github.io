@@ -1,0 +1,15 @@
+<pre>
+<code data-trim class="code-font-sm typescript" data-line-numbers="*">
+    <script type="text/template">
+    export const useProductRecommendations = routeAction$(
+        async (_data, requestEvent) => {
+            console.log('Request headers:', requestEvent.request.headers);
+            console.log('Request cookies:', requestEvent.cookie);
+            console.log('Request url:', requestEvent.url);
+            console.log('Request params:', requestEvent.params);
+            console.log('MY_ENV_VAR:', requestEvent.env.get('MY_ENV_VAR'));
+        }
+    );
+    </script>
+</code>
+</pre>

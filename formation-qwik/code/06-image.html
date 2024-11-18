@@ -1,0 +1,23 @@
+<pre data-id="code-animation">
+<code data-trim class="code-font-sm typescript" data-line-numbers="1-3|10,13">
+    <script type="text/template">
+        import ImageOnepoint from './public/images/onepoint-white.png?jsx';
+        import ImageBdxIO from './public/images/bdxio.png?jsx';
+        import type {DocumentHead} from "@builder.io/qwik-city";
+
+        ...
+
+        export default component$(() => {
+        return <>
+            <div class="onepoint">
+                <ImageOnepoint/>
+            </div>
+            <div class="bdx-io">
+                <ImageBdxIO/>
+            </div>
+            <Slot/>
+        </>;
+        });
+    </script>
+</code>
+</pre>

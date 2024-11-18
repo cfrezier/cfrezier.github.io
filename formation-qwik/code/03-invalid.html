@@ -1,0 +1,23 @@
+<pre data-id="code-animation">
+<code data-trim class="code-font-sm typescript" data-line-numbers>
+    <script type="text/template">
+    // Invalid
+    const foo = 'foo';
+    foo$(foo); // foo is not exported, so it's not importable
+
+    // Invalid
+    component$(() => {
+        let foo = 'value'; // variable is not a const
+        return <div onClick$={() => console.log(foo)}/>
+    });
+
+    // Valid
+    export const bar = 'bar';
+    foo$(bar);
+
+    // Valid
+    import { bar } from './bar';
+    foo$(bar);
+    </script>
+</code>
+</pre>

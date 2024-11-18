@@ -1,0 +1,11 @@
+<pre>
+    <code data-trim class="code-font-sm typescript">
+        <script type="text/template">
+            export const useProductDetails = routeLoader$(async (requestEvent) => {
+                const res = await fetch(`https://.../products/${requestEvent.params.productId}`);
+                const product = await res.json();
+                return product as Product;
+            });
+        </script>
+    </code>
+</pre>

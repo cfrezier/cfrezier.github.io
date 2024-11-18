@@ -1,0 +1,24 @@
+<pre class="fragment">
+<code data-trim class="code-font-sm typescript" data-line-numbers="*|5-7|9|11-18">
+export const useAction = routeAction$(
+    async (data, requestEvent: RequestEventAction) => {
+        return { foo: "bar" };
+    },
+    zod$(/*...*/),
+    validator$(/*...*/),
+    validator$(async (ev: RequestEvent, data) => {
+        if (ev.query.get("secret") === "123") {
+            return { success: true, data: "cool" };
+        }
+        return {
+            success: false,
+            error: {
+                message: "secret is not correct",
+                secret: ev.query.get("secret"),
+                status: 404
+            },
+        };
+    }),
+);
+</code>
+</pre>

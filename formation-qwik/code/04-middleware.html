@@ -1,0 +1,11 @@
+<pre>
+<code data-trim class="code-font-sm typescript" data-line-numbers="*">
+import type { RequestHandler } from '@builder.io/qwik-city';
+
+export const onRequest: RequestHandler = async ({next, url}) => {
+    console.log('Before request', url);
+    await next();
+    console.log('After request', url);
+};
+</code>
+</pre>

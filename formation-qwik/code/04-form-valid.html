@@ -1,0 +1,24 @@
+<pre>
+<code data-trim class="code-font-sm typescript" data-line-numbers="*|13-17">
+    <script type="text/template">
+    export const useAddUser = routeAction$(
+        async (user) => {
+            // The "user" is strongly typed: { firstName: string, lastName: string }
+            const userID = await db.users.add({
+                firstName: user.firstName,
+                lastName: user.lastName,
+            });
+            return {
+                success: true,
+                userID,
+            };
+        },
+        // Zod schema is used to validate that the FormData includes "firstName" and "lastName"
+        zod$({
+            firstName: z.string(),
+            lastName: z.string(),
+        })
+    );
+    </script>
+</code>
+</pre>

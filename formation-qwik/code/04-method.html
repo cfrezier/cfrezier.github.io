@@ -1,0 +1,17 @@
+<pre>
+<code data-trim class="code-font-sm typescript" data-line-numbers="*">
+    // Called only with a specific HTTP method
+    export const onGet: RequestHandler = async (requestEvent) => { ... }
+    export const onPost: RequestHandler = async (requestEvent) => { ... }
+    export const onPut: RequestHandler = async (requestEvent) => { ... }
+    export const onPatch: RequestHandler = async (requestEvent) => { ... }
+    export const onDelete: RequestHandler = async (requestEvent) => { ... }
+
+    // or if more complex logic
+    export const onRequest: RequestHandler = async (requestEvent) => {
+        switch(requestEvent.method) {
+            case 'GET': ...
+        }
+    }
+</code>
+</pre>

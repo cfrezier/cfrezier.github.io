@@ -1,0 +1,17 @@
+<pre>
+<code data-trim class="code-font-sm typescript" data-line-numbers="*|9">
+    export const useAddUser = routeAction$(
+        // handle action...
+    );
+
+    export default component$(() => {
+        const action = useAddUser();
+        return (
+            <Form action={action}>
+                <input name="name" value={action.formData?.get('name')}/>
+                <button type="submit">Add user</button>
+            </Form>
+        );
+    });
+</code>
+</pre>

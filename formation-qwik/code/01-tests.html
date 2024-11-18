@@ -1,0 +1,9 @@
+<pre>
+    <code data-trim class="code-font typescript">
+        test(`[ExampleTest Component]: Should render`, async () => {
+          const { screen, render } = await createDOM();
+          await render(&lt;ExampleComponent /&gt;);
+          expect(screen.outerHTML).toContain(...);
+        });
+    </code>
+</pre>

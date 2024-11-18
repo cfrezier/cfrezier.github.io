@@ -1,0 +1,12 @@
+<pre>
+<code data-trim class="code-font typescript">
+    // Au dessus du composant
+    export const useData = routeLoader$(async (requestEvent) => {
+      const res = await fetch(...);
+      const data = await res.json();
+      return data as ...;
+    });
+    // Dans le composant
+    const signal = useData();
+</code>
+</pre>

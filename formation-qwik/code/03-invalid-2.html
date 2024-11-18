@@ -1,0 +1,17 @@
+<pre data-id="code-animation">
+<code data-trim class="code-font-sm typescript" data-line-numbers>
+    <script type="text/template">
+    // Invalid
+    component$(() => {
+        const foo = new MyCustomClass(12); // MyCustomClass is not serializable
+        return <div onClick$={() => console.log(foo)}/>
+    });
+
+    // Valid
+    component$(() => {
+        const foo = 'value'; // ok
+        return <div onClick$={() => console.log(foo)}/>
+    });
+    </script>
+</code>
+</pre>

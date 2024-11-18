@@ -1,0 +1,17 @@
+<pre>
+<code data-trim class="code-font-sm typescript" data-line-numbers="*|4,6,9,12">
+    import { type RequestHandler } from '@builder.io/qwik-city';
+
+    // Generic function `onRequest` is executed first
+    export const onRequest: RequestHandler = async ({ next, sharedMap, json }) => {
+        const log: string[] = [];
+        sharedMap.set('log', log);
+
+        log.push('onRequest start');
+        await next(); // Execute next middleware function (onGet)
+        log.push('onRequest end');
+
+        json(200, log);
+    };
+</code>
+</pre>

@@ -1,0 +1,10 @@
+<pre>
+    <code data-trim class="code-font typescript">
+        // Au dessus du composant parent
+        export const contextId = createContextId&lt;Signal&lt;...&gt;&gt;(...);
+        // Dans le composant parent
+        useContextProvider(contextId, ...);
+        // Dans les composants enfants
+        const ... = useContext(contextId);
+    </code>
+</pre>

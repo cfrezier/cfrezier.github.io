@@ -1,0 +1,15 @@
+<pre>
+    <code data-trim class="code-font typescript">
+        // En dehors du composant
+        export const ... = routeLoader$(async (requestEvent) => {
+          return requestEvent.params...;
+        });
+
+        export const head: DocumentHead = ({resolveValue, params}) => {
+          const ... = resolveValue(...);
+          return {
+            title: ...,
+          };
+        };
+    </code>
+</pre>

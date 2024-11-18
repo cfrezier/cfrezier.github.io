@@ -1,0 +1,24 @@
+<pre data-id="code-animation" style="height: 420px">
+<code data-trim class="code-font-sm typescript" data-line-numbers="1-6|8-17|17-24">
+//app.js
+import { componentQrl, qrl } from '@builder.io/qwik';
+const App = /*#__PURE__*/ componentQrl(
+    qrl(() => import('./app_component_akbu84a8zes.js'), 'App_component_AkbU84a8zes')
+);
+export { App };
+
+// app_component_akbu84a8zes.js
+import { jsx as _jsx } from '@builder.io/qwik/jsx-runtime';
+import { qrl } from '@builder.io/qwik';
+export const App_component_AkbU84a8zes = () => {
+    console.log('render');
+    return /*#__PURE__*/ _jsx('p', {
+        onClick$: qrl(() => import('./app_component_p_onclick_01pegc10cpw'), 'App_component_p_onClick_01pEgC10cpw'),
+        children: 'Hello Qwik',
+    });
+};
+
+// app_component_p_onclick_01pegc10cpw.js
+export const App_component_p_onClick_01pEgC10cpw = () => console.log('hello');
+</code>
+</pre>

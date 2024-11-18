@@ -1,0 +1,31 @@
+<pre>
+<code data-trim class="code-font-sm typescript" data-line-numbers="*|6|21-22">
+    <script type="text/template">
+    export const useAddUser = routeAction$(
+        async (user, { fail }) => {
+            // `user` is typed { name: string }
+            const userID = await db.users.add(user);
+            if (!userID) {
+                return fail(500, { message: 'User could not be added' });
+            }
+            return { userID };
+        },
+        zod$({
+            name: z.string(),
+        })
+    );
+
+    export default component$(() => {
+        const action = useAddUser();
+        return (
+            <Form action={action}>
+                <input name="name"/>
+                <button type="submit">Add user</button>
+                {action.value?.failed && <p>{action.value.fieldErrors.name}</p>}
+                {action.value?.userID && <p>User added successfully</p>}
+            </Form>
+        );
+    });
+    </script>
+</code>
+</pre>

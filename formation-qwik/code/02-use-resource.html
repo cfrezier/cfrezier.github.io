@@ -1,0 +1,13 @@
+<pre>
+    <code data-trim class="code-font typescript">
+        // Dans le composant
+        const resource = useResource$&lt;...&gt;(
+            async ({ track, cleanup }) => {
+            track(() => ...);
+            cleanup(() => ...);
+            const resp = await fetch(...);
+            const json = (await resp.json()) as ...;
+            return json;
+        }
+    </code>
+</pre>
