@@ -55,16 +55,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li>Création d'une application qwik "power-rangers-app"</li>
-                    <li>`npm create qwik@latest`</li>
-                    <li>Nom : power-rangers-app</li>
-                    <li>Starte : Empty App (Qwik City + Qwik)</li>
-                    <li>Installation des dependences : oui</li>
-                    <li>Initialisation du git : non</li>
-                    <li>cd power-rangers-app</li>
-                    <li>npm run start</li>
-                </ul>
+                <div w3-include-html="./tp/niveau1/01-create-app/README.html"></div>
                 <aside class="notes">
                     <ul>
                         <li>Correction : 01-Première-application</li>
@@ -104,20 +95,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Nettoyer la page `index.tsx`</li>
-                    <li class="fragment">Créer un composant hello-world.tsx dans le dossier components et l'appeler dans
-                        ...src/routes/index.tsx
-                    </li>
-                    <li class="fragment">Passer un `props` pour variabiliser le `world` selon le composant parent (ne
-                        pas oublier le typage)
-                    </li>
-                    <li class="fragment">Ajouter un bouton avec un évènement onClick$ pour faire un console.log dans une
-                        méthode $
-                    </li>
-                    <li class="fragment">👀Inspecter le navigateur👀</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau1/02-first-component/README.html"></div>
             </section>
             <section>
                 <p>Rendu avec des conditions, des listes et du binding</p>
@@ -133,16 +111,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Importer SAGA_POWER_RANGERS</li>
-                    <li class="fragment">Créer un composant power-ranger-list.tsx</li>
-                    <li class="fragment">Faire apparaitre le nom des power rangers avec une boucle `map`</li>
-                    <li class="fragment">Utiliser les balises ul li</li>
-                    <li class="fragment">Ajout d'une condition d'affichage selon la couleur d'un power ranger</li>
-                    <li class="fragment">Modification du filtre couleur avec un input `bind`</li>
-                    <li class="fragment">Petit aide !!!</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau1/03-condition/README.html"></div>
             </section>
 
             <section>
@@ -153,26 +122,17 @@
                         <li>Modifier dynamiquement le template</li>
                         <li>Montrer la différence</li>
                         <li>option deep permettant de suivre uniquement les propriétés de niveau supérieur, perf</li>
+                        <li>utiliser useSignal sinon le bind ne fonctionnera pas !</li>
                     </ul>
                 </aside>
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Créer un composant dream-team.txs, l'appeler dans power-ranger-list</li>
-                    <li class="fragment">Le composant DreamTeam a en props theSelection de type string</li>
-                    <li class="fragment">Créer un useSignal theSelection de type string dans PowerRangerList</li>
-                    <li class="fragment">Ajouter dans theSelection le nom du power ranger via un bouton, onClick$</li>
-                </ul>
+                <div w3-include-html="./tp/niveau1/04-signal/README.html"></div>
             </section>
             <section data-state="tp">
                 <p>Suite du TP</p>
-                <ul>
-                    <li class="fragment">Changer theSelection par une liste de string pour en avoir plusieurs</li>
-                    <li class="fragment">Utiliser les balises ul li</li>
-                    <li class="fragment">👀Inspecter le navigateur👀</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau1/05-store/README.html"></div>
             </section>
             <section>
                 <p>CSS modules et CSS global</p>
@@ -200,15 +160,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Création d'un fichier style.css</li>
-                    <li class="fragment">Personnaliser la balise ul avec `list-style-type` et la méthode useStyles$ dans
-                        PowerRangerList
-                    </li>
-                    <li class="fragment">Remplacer par useStyles$ par useStylesScoped$</li>
-                    <li class="fragment">👀Inspecter le navigateur👀</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau1/06-css/README.html"></div>
             </section>
             <section>
                 <p>Et les tests</p>
@@ -216,11 +168,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Installer de l'adapter vitest `npm run qwik add vitest`</li>
-                    <li class="fragment">Ecrire un test pour PowerRangerDreamTeam</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau1/07-test/README.html"></div>
             </section>
         </section>
         <section data-state="medium">
@@ -239,12 +187,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Supprimer le props theSelection dans DreamTeam</li>
-                    <li class="fragment">Modification PowerRangerList pour utiliser un context</li>
-                    <li class="fragment">Récupération dans DreamTeam</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau2/01-context/README.html"></div>
             </section>
 
             <section>
@@ -261,10 +204,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Création d'une page `Mon power ranger`</li>
-                    <li class="fragment">Accéder directement via l'url</li>
-                </ul>
+                <div w3-include-html="./tp/niveau2/02-routing/README.html"></div>
             </section>
             <section>
                 <p>Pour récupération de la donnée passé dans l'url</p>
@@ -272,11 +212,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Création d'une page dynamique `detail` avec l'id d'une saga</li>
-                    <li class="fragment">Récupérer la donnée avec SAGA_POWER_RANGERS</li>
-                    <li class="fragment">Accéder directement via l'url</li>
-                </ul>
+                <div w3-include-html="./tp/niveau2/03-routing-dynamic/README.html"></div>
             </section>
             <section>
                 <p>Qwik City - Navigation SPA/MPA</p>
@@ -284,18 +220,14 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Utilisation du composant `Link` pour aller sur la page `detail/[id]`</li>
-                    <li class="fragment">👀Inspecter le navigateur👀</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau2/04-link/README.html"></div>
             </section>
             <section>
                 <p>Navigation MPA ou SPA 🧐</p>
             </section>
             <section data-state="tp">
                 <p>Évènement de navigation bizarre</p>
-                <p>Live coding</p>
+                <div w3-include-html="./tp/niveau2/05-nav-SPA-MPA/README.html"></div>
                 <aside class="notes">
                     export default component$(() => {
                     const go = $((event)=>{
@@ -306,17 +238,6 @@
                     }
                     )
                 </aside>
-            </section>
-            <section>
-                <p>Qwik City - DocumentHead</p>
-                <div w3-include-html="./code/02-head.html"></div>
-            </section>
-            <section data-state="tp">
-                <p>TP</p>
-                <ul>
-                    <li class="fragment">Variabiliser le `title` selon le nom dans page détails d'un power rangers</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
             </section>
             <section>
                 <p>Qwik City - routeLoaders$</p>
@@ -330,14 +251,15 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Démarage du backend `node server.mjs`
-                    </li>
-                    <li class="fragment">Modifier le code pour récupération les données avec routeLoader$ sur
-                        http://localhost:8080/
-                    </li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau2/06-route-loader/README.html"></div>
+            </section>
+            <section>
+                <p>Qwik City - DocumentHead</p>
+                <div w3-include-html="./code/02-head.html"></div>
+            </section>
+            <section data-state="tp">
+                <p>TP</p>
+                <div w3-include-html="./tp/niveau2/07-head/README.html"></div>
             </section>
             <section>
                 <p>Qwik City - useResource$</p>
@@ -347,24 +269,25 @@
                 <p>Qwik City - Resources</p>
                 <div w3-include-html="./code/02-resource.html"></div>
                 <aside class="notes">
-                    <aside class="notes">
-                        <ul>
-                            <li> Il est souvent souhaitable de commencer à récupérer les données sur le serveur dans le
-                                cadre de la requête HTTP initiale avant le rendu du composant
-                            </li>
-                            <li>Il s'agit plutôt d'une API de bas niveau qui est utile lorsque vous souhaitez récupérer
-                                des données dans le navigateur
-                            </li>
-                        </ul>
-                    </aside>
+                    <ul>
+                        <li> Il est souvent souhaitable de commencer à récupérer les données sur le serveur dans le
+                            cadre de la requête HTTP initiale avant le rendu du composant
+                        </li>
+                        <li>Il s'agit plutôt d'une API de bas niveau qui est utile lorsque vous souhaitez récupérer
+                            des données dans le navigateur
+                        </li>
+                    </ul>
                 </aside>
             </section>
             <section>
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Utilisation du composant Ressource avec le backend</li>
-                    <li class="fragment">Live coding</li>
-                </ul>
+                <div w3-include-html="./tp/niveau2/08-resource/README.html"></div>
+                <aside class="notes">
+                    <ul>
+                        <li>Si le loading ne s'affiche pas, c'est à cause du fait que la page est générée en SSR.</li>
+                        <li>cf <a href="https://github.com/QwikDev/qwik/issues/4328">ce ticket</a></li>
+                    </ul>
+                </aside>
             </section>
             <section>
                 <p>Qwik City - formulaire avec Modular Form</p>
@@ -372,9 +295,7 @@
             </section>
             <section>
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Non, je blague</li>
-                </ul>
+                <div w3-include-html="./tp/niveau2/09-form/README.html"></div>
             </section>
         </section>
 
@@ -399,7 +320,6 @@
             <section>
                 <img src="./images/fcp-why.png" style="height: 600px">
                 <aside class="notes">
-                    <div>TEMPO: 4:40</div>
                     <div>Correspond à des évènements techniques</div>
                     <div>FP: chargement de la page html uniquement</div>
                     <div>FMP: page html + rendu JS si besoin</div>
@@ -410,7 +330,6 @@
             <section>
                 <h2>Les types de rendu web</h2>
                 <aside class="notes">
-                    <div>TEMPO: 6:00</div>
                     <div>Partant de ces définitions, on a utilisé dans le temps plusieurs façons de faire pour essayer
                         d'améliorer l'UX utilisateur
                     </div>
@@ -685,10 +604,7 @@
             </section>
             <section data-state="tp">
                 <h2>TP</h2>
-                <ul>
-                    <li class="fragment">Regarder le lazy loading sur son appli</li>
-                    <li class="fragment">Regarder les js générés et comment c'est articulé</li>
-                </ul>
+                <div w3-include-html="./tp/niveau3/01-lazy/README.html"></div>
             </section>
 
             <section>
@@ -733,7 +649,6 @@
                 </blockquote>
                 <div w3-include-html="./code/03-invalid-2.html"></div>
                 <aside class="notes">
-                    <div>TEMPO: 23:10</div>
                     <p>Pas de let</p>
                     <p>Pas de classes (sérializable)</p>
                 </aside>
@@ -756,15 +671,7 @@
             </section>
             <section data-state="tp">
                 <h2>TP</h2>
-                <ul>
-                    <li class="fragment">Ajouter un affichage de la position de la souris sur la page (coordonnées X,
-                        Y)
-                    </li>
-                    <li class="fragment">Rendre les Noms des power rangers qui sont trop longs pour qu'ils défilent sur
-                        place
-                    </li>
-                    <li class="fragment">Permettre de stopper/reprendre le défilement en cliquant sur un bouton</li>
-                </ul>
+                <div w3-include-html="./tp/niveau3/02-use/README.html"></div>
                 <aside class="notes">
                     <a href="https://qwik.dev/docs/guides/best-practices/#use-usevisibletask-as-a-last-resort">Avoid
                         Visible tasks</a>
@@ -870,12 +777,8 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Permettre d'ajouter un personnage dans une saga (utiliser le endpoint POST prévu à cet effet).</li>
-                    <li class="fragment">Permettre de modifier un personnage dans une saga (utiliser le endpoint PUT prévu à cet effet).</li>
-                </ul>
+                <div w3-include-html="./tp/niveau4/01-route-action/README.html"></div>
             </section>
-
             <section>
                 <p>Middlewares</p>
                 <aside class="notes">
@@ -925,11 +828,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Logger tous les appels faits sur l'API</li>
-                    <li class="fragment">Si tu t'ennuies: Rediriger si "non authentifié" sur certaines routes (présenter un header "Authentication" suffit)
-                    </li>
-                </ul>
+                <div w3-include-html="./tp/niveau4/02-middleware/README.html"></div>
             </section>
 
             <section>
@@ -977,15 +876,13 @@
 
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Retourner la liste des power rangers pour afficher sur une page</li>
-                    <li class="fragment">Si tu t'ennuies: Le faire progressivement apparaître toutes les 1s</li>
-                </ul>
+                <div w3-include-html="./tp/niveau4/03-endpoint/README.html"></div>
             </section>
 
             <section>
                 <p>validator$ (server-side)</p>
                 <div w3-include-html="./code/04-ss-validator.html"></div>
+                <div class="fragment">Attention, vous pouvez modifier ce qui est donné au prochain validateur/endpoint</div>
                 <aside class="notes">
                     <ul>
                         <li>Permet de valider les entrées, headers, ...</li>
@@ -995,10 +892,7 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Valider que toules champs du Power ranger soient bien renseignées</li>
-                    <li class="fragment">(optionnel: et les couleurs dans une liste)</li>
-                </ul>
+                <div w3-include-html="./tp/niveau4/04-validator/README.html"></div>
             </section>
         </section>
 
@@ -1139,10 +1033,8 @@
             </section>
             <section data-state="tp">
                 <p>TP</p>
-                <ul>
-                    <li class="fragment">Déployer votre application en mode Node.JS</li>
-                    <li class="fragment">Compiler votre application en SSG</li>
-                </ul>
+                <div w3-include-html="./tp/niveau5/01-node/README.html"></div>
+                <div w3-include-html="./tp/niveau5/02-ssg/README.html"></div>
             </section>
             <section>
                 <h2><a href="https://qwik.dev/docs/integrations/partytown/#partytown">Partytown</a></h2>
