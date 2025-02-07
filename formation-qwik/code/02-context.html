@@ -1,9 +1,9 @@
-<pre>
+<pre class="code-wrapper">
     <code data-trim class="code-font typescript">
         // Au dessus du composant parent
-        export const contextId = createContextId&lt;Signal&lt;...&gt;&gt;(...);
+        export const contextId = createContextId&lt;type&gt;(identifiant personnalisé);
         // Dans le composant parent
-        useContextProvider(contextId, ...);
+        useContextProvider(contextId, Valeur d initialisation);
         // Dans les composants enfants
         const ... = useContext(contextId);
     </code>

@@ -1,10 +1,10 @@
-<pre>
+<pre class="code-wrapper">
 <code data-trim class="code-font typescript">
     // Au dessus du composant
     export const useData = routeLoader$(async (requestEvent) => {
-      const res = await fetch(...);
+      const res = await fetch(URL);
       const data = await res.json();
-      return data as ...;
+      return data as type;
     });
     // Dans le composant
     const signal = useData();

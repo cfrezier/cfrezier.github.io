@@ -136,3 +136,19 @@ pre {
 .green {
     color:#17ff2e
 }
+
+code {
+    font-size: 32px;
+    color: #003286;
+    font-style: italic;
+
+    &.code-font {
+        font-size: 18px;
+        font-style: normal;
+    }
+}
+
+.reveal pre {
+    margin: 0;
+    width: 100%
+}

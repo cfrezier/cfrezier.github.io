@@ -1,14 +1,14 @@
-<pre>
+<pre class="code-wrapper">
     <code data-trim class="code-font typescript">
         // Composant bouton.tsx
         export default component$(() =&gt; {
-
           return (
-            &lt;&gt;
+            &lt;button&gt;
                 &lt;Slot/&gt;
-            &lt;/&gt;
+            &lt;/button&gt;
           );
         });
+
         // Utilisation dans un aure composant
         &lt;Bouton&gt;
             &lt;p>Clique ici&lt;/p&gt;

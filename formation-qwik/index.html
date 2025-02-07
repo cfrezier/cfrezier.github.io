@@ -6,13 +6,13 @@
 
     <title>Qwik training</title>
 
-    <link rel="stylesheet" href="../dist/reset.css">
-    <link rel="stylesheet" href="../dist/reveal.css">
-    <link rel="stylesheet" href="../dist/theme/white.css">
+    <link rel="stylesheet" href="./dist/reset.css">
+    <link rel="stylesheet" href="./dist/reveal.css">
+    <link rel="stylesheet" href="./dist/theme/white.css">
     <link rel="stylesheet" href="./slides.css">
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="./plugin/highlight/monokai.css">
 
     <link rel='stylesheet' id='font-family-1-css'
           href='https://fonts.googleapis.com/css2?family=Poppins%3Awght%40300%3B400%3B600%3B700&#038;display=swap&#038;ver=005bbd'
@@ -136,14 +136,14 @@
             </section>
             <section>
                 <p>CSS modules et CSS global</p>
-                <p class="fragment">Le CSS global est utilisé pour les styles qui doivent être appliqués sur tout le
-                    site</p>
-                <p class="fragment">Le CSS module est utilisé pour les styles qui doivent être appliqués sur un
-                    composant</p>
-            </section>
-            <section>
-                <p>Slot</p>
-                <div w3-include-html="./code/01-slot.html"></div>
+                <ul>
+                    <li class="fragment">Le CSS global est utilisé pour les styles qui doivent être appliqués sur tout
+                        le site
+                    </li>
+                    <li class="fragment">Le CSS module est utilisé pour les styles qui doivent être appliqués sur un
+                        composant
+                    </li>
+                </ul>
             </section>
             <section>
                 <div w3-include-html="./code/01-css.html"></div>
@@ -161,6 +161,10 @@
             <section data-state="tp">
                 <p>TP</p>
                 <div w3-include-html="./tp/niveau1/06-css/README.html"></div>
+            </section>
+            <section>
+                <p>Slot</p>
+                <div w3-include-html="./code/01-slot.html"></div>
             </section>
             <section>
                 <p>Et les tests</p>
@@ -562,7 +566,7 @@
             </section>
             <section data-state="robot">
                 <p>Lisible avec <a href="https://qwik.dev/docs/labs/devtools/">Qwik Devtools</a></p>
-                <pre data-id="code-animation">
+                <pre class="code-wrapper" data-id="code-animation">
                 <code data-trim data-line-numbers="1-16|3-5|7" class="code-font-sm">
                         import("https://qwik.dev/devtools/json/");
                 </code>
@@ -882,7 +886,8 @@
             <section>
                 <p>validator$ (server-side)</p>
                 <div w3-include-html="./code/04-ss-validator.html"></div>
-                <div class="fragment">Attention, vous pouvez modifier ce qui est donné au prochain validateur/endpoint</div>
+                <div class="fragment">Attention, vous pouvez modifier ce qui est donné au prochain validateur/endpoint
+                </div>
                 <aside class="notes">
                     <ul>
                         <li>Permet de valider les entrées, headers, ...</li>
@@ -1048,49 +1053,13 @@
     </div>
 </div>
 
-
-<script>
-    function includeHTML() {
-        var z, i, elmnt, file, xhttp;
-        /* Loop through a collection of all HTML elements: */
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /*search for elements with a certain atrribute:*/
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-                /* Make an HTTP request using the attribute value as the file name: */
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4) {
-                        if (this.status == 200) {
-                            elmnt.innerHTML = this.responseText;
-                        }
-                        if (this.status == 404) {
-                            elmnt.innerHTML = "Page not found.";
-                        }
-                        /* Remove the attribute, and call this function once more: */
-                        elmnt.removeAttribute("w3-include-html");
-                        includeHTML();
-                    }
-                }
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                /* Exit the function: */
-                return;
-            }
-        }
-    }
-
-    includeHTML();
-</script>
-<script src="../dist/reveal.js"></script>
-<script src="../plugin/notes/notes.js"></script>
-<script src="../plugin/markdown/markdown.js"></script>
-<script src="../plugin/highlight/highlight.js"></script>
+<script src="./dist/reveal.js"></script>
+<script src="./plugin/notes/notes.js"></script>
+<script src="./plugin/markdown/markdown.js"></script>
+<script src="./plugin/highlight/highlight.js"></script>
 <script type="module">
-    import RevealGamepadController from "../plugin/reveal-gamepad-controller-plugin/dist/index.js";
-    import RevealProgressImage from "../plugin/reveal-progress-image-plugin/dist/index.js";
+    import RevealGamepadController from "./plugin/reveal-gamepad-controller-plugin/dist/index.js";
+    import RevealProgressImage from "./plugin/reveal-progress-image-plugin/dist/index.js";
 
     const urlParams = new URLSearchParams(window.location.search);
     const receiver = urlParams.get('receiver');
@@ -1109,6 +1078,43 @@
             imageSrc: './images/lightening.png',
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes, ...pluginOnlyOnMain, progressPlugin],
         });
+
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                                elmnt.querySelectorAll('pre code').forEach((block) => {
+                                    Reveal.getPlugins()['highlight'].hljs.highlightElement(block);
+                                })
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+
+        includeHTML();
     }, 1000);
 </script>
 </body>
