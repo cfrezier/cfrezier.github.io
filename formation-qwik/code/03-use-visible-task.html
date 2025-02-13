@@ -1,0 +1,10 @@
+<pre class="code-wrapper"  data-id="code-animation">
+<code data-trim class="code-font-sm typescript" data-line-numbers>
+    <script type="text/template">
+        // eslint-disable-next-line qwik/no-use-visible-task
+        useVisibleTask$(() => {
+            console.log('Triggered client-side');
+        }, {strategy:'intersection-observer|document-ready|document-idle'});
+    </script>
+</code>
+</pre>

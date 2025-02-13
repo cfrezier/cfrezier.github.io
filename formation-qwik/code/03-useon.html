@@ -1,0 +1,12 @@
+<pre class="code-wrapper">
+    <code data-trim class="code-font typescript">
+        // Sur le container du composant
+        useOn(
+            'mousemove',
+            $((event) => {
+              store.element.x = event.x;
+              store.element.y = event.y;
+            })
+          );
+    </code>
+</pre>
