@@ -74,9 +74,10 @@ const server = createServer((req, _res) => {
                         setTimeout(() => res.status(400).end('Bad Request'), 10);
                     } else {
                         try {
-                            userSaga.personnages.push({...JSON.parse(body)});
+                            userSaga.personnages.push({...JSON.parse(body), id: userSaga.personnages.at(-1).id + 1});
                             setTimeout(() => res.status(201).end('OK'), 10);
                         } catch (error) {
+                            console.error(error)
                             setTimeout(() => res.status(400).end('Bad Request'), 10);
                         }
                     }

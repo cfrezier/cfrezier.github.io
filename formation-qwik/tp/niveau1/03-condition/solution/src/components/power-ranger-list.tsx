@@ -1,5 +1,5 @@
 import {component$, Signal} from "@builder.io/qwik";
-import {SAGA_POWER_RANGERS} from "../../../ressources-tp/ressources/saga-power-rangers";
+import {SAGA_POWER_RANGERS} from "../../ressources-tp/ressources/saga-power-rangers";
 
 export default component$<{ color: Signal<string> }>(({color}) => {
 

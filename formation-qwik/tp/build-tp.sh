@@ -2,7 +2,10 @@
 
 STOP_DIR=$1
 
-npm create qwik@latest
+echo "Remove power-ranger-app"
+rm -rf power-ranger-app
+
+npm create qwik@latest empty power-ranger-app  -i
 
 for i in $(find . -name "solution" -type d | sort --numeric-sort); do
   cp -r $i/* ./power-ranger-app
@@ -17,7 +20,7 @@ for i in $(find . -name "solution" -type d | sort --numeric-sort); do
     popd
   fi
 
-  if [[ "$i" =~ "$STOP_DIR" ]];
+  if [[ "$i" == *"$STOP_DIR"* ]];
   then
       echo "stopping at $i"
       break
@@ -26,6 +29,6 @@ for i in $(find . -name "solution" -type d | sort --numeric-sort); do
   fi
 done
 
-cd power-ranger-app
+pushd power-ranger-app || echo "power-ranger-app doesn't exist"
 
 npm run start

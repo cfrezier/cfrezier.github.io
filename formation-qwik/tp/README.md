@@ -1,6 +1,6 @@
 # Fonctionnement de l'arbo des TPs
 
-utiliser `./build.sh <étape>` permet de constuire une application qwik qui correspond à l'étape indiquée.
-Il faudra répondre aux question de création d'application Qwik, comme pour le premier TP (utiliser power-rangers-app !).
+Utiliser `./build-tp.sh <étape>` permet de constuire une application qwik qui correspond à l'étape indiquée.
+Pour certaines étapes il faut valider à la main les demandes d'installations pour les modules ajoutés pour qwik
 
-Exemple:  `./build.sh 01-lazy` pour la solution du TP niveau3/01-lazy.
+Exemple:  `./build-tp.sh niveau3/01-lazy` pour la solution du TP niveau3/01-lazy.

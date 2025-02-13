@@ -1,4 +1,4 @@
-import {component$, createContextId, useContext, useContextProvider, useSignal, useStore} from "@builder.io/qwik";
+import {component$, createContextId, useContextProvider, useSignal, useStore} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import PowerRangerList from "~/components/power-ranger-list";
 import DreamTeam from "../components/dream-team";
