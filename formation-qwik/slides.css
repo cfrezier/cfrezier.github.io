@@ -83,7 +83,7 @@ pre {
     color: red;
 }
 
-.why-qwik-so-cool:before, .qwik-backend:before, .bonus:before, .power-rangers:before, .pr-robot:before, .se-connaitre:before, .intro:before, .base:before, .medium:before, .quiz:before {
+.why-qwik-so-cool:before, .qwik-backend:before, .bonus:before, .power-rangers:before, .pr-robot:before, .se-connaitre:before, .intro:before, .base:before, .medium:before, .quiz:before, .historique:before {
     content: "";
     position: absolute;
     top: 0;
@@ -131,6 +131,10 @@ pre {
 
 .quiz:before {
     background-image: url("./images/power_ranger_questions.png");
+}
+
+.historique:before {
+    background-image: url("./images/power-ranger-historique.png");
 }
 
 .green {

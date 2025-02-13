@@ -2,8 +2,8 @@
 import {createServer} from 'node:http';
 import saga from './ressources/saga-power-rangers.json' with {type: 'json'};
 
+let index = 1;
 const addPersonnagesId = (sagas) => {
-    let index = 1;
     return sagas.map(saga => ({
         ...saga,
         personnages: saga.personnages.map((personnage, idx) => ({...personnage, id: index++}))
@@ -23,7 +23,34 @@ const server = createServer((req, _res) => {
             setTimeout(() => res.status(200).end(), 10);
             break;
         case 'GET':
-            setTimeout(() => res.status(200).end(JSON.stringify(data)), 2000);
+            if (req.url === '/') {
+                setTimeout(() => res.status(200).end(JSON.stringify(data)), 2000);
+            } else {
+                if (req.url.indexOf('/saga/') > -1) {
+                    const id = req.url.split('/')[2];
+                    const saga = data.find(saga => saga.id === id);
+                    if (saga) {
+                        setTimeout(() => res.status(200).end(JSON.stringify(saga)), 2000);
+                    } else {
+                        setTimeout(() => res.status(404).end(JSON.stringify("Saga not found")), 10);
+                    }
+                } else if (req.url.indexOf('/power-ranger/') > -1) {
+                    const id = parseInt(req.url.split('/')[2], 10);
+                    const saga = data.find(saga => saga.personnages.some(perso => perso.id === id));
+                    if (saga) {
+                        const pr = saga.personnages.find(perso => perso.id === id);
+                        if (pr) {
+                            setTimeout(() => res.status(200).end(JSON.stringify(pr)), 2000);
+                        } else {
+                            setTimeout(() => res.status(404).end(JSON.stringify("Power ranger not found")), 10);
+                        }
+                    } else {
+                        setTimeout(() => res.status(404).end(JSON.stringify("Power ranger not found")), 10);
+                    }
+                } else {
+                    setTimeout(() => res.status(404).end(JSON.stringify("Wrong url")), 10);
+                }
+            }
             break;
         case 'PUT':
             body = '';
@@ -74,8 +101,9 @@ const server = createServer((req, _res) => {
                         setTimeout(() => res.status(400).end('Bad Request'), 10);
                     } else {
                         try {
-                            userSaga.personnages.push({...JSON.parse(body), id: userSaga.personnages.at(-1).id + 1});
-                            setTimeout(() => res.status(201).end('OK'), 10);
+                            const pr = {...JSON.parse(body), id: index++};
+                            userSaga.personnages.push(pr);
+                            setTimeout(() => res.status(201).end(JSON.stringify(pr)), 10);
                         } catch (error) {
                             console.error(error)
                             setTimeout(() => res.status(400).end('Bad Request'), 10);

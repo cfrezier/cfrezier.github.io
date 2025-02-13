@@ -4,7 +4,7 @@
         export const streamPRFromServer = server$(
             // Async Generator Function
             async function* () {
-                const data = getSagaPowerRangers(prJson as SagaPowerRangers);
+                const data = getSagaPowerRangers(prJson as SagaPowerRangers[]);
 
                 for (const saga of data) {
                     // Yield returns the array value during each iteration

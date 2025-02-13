@@ -2,7 +2,7 @@
     <code data-trim class="code-font typescript">
         test(`[ExampleTest Component]: Should render`, async () => {
           const { screen, render } = await createDOM();
-          await render(&lt;ExampleComponent /&gt;);
+          await render(<ExampleComponent />);
           expect(screen.outerHTML).toContain(...);
         });
     </code>

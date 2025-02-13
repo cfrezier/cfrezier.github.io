@@ -1,12 +1,14 @@
 <pre class="code-wrapper">
     <code data-trim class="code-font typescript">
-        &lt;Resource
+        <script type="text/template">
+        <Resource
             value={resource}
-            onPending={()=> &lt;&gt;Loading...&lt;/&gt;}
-            onRejected={()=> &lt;&gt;Erreur...&lt;/&gt;}
+            onPending={()=> <>Loading...< />}
+            onRejected={()=> <>Erreur...< />}
             onResolved={(data) => {
-            return &lt;&gt;OK&lt;/&gt;;
-          }}
-        &gt;
+                return <>{data.label}< />;
+            }}>
+        < /Resource>
+        </script>
     </code>
 </pre>

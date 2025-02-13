@@ -1,8 +1,10 @@
 <pre class="code-wrapper">
     <code data-trim class="code-font typescript">
-        export default component$&lt;PropsType&gt;((props) => {
+        <script type="text/template">
+        export default component$(() => {
             const do = $(()=>...);
-            return &lt;button onClick$={()=>do()}&gt;Clique la&lt;button/&gt;
+            return <button onClick$={()=>do()}>Clique la<button/>
         })
+        </script>
     </code>
 </pre>

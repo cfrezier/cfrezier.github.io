@@ -8,9 +8,9 @@
         });
 
         export const head: DocumentHead = ({resolveValue, params}) => {
-          const data = resolveValue(useData);
+          const data = resolveValue(useData); // not a signal
           return {
-            title: ...,
+            title: data.label,
           };
         };
     </code>

@@ -15,40 +15,40 @@
           )
         });
 
-        type LoginForm = v.InferInput&lt;typeof LoginSchema&gt;;
+        type LoginForm = v.InferInput<typeof LoginSchema>;
 
-        export const useFormLoader = routeLoader$&lt;InitialValues&lt;LoginForm&gt;&gt;(() =&gt; ({
+        export const useFormLoader = routeLoader<InitialValues<LoginForm>>(() => ({
           email: '',
         }));
 
-        export const useFormAction = formAction$&lt;LoginForm&gt;((values) =&gt; {
+        export const useFormAction = formAction<LoginForm>((values) => {
           // Runs on server
         }, valiForm$(LoginSchema));
 
-        export default component$(() =&gt; {
-          const [loginForm, { Form, Field }] = useForm&lt;LoginForm&gt;({
+        export default component$(() => {
+          const [loginForm, { Form, Field }] = useForm<LoginForm>({
             loader: useFormLoader(),
             action: useFormAction(),
             validate: valiForm$(LoginSchema),
           });
 
-          const handleSubmit: QRL&lt;SubmitHandler&lt;LoginForm&gt;&gt; = $((values, event) =&gt; {
+          const handleSubmit: QRL<SubmitHandler<LoginForm>> = $((values, event) => {
             // Runs on client
             console.log(values);
           });
 
           return (
-            &lt;Form onSubmit$={handleSubmit}&gt;
-              &lt;Field name="email"&gt;
-                {(field, props) =&gt; (
-                  &lt;div&gt;
-                    &lt;input {...props} type="email" value={field.value} /&gt;
-                    {field.error && &lt;div&gt;{field.error}&lt;/div&gt;}
-                  &lt;/div&gt;
+            <Form onSubmit$={handleSubmit}>
+              <Field name="email">
+                {(field, props) => (
+                  <div>
+                    <input {...props} type="email" value={field.value} />
+                    {field.error && <div>{field.error}</div>}
+                  </div>
                 )}
-              &lt;/Field&gt;
-              &lt;button type="submit"&gt;Login&lt;/button&gt;
-            &lt;/Form&gt;
+              </Field>
+              <button type="submit">Login</button>
+            </Form>
           );
         });
     </code>

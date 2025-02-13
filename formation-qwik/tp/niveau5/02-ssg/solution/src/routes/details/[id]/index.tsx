@@ -13,7 +13,7 @@ import type {SagaPowerRangers} from "../../../../../ressources-tp/models/app.mod
 
 export const useRouteLoader = routeLoader$(async (requestEvent) => {
   const resp = await fetch("http://localhost:8080");
-  return ((await resp.json()) as SagaPowerRangers).find(({id}) => id === requestEvent.params.id);
+  return ((await resp.json()) as SagaPowerRangers[]).find(({id}) => id === requestEvent.params.id);
 });
 
 export const head: DocumentHead = ({resolveValue}) => {
@@ -144,7 +144,7 @@ export const useAddAction = routeAction$(factorized('POST'), facorizedValidator)
 
 export const onStaticGenerate: StaticGenerateHandler = async () => {
   const resp = await fetch("http://localhost:8080");
-  const ids = ((await resp.json()) as SagaPowerRangers).map(({id}) => id);
+  const ids = ((await resp.json()) as SagaPowerRangers[]).map(({id}) => id);
 
   return {
     params: ids.map((id) => {

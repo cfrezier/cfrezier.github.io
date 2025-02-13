@@ -2,10 +2,11 @@
 <code data-trim class="code-font-sm typescript" data-line-numbers="*|3|5|7">
     src/
     └── routes/
-        ├── layout.tsx            # Invocation order: 1 (first)
+        ├── plugin@auth.tsx       # Invocation order: 1
+        ├── layout.tsx            # Invocation order: 2
         └── api/
-            ├── layout.tsx        # Invocation order: 2
+            ├── layout.tsx        # Invocation order: 3
             └── greet/
-                └── index.ts      # Invocation order: 3 (last)
+                └── index.ts      # Invocation order: 4
 </code>
 </pre>

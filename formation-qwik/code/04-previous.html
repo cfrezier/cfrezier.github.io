@@ -1,5 +1,6 @@
 <pre class="code-wrapper">
 <code data-trim class="code-font-sm typescript" data-line-numbers="*|9">
+    <script type="text/template">
     export const useAddUser = routeAction$(
         // handle action...
     );
@@ -10,8 +11,9 @@
             <Form action={action}>
                 <input name="name" value={action.formData?.get('name')}/>
                 <button type="submit">Add user</button>
-            </Form>
+            < /Form>
         );
     });
+    </script>
 </code>
 </pre>

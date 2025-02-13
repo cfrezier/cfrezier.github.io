@@ -12,7 +12,7 @@ export default component$<{ color: Signal<string> }>(({color}) => {
   const resource = useResource$(
     async () => {
       const resp = await fetch("http://localhost:8080");
-      return (await resp.json()) as SagaPowerRangers;
+      return (await resp.json()) as SagaPowerRangers[];
     }
   );
 

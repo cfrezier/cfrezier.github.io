@@ -1,5 +1,6 @@
 <pre class="code-wrapper">
-                <code data-trim class="code-font-sm typescript" data-line-numbers="*|4-14|17,21-25|26-29">
+    <code data-trim class="code-font-sm typescript" data-line-numbers="*|4-14|17,21-25|26-29">
+        <script type="text/template">
                 import { component$ } from '@builder.io/qwik';
                 import { routeAction$, Form } from '@builder.io/qwik-city';
 
@@ -24,7 +25,7 @@
                                 <input name="firstName"/>
                                 <input name="lastName"/>
                                 <button type="submit">Add user</button>
-                            </Form>
+                            < /Form>
                             {action.value?.success && (
                                 // When the action is done successfully, the `action.value` property will contain the return value of the action
                                 <p>User {action.value.userID} added successfully</p>
@@ -32,5 +33,6 @@
                         </>
                         );
                 });
+        </script>
     </code>
 </pre>

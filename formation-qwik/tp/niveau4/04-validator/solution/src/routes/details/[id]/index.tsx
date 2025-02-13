@@ -13,7 +13,7 @@ import type {SagaPowerRangers} from "../../../../../ressources-tp/models/app.mod
 
 export const useRouteLoader = routeLoader$(async (requestEvent) => {
   const resp = await fetch("http://localhost:8080");
-  return ((await resp.json()) as SagaPowerRangers).find(({id}) => id === requestEvent.params.id);
+  return ((await resp.json()) as SagaPowerRangers[]).find(({id}) => id === requestEvent.params.id);
 });
 
 export const head: DocumentHead = ({resolveValue}) => {

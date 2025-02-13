@@ -1,7 +1,7 @@
 <pre class="code-wrapper">
     <code data-trim class="code-font-sm typescript">
         <script type="text/template">
-            component$(() => {
+            export default component$(() => {
                 const foo = new BroadcastChannel('channel');
                 return <div onClick$={() => console.log(foo)}/>
             });

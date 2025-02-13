@@ -3,7 +3,7 @@ export type SagaPowerRangers = {
   nom: string;
   personnages: Personnage[];
   annee_de_debut: string;
-}[];
+};
 
 export type Personnage = {
   id: number;

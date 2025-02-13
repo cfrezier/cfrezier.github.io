@@ -6,12 +6,12 @@ import prJson from "../../../../ressources-tp/ressources/saga-power-rangers.json
 export const serverList = server$(
   // Async Generator Function
   async function* () {
-    const data = prJson as SagaPowerRangers;
+    const data = prJson as SagaPowerRangers[];
 
     for (const saga of data) {
       // Yield returns the array value during each iteration
 
-      yield saga as SagaPowerRangers[0];
+      yield saga as SagaPowerRangers;
 
       // Waiting for 1 second before the next iteration
       // This simulates a delay in the execution
@@ -20,11 +20,11 @@ export const serverList = server$(
   }
 );
 
-export const CTX = createContextId<{ list: SagaPowerRangers }>("ctx-progressive");
+export const CTX = createContextId<{ list: SagaPowerRangers[] }>("ctx-progressive");
 
 export default component$(() => {
 
-  const list = useStore<SagaPowerRangers>([]);
+  const list = useStore<SagaPowerRangers[]>([]);
 
   return (
     <section>

@@ -23,19 +23,41 @@
 
 <div class="reveal">
     <div class="slides">
-        <section data-state="se-connaitre">
-            <h1>Qwik</h1>
-            <aside class="notes">
-                <ul>
-                    <li>Présentation formateur</li>
-                    <li>Un tour de table</li>
-                    <li>Votre niveau en HTML / JS / CSS ?</li>
-                    <li>Framework web JS</li>
-                    <li>Chargement "instantané" quelle que soit la taille/complexité de l'application</li>
-                    <li>Nécessite uniquement 1Ko de JS pour commencer à fonctionner</li>
-                    <li>JSX</li>
-                </ul>
-            </aside>
+        <section>
+            <section data-state="se-connaitre">
+                <h1>Qwik</h1>
+                <aside class="notes">
+                    <ul>
+                        <li>Présentation formateur</li>
+                        <li>Un tour de table</li>
+                        <li>Votre niveau en HTML / JS / CSS ?</li>
+                        <li>Framework web JS</li>
+                        <li>Chargement "instantané" quelle que soit la taille/complexité de l'application</li>
+                        <li>Nécessite uniquement 1Ko de JS pour commencer à fonctionner</li>
+                        <li>JSX</li>
+                    </ul>
+                </aside>
+            </section>
+            <section data-state="historique">
+                <h2>Pourquoi et comment ?</h2>
+                <p class="fragment">
+                    <img src="./images/builder-io.webp" style="height: 200px;">
+                </p>
+                <p class="fragment">
+                    Optimisation de toutes les applications clientes
+                </p>
+                <aside class="notes">
+                    <ul>
+                        <li>Miško Hevery, créateur d'AngularJS et Angular</li>
+                        <li>Manu Almeida, core team ionic</li>
+                        <li>Adam Bradley, Director of technology chez ionic</li>
+                    </ul>
+                </aside>
+            </section>
+            <section data-state="historique">
+                <a href="https://qwik.dev/docs/">Documentation</a>
+                <a href="hhttps://qwik.dev/tutorial/welcome/overview/">Tutoriel</a>
+            </section>
         </section>
 
         <section data-state="base">
@@ -84,7 +106,19 @@
                 </aside>
             </section>
             <section>
-                <p>Composant et évènements</p>
+                <p>Framework composant</p>
+                <p>Assemblage de composants donne une page</p>
+                <div w3-include-html="./code/01-component-simple.html"></div>
+                <p>1 seul élément par composant (<> operator)</p>
+                <aside class="notes">
+                    <ul>
+                        <li>On va créer un arbre de composants</li>
+                        <li>La version la plus simple d'un composant</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <p>Évènements</p>
                 <div w3-include-html="./code/01-component.html"></div>
                 <aside class="notes">
                     <ul>
@@ -92,6 +126,10 @@
                         <li>Montrer handler</li>
                     </ul>
                 </aside>
+            </section>
+            <section>
+                <p>Données</p>
+                <div w3-include-html="./code/01-component-avec-props.html"></div>
             </section>
             <section data-state="tp">
                 <p>TP</p>
@@ -109,13 +147,22 @@
             <section>
                 <div w3-include-html="./code/01-conditions.html"></div>
             </section>
+            <section>
+                <div w3-include-html="./code/01-conditions-ternaire.html"></div>
+            </section>
+            <section>
+                <div w3-include-html="./code/01-conditions-map.html"></div>
+            </section>
             <section data-state="tp">
                 <p>TP</p>
                 <div w3-include-html="./tp/niveau1/03-condition/README.html"></div>
             </section>
-
             <section>
                 <p>Signal et Store</p>
+                <p class="fragment">Lier une variable avec ce qui est dans le template</p>
+                <p class="fragment">Pour une variable "atomique" / un objet complexe</p>
+            </section>
+            <section>
                 <div w3-include-html="./code/01-signal.html"></div>
                 <aside class="notes">
                     <ul>
@@ -230,18 +277,8 @@
                 <p>Navigation MPA ou SPA 🧐</p>
             </section>
             <section data-state="tp">
-                <p>Évènement de navigation bizarre</p>
-                <div w3-include-html="./tp/niveau2/05-nav-SPA-MPA/README.html"></div>
-                <aside class="notes">
-                    export default component$(() => {
-                    const go = $((event)=>{
-                    event.preventDefault();
-                    alert('tu ne pars pas')
-                    })
-                    return &lt;a href="http://google.com" preventdefault:click onClick$={go}&gt;Go to&lt;/a&gt;
-                    }
-                    )
-                </aside>
+                <p>Prevent default</p>
+                <div w3-include-html="./code/02-prevent.html"></div>
             </section>
             <section>
                 <p>Qwik City - routeLoaders$</p>
@@ -268,6 +305,8 @@
             <section>
                 <p>Qwik City - useResource$</p>
                 <div w3-include-html="./code/02-use-resource.html"></div>
+                <p>track: recherche avec filtres, ...</p>
+                <p>cleanup: destruction de websocket, ...</p>
             </section>
             <section>
                 <p>Qwik City - Resources</p>
@@ -293,14 +332,6 @@
                     </ul>
                 </aside>
             </section>
-            <section>
-                <p>Qwik City - formulaire avec Modular Form</p>
-                <div w3-include-html="./code/02-forms.html"></div>
-            </section>
-            <section>
-                <p>TP</p>
-                <div w3-include-html="./tp/niveau2/09-form/README.html"></div>
-            </section>
         </section>
 
         <section data-state="why-qwik-so-cool">
@@ -312,6 +343,17 @@
             <section>
                 <h2>Performance Web</h2>
                 <p class="fragment">... et empreinte carbone</p>
+            </section>
+            <section data-state="green">
+                <h2>Empreinte et performance</h2>
+                <p class="fragment fade-in">1 Mo envoyé = 15 g de CO2 (et c'est déjà un début)</p>
+                <p class="fragment fade-in">Attention (activité backend, optimisations: caches, génération statique,
+                    ...)</p>
+                <aside class="notes">
+                    <p>On a parlé jusque-là de performances, mais quel rapport avec l'empreinte carbone ?</p>
+                    <p>Plus de code = plus de transit = plus de consommation</p>
+                    <p>Multiplié par le nombre de visites ou d'utilisateurs</p>
+                </aside>
             </section>
             <section>
                 <img src="./images/fcp.png" style="max-height: 400px">
@@ -511,19 +553,6 @@
                     <div>Qwik ne demande pas d'effort au développeur !</div>
                 </aside>
             </section>
-
-            <section data-state="green">
-                <h2>Empreinte et performace</h2>
-                <p class="fragment fade-in">1 Mo envoyé = 15 g de CO2 (et c'est déjà un début)</p>
-                <p class="fragment fade-in">Attention (activité backend, optimisations: caches, génération statique,
-                    ...)</p>
-                <aside class="notes">
-                    <p>On a parlé jusque-là de performances, mais quel rapport avec l'empreinte carbone ?</p>
-                    <p>Plus de code = plus de transit = plus de consommation</p>
-                    <p>Multiplié par le nombre de visites ou d'utilisateurs</p>
-                </aside>
-            </section>
-
             <section data-state="robot">
                 <h2>Résumabilité</h2>
                 <p class="fragment">Relancer la navigation en exécutant le minimum de choses</p>
@@ -660,15 +689,31 @@
 
             <section>
                 <h2>Dès le début ?</h2>
-                <p class="fragment">useOn, useOnDocument, useOnWindow</p>
-                <p class="fragment">useTask$</p>
-                <p class="fragment fade-in red">useVisibleTask$</p>
-                <div w3-include-html="./code/03-eslint.html"></div>
+                <p>useOn, useOnDocument, useOnWindow</p>
+                <div w3-include-html="./code/03-useon.html"></div>
                 <aside class="notes">
                     <p>Des fois on a besoin d'exécuter des choses sans action utilisateur (slideshow, ...)</p>
                     <ul>
                         <li>useOn* permet d'écouter les évènements de chaque container directement</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>Dès le début ?</h2>
+                <p>useTask$ (côté serveur, avant rendering, no delay)</p>
+                <div w3-include-html="./code/03-usetask.html"></div>
+                <aside class="notes">
+                    <ul>
                         <li>useTask$: exécution en mode SSR</li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h2>Dès le début ?</h2>
+                <p class="fade-in red">useVisibleTask$</p>
+                <div w3-include-html="./code/03-use-visible-task.html"></div>
+                <aside class="notes">
+                    <ul>
                         <li>useVisibleTask$: exécution en mode CSR, mais attention, bloque le main thread !</li>
                     </ul>
                 </aside>
@@ -784,11 +829,19 @@
                 <div w3-include-html="./tp/niveau4/01-route-action/README.html"></div>
             </section>
             <section>
+                <p>Avec Modular Form</p>
+                <div w3-include-html="./code/02-forms.html"></div>
+            </section>
+            <section>
+                <p>TP</p>
+                <div w3-include-html="./tp/niveau4/05-form/README.html"></div>
+            </section>
+            <section>
                 <p>Middlewares</p>
                 <aside class="notes">
                     <ul>
                         <li>Permet de faire de la chain logic (auth, security, cache, redirects, logging)</li>
-                        <li>se déclare dans un `layout.tsx` ou `index.tsx` ou un `plugin.tsx`</li>
+                        <li>se déclare dans un `layout.tsx` ou `index.tsx` ou un `plugin@some-name.ts`</li>
                     </ul>
                 </aside>
             </section>
@@ -932,7 +985,7 @@
                 <div w3-include-html="./code/05-qwizz-2.html"></div>
                 <p class="fragment highlight-green">Oui</p>
                 <p>Non</p>
-                <p class="fragment green">
+                <p class="fragment">
                     Mais ce n'est pas pertinent pour autant
                 </p>
                 <aside class="notes">
@@ -958,7 +1011,7 @@
                 <p>Côté client</p>
                 <p class="fragment highlight-green">Côté serveur</p>
                 <p>Les 2</p>
-                <aside class="notes">
+                <p class="fragment">
                     Même si on fait de la navigation côté client, cette partie reste déportée sur le serveur
                 </aside>
             </section>
@@ -968,9 +1021,9 @@
                 <p>Côté client</p>
                 <p>Côté serveur</p>
                 <p class="fragment highlight-green">Les 2</p>
-                <aside class="notes">
-                    Use task est spécifiquement déclenché au rendeer du composant
-                </aside>
+                <p class="fragment">
+                    Pendant le rendu, mais en MPA ou SPA
+                </p>
             </section>
         </section>
 

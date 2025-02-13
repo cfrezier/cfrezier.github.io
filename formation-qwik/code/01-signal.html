@@ -1,6 +1,6 @@
 <pre class="code-wrapper">
     <code data-trim class="code-font typescript">
-        const ... = useSignal<...>(...);
-        const ... = useStore<...>(..., { deep: boolean });
+        const signal = useSignal<string>("initialisation");
+        const store = useStore<TypeStore>({ prop: "valeur", prop2: 2 }, { deep: true });
     </code>
 </pre>
